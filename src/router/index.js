@@ -3,6 +3,8 @@ import BootstrapVue from "bootstrap-vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Lab from "../views/Lab.vue";
+import Class from "../views/Class.vue";
+import Link from "../views/Link.vue";
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
@@ -20,6 +22,16 @@ const routes = [
     path: "/lab",
     name: "Lab",
     component: Lab
+  },
+  {
+    path: "/class",
+    name: "Class",
+    component: Class
+  },
+  {
+    path: "/link",
+    name: "Link",
+    component: Link
   }
 ];
 
