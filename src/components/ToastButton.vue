@@ -1,7 +1,9 @@
 <template>
   <div>
+    <p></p>
+    <input v-model="inputText" type="text" placeholder="任意の文字列を入力" />
+    <p>これ → {{ inputText }}</p>
     <b-button @click="makeToast()">いっぱいおしてね</b-button>
-    <p>hoge</p>
   </div>
 </template>
 
@@ -10,12 +12,11 @@ export default {
   name: "ToastButton",
   data() {
     return {
-      toastCount: 0
+      toastCount: 0,
+      inputText: ""
     };
   },
-  props: {
-    inputText: String
-  },
+  props: {},
   methods: {
     makeToast() {
       this.toastCount++;
