@@ -14,26 +14,23 @@
             <b-nav-item-dropdown text="Lab" right>
               <b-dropdown-item to="/Lab">Contents</b-dropdown-item>
               <b-dropdown-item to="/Lab">Member</b-dropdown-item>
+              <b-dropdown-item to="/Lab">History</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item to="/Class">Class</b-nav-item>
             <b-nav-item-dropdown text="Q&A" right>
               <b-dropdown-item to="/Q&A">Answer</b-dropdown-item>
               <b-dropdown-item to="/Q&A">Send</b-dropdown-item>
             </b-nav-item-dropdown>
+            <b-nav-item to="/Link">Link</b-nav-item>
           </b-navbar-nav>
 
           <!-- 右側の要素 -->
           <b-navbar-nav class="ml-auto">
-            <b-nav-text>このスペース, 何か書くこと無い?</b-nav-text>
+            <b-nav-text>ここに書くこと無い?</b-nav-text>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
     </div>
-    <router-view />
-    <router-view />
-    <router-view />
-    <router-view />
-    <router-view />
     <router-view />
   </div>
 </template>
