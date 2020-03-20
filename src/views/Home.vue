@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <header class="header">
-      <div>
+      <div class="logo">
         <img fluid alt="Vue logo" src="../assets/lab_logo_top.png" />
       </div>
       <!-- <b-img
@@ -53,13 +53,17 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.logo img {
+  width: 60%;
+}
+
 .home {
   display: grid;
   /* 1列目から順番に180px、1fr、160pxの幅 */
-  grid-template-columns: 180px 1fr 160px;
+  grid-template-columns: 20% 1fr 20%;
   /* 1行目から順番に60px 1fr 90pxの高さ */
-  grid-template-rows: 360px 1fr 90px;
+  grid-template-rows: auto;
 }
 
 .header {
@@ -69,7 +73,7 @@ export default {
   /* 行の1本目から2本目のグリッドラインまで */
   grid-row-start: 1;
   grid-row-end: auto;
-  padding-top: 10px;
+  padding-bottom: 10%;
 }
 
 .main {
