@@ -58,9 +58,21 @@
 </style>
 
 <style lang="stylus">
+html
+    font-size: 13px
+
+@media only screen and (min-width:651px)
+  html
+    font-size: 16px
+
+@media only screen and (min-width:961px)
+  html
+    font-size: 19px
+
+
 @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese');
 font-KM = 'Kosugi Maru'
-hl-fs = 2.5rem
+hl-fs = 2.2rem
 hl-line-px = 0.2rem
 hl-line-color = #008554
 

@@ -90,11 +90,11 @@ export default {
 <style scoped lang="stylus">
 
 .md-block-outer
-  padding: 0.2em 3% 0.2em;
+  padding: 0.2rem 3% 0.2rem;
 
 .md-block
-  padding: 0.5em 1em;
-  margin: 2em 0;
+  padding: 0.5rem 1rem;
+  margin: 2rem 0;
   background: #F0F0F0;
   border-top: solid 5px #008554;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
@@ -121,11 +121,11 @@ export default {
       background: #E0E0E0
 
     h1
-      font-size: 2.2em;
-      padding-bottom: .2em;
+      font-size: 2.2rem;
+      padding-bottom: .2rem;
       padding-top: 0;
-      padding-left: .2em;
-      margin-top: 1em;
+      padding-left: .2rem;
+      margin-top: 1rem;
       position relative;
       border-left: 5px solid #999999;
 
@@ -147,7 +147,7 @@ export default {
         border-bottom: 2px solid #999999;
 
     h2
-      font-size: 1.8em;
+      font-size: 1.8rem;
       position relative;
 
       &::before, &::after
@@ -163,10 +163,10 @@ export default {
         border-bottom: 2px solid #AAAAAA;
 
     h3
-      font-size: 1.4em;
+      font-size: 1.4rem;
 
     h4
-      font-size: 1.2em;
+      font-size: 1.2rem;
 
     a
       color: #45A8F0;
