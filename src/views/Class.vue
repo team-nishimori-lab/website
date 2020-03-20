@@ -16,9 +16,9 @@
         授業を選択
       </div>
       <form id="classSelect">
-        <span v-html="radioList"></span>
+        <div class="container" v-html="radioList"></div>
       </form>
-      <div style="padding: 0% 30%">
+      <div style="padding: 0% 35%">
         <b-button v-on:click="selected" block variant="outline-secondary">
           決定
         </b-button>
@@ -41,7 +41,7 @@ export default {
       });
     },
     selected: function() {
-      var state = document.getElementById("classSelect").classItem.value;
+      var state = document.getElementById("classSelect").radio.value;
       if (state == "") {
         this.ToastAleart();
       } else {
@@ -81,9 +81,14 @@ export default {
       } catch (error) {
         continue;
       }
-      str += `<input name="classItem" type="radio" id="${id}" value="${d["id"]}">`;
-      str += `<label for="${id}">${className}</label>`;
-      str += "<br>";
+      str += `<div class="radio">`;
+      if (id == 0) {
+        str += `<input name="radio" type="radio" id="${id}" value="${d["id"]}" checked/>`;
+      } else {
+        str += `<input name="radio" type="radio" id="${id}" value="${d["id"]}" />`;
+      }
+      str += `<label class="radio-label" for="${id}">${className}</label>`;
+      str += "</div>";
       id++;
     }
     this.radioList = str;
@@ -93,3 +98,75 @@ export default {
   }
 };
 </script>
+
+<style scoped lang="scss">
+$color1: #f4f4f4;
+$color2: #3197ee;
+
+.container {
+  /deep/ .radio {
+    margin: 0.5rem;
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      + .radio-label {
+        &:before {
+          content: "";
+          background: $color1;
+          border-radius: 100%;
+          border: 1px solid darken($color1, 25%);
+          display: inline-block;
+          width: 1.4em;
+          height: 1.4em;
+          position: relative;
+          top: -0.2em;
+          margin-right: 1em;
+          vertical-align: middle;
+          cursor: pointer;
+          text-align: center;
+          transition: all 250ms ease;
+        }
+      }
+      &:checked {
+        + .radio-label {
+          &:before {
+            background-color: $color2;
+            box-shadow: inset 0 0 0 4px $color1;
+          }
+        }
+      }
+      &:focus {
+        + .radio-label {
+          &:before {
+            outline: none;
+            border-color: $color2;
+          }
+        }
+      }
+      &:disabled {
+        + .radio-label {
+          &:before {
+            box-shadow: inset 0 0 0 4px $color1;
+            border-color: darken($color1, 25%);
+            background: darken($color1, 25%);
+          }
+        }
+      }
+      + .radio-label {
+        &:empty {
+          &:before {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+</style>
