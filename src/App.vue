@@ -32,7 +32,11 @@
       </b-navbar>
     </div>
     <router-view />
-    <div id="footer"></div>
+    <div id="footer">
+      <b-navbar ype="dark" variant="dark" fixed="bottom" class="inner">
+        Copyright (C) 2020- nishimori lab. All Rights Reserved.
+      </b-navbar>
+    </div>
   </div>
 </template>
 
@@ -50,11 +54,11 @@
   color: #2c3e50;
 }
 
-#footer {
-  margin-top: 5rem;
-  height: 100px;
-  background: #444444;
-}
+#footer
+  .inner
+    color: #DDDDDD;
+    font-size: 0.7rem;
+    display table-cell;
 </style>
 
 <style lang="stylus">
