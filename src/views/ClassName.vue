@@ -84,13 +84,82 @@ export default {
   border-top: solid 5px #008554;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 
-  *
-    text-align: left;
+  /deep/
+    *
+      text-align left;
+      color: #333333
+      font-size 1.2rem;
+    table, th, td
+      border-collapse: collapse;
+      border: 1.5px solid #3f3f3f;
+      line-height: 1.5rem;
+    th
+      width: 1.2rem;
+      padding: 0.6rem;
+      font-weight: bold;
+      background: #3f3f3f;
+      color: #ffffff;
+    td
+      width: 10rem;
+      padding: 10px;
+    tr:nth-child(even)
+      background: #E0E0E0
 
-  h1
-    font-size: 10px !important;
-    color: #444444
-    text-align: left;
-  p
-    font-size: 10px;
+    h1
+      font-size: 2.2em;
+      padding-bottom: .2em;
+      padding-top: 0;
+      padding-left: .2em;
+      margin-top: 2em;
+      position relative;
+      border-left: 5px solid #999999;
+
+      &::before, &::after
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 6px;
+        box-sizing: border-box;
+
+      &::before
+        top: 0;
+        border-top: 2px solid #999999;
+
+      &::after
+        bottom: 0;
+        border-top: 1px solid #BBBBBB;
+        border-bottom: 2px solid #999999;
+
+    h2
+      font-size: 1.8em;
+      position relative;
+
+      &::before, &::after
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 6px;
+        box-sizing: border-box;
+
+      &::after
+        bottom: 0;
+        border-bottom: 2px solid #AAAAAA;
+
+    h3
+      font-size: 1.4em;
+
+    h4
+      font-size: 1.2em;
+
+    a
+      color: #45A8F0;
+      font-weight: bold;
+
+    pre
+      margin: 0px 2rem;
+      padding: 1rem;
+      border: 3px inset #AAAAAA;
+      background: #D6D6D6;
 </style>

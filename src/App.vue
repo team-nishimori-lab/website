@@ -32,6 +32,7 @@
       </b-navbar>
     </div>
     <router-view />
+    <div id="footer"></div>
   </div>
 </template>
 
@@ -47,6 +48,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+#footer {
+  margin-top: 5rem;
+  height: 100px;
+  background: #444444;
 }
 </style>
 
