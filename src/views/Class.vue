@@ -11,19 +11,25 @@
         授業データの更新中...
       </div>
     </div>
-    <div v-show="!(loadingTime || loadingApi)" class="select">
-      <div class="headline">
-        授業を選択
+    <transition name="hl">
+      <div v-show="!(loadingTime || loadingApi)" class="hl">
+        <div class="headline">
+          授業を選択
+        </div>
       </div>
-      <form id="classSelect">
-        <div class="container" v-html="radioList"></div>
-      </form>
-      <div style="padding: 0% 35%">
-        <b-button v-on:click="selected" block variant="outline-secondary">
-          決定
-        </b-button>
+    </transition>
+    <transition name="content">
+      <div v-show="!(loadingTime || loadingApi)" class="select">
+        <form id="classSelect">
+          <div class="container" v-html="radioList"></div>
+        </form>
+        <div style="padding: 0% 35%">
+          <b-button v-on:click="selected" block variant="outline-secondary">
+            決定
+          </b-button>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -168,5 +174,6 @@ $color2: #3197ee;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+  font-size: 2rem;
 }
 </style>

@@ -109,4 +109,35 @@ hl-line-color = #008554
   h1
     margin: 40px 0px 10px;
     padding: 0;
+
+// transition系
+.hl-enter {
+  opacity: 0;
+}
+.hl-enter-active {
+  transition: opacity 0.5s
+}
+.hl-enter-to {
+  opacity: 1;
+}
+
+.content-enter {
+  opacity: 0;
+}
+.content-enter-active {
+  transition: opacity 1.5s
+}
+.content-enter-to {
+  opacity: 1;
+}
+
+.subcontent-enter {
+  opacity: 0;
+}
+.subcontent-enter-active {
+  transition: opacity 2.5s
+}
+.subcontent-enter-to {
+  opacity: 1;
+}
 </style>

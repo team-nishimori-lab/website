@@ -1,6 +1,10 @@
 <template>
   <div class="link">
-    リンク集を書くよ
+    <transition name="hl" appear>
+      <div class="headline">
+        リンク集
+      </div>
+    </transition>
   </div>
 </template>
 
