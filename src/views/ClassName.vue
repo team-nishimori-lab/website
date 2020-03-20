@@ -16,7 +16,9 @@
         {{ className }}
       </div>
       <br />
-      <div v-html="content" class="md-block"></div>
+      <div class="md-block-outer">
+        <div v-html="content" class="md-block"></div>
+      </div>
       <b-button variant="outline-secondary" v-bind:href="url" target="_blank">
         Gistへ移動
       </b-button>
@@ -69,3 +71,20 @@ export default {
   // }
 };
 </script>
+
+<style scoped lang="stylus">
+.md-block-outer
+  padding: 0.2em 3% 0.2em;
+
+.md-block
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  h1
+    font-size: 10px !important;
+    color: #444444
+  p
+    font-size: 10px;
+</style>
