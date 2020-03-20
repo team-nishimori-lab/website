@@ -1,6 +1,6 @@
 <template>
-  <div id="header">
-    <div id="nav">
+  <div id="app">
+    <div id="header">
       <b-navbar toggleable="xl" type="dark" variant="dark" fixed="top">
         <!-- ロゴなど -->
         <b-navbar-brand to="/">西森研究室</b-navbar-brand>
@@ -35,12 +35,32 @@
   </div>
 </template>
 
+<style scoped lang="stylus">
+
+#app {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#header {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+</style>
+
 <style lang="stylus">
 @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese');
 font-KM = 'Kosugi Maru'
 hl-fs = 30px
 hl-line-px = 3px
 hl-line-color = #008554
+
+* {
+  font-family: "Gothic", sans-serif;
+  font-size: 1.1rem;
+}
 
 .load-str
   font-family: font-KM, sans-serif;
@@ -77,15 +97,6 @@ hl-line-color = #008554
   border-bottom: solid hl-line-px hl-line-color;
   bottom:0;
   right: 0;
-}
-
-#header {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 100px;
 }
 
 .md-block
