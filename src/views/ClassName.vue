@@ -1,6 +1,6 @@
 <template>
   <div class="className">
-    <div v-show="loadingTime || loadingApi" class="loader">
+    <div v-if="loadingTime || loadingApi" class="loader">
       <vue-loading
         type="beat"
         color="#BCBCBC"
@@ -11,18 +11,32 @@
         授業データの取得中..
       </div>
     </div>
-    <div v-show="!(loadingTime || loadingApi)" class="classInfo">
-      <div class="headline">
-        {{ className }}
+    <transition name="hl">
+      <div v-if="!(loadingTime || loadingApi)" class="hl">
+        <div class="headline">
+          {{ className }}
+        </div>
       </div>
-      <br />
-      <div class="md-block-outer">
-        <div v-html="content" class="md-block"></div>
+    </transition>
+    <transition name="content">
+      <div v-if="!(loadingTime || loadingApi)" class="md">
+        <div class="md-block-outer">
+          <div v-html="content" class="md-block"></div>
+        </div>
       </div>
-      <b-button variant="outline-secondary" v-bind:href="url" target="_blank">
-        Gistへ移動
-      </b-button>
-    </div>
+    </transition>
+    <transition name="gist-link">
+      <div v-if="!(loadingTime || loadingApi)" class="gist-link">
+        <b-button
+          variant="outline-dark"
+          v-bind:href="url"
+          target="_blank"
+          size="lg"
+        >
+          Gistへ移動
+        </b-button>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -74,6 +88,7 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+
 .md-block-outer
   padding: 0.2em 3% 0.2em;
 
@@ -110,7 +125,7 @@ export default {
       padding-bottom: .2em;
       padding-top: 0;
       padding-left: .2em;
-      margin-top: 2em;
+      margin-top: 1em;
       position relative;
       border-left: 5px solid #999999;
 
