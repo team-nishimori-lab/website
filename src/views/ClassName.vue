@@ -55,6 +55,7 @@ export default {
       });
   },
   beforeUpdate() {
+    // this.className = /#class_(.+)/.exec(this.orgData["description"])[1];
     try {
       this.className = /#class_(.+)/.exec(this.orgData["description"])[1];
     } catch (error) {
@@ -79,12 +80,17 @@ export default {
 .md-block
   padding: 0.5em 1em;
   margin: 2em 0;
-  background: white;
-  border-top: solid 5px #5d627b;
+  background: #F0F0F0;
+  border-top: solid 5px #008554;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+
+  *
+    text-align: left;
+
   h1
     font-size: 10px !important;
     color: #444444
+    text-align: left;
   p
     font-size: 10px;
 </style>

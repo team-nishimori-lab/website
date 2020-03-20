@@ -53,8 +53,8 @@
 <style lang="stylus">
 @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese');
 font-KM = 'Kosugi Maru'
-hl-fs = 30px
-hl-line-px = 3px
+hl-fs = 2.5rem
+hl-line-px = 0.2rem
 hl-line-color = #008554
 
 * {
