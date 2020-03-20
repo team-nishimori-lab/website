@@ -99,13 +99,6 @@ hl-line-color = #008554
   right: 0;
 }
 
-.md-block
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  background: white;
-  border-top: solid 5px #5d627b;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-
   h1
     margin: 40px 0px 10px;
     padding: 0;
