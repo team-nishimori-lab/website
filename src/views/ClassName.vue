@@ -18,7 +18,7 @@
         </div>
       </div>
     </transition>
-    <transition name="content">
+    <transition name="part">
       <div v-if="!(loadingTime || loadingApi)" class="md">
         <div class="md-block-outer">
           <div v-html="content" class="md-block"></div>

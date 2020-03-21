@@ -18,7 +18,7 @@
         </div>
       </div>
     </transition>
-    <transition name="content">
+    <transition name="part">
       <div v-show="!(loadingTime || loadingApi)" class="select">
         <form id="classSelect">
           <div class="container" v-html="radioList"></div>
