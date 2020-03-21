@@ -1,41 +1,47 @@
 <template>
   <div id="app">
-    <div id="header">
-      <b-navbar toggleable="xl" type="dark" variant="dark" fixed="top">
-        <!-- ロゴなど -->
-        <b-navbar-brand to="/">西森研究室</b-navbar-brand>
-
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-        <!-- 各項目へのリンク -->
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
-            <b-nav-item to="/">Home</b-nav-item>
-            <b-nav-item-dropdown text="Lab" right>
-              <b-dropdown-item to="/Lab">Contents</b-dropdown-item>
-              <b-dropdown-item to="/Lab">Member</b-dropdown-item>
-              <b-dropdown-item to="/Lab">History</b-dropdown-item>
-            </b-nav-item-dropdown>
-            <b-nav-item to="/Class">Class</b-nav-item>
-            <b-nav-item-dropdown text="Q&A" right>
-              <b-dropdown-item to="/Q&A">Answer</b-dropdown-item>
-              <b-dropdown-item to="/Q&A">Send</b-dropdown-item>
-            </b-nav-item-dropdown>
-            <b-nav-item to="/Link">Link</b-nav-item>
-          </b-navbar-nav>
-
-          <!-- 右側の要素 -->
-          <b-navbar-nav class="ml-auto">
-            <b-nav-text id="time-msg">{{ timeMsg }}</b-nav-text>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
+    <div class="shutter" style="text-align=center">
+      <span>Welcome!</span>
     </div>
-    <router-view />
-    <div id="footer">
-      <b-navbar ype="dark" variant="dark" fixed="bottom" class="inner">
-        Copyright (C) 2020- nishimori lab. All Rights Reserved.
-      </b-navbar>
+
+    <div class="content">
+      <div id="header">
+        <b-navbar toggleable="xl" type="dark" variant="dark" fixed="top">
+          <!-- ロゴなど -->
+          <b-navbar-brand to="/">西森研究室</b-navbar-brand>
+
+          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+          <!-- 各項目へのリンク -->
+          <b-collapse id="nav-collapse" is-nav>
+            <b-navbar-nav>
+              <b-nav-item to="/">Home</b-nav-item>
+              <b-nav-item-dropdown text="Lab" right>
+                <b-dropdown-item to="/lab/contents">Contents</b-dropdown-item>
+                <b-dropdown-item to="/lab/member">Member</b-dropdown-item>
+                <b-dropdown-item to="/lab/history">History</b-dropdown-item>
+              </b-nav-item-dropdown>
+              <b-nav-item to="/class">Class</b-nav-item>
+              <b-nav-item-dropdown text="Q&A" right>
+                <b-dropdown-item to="/Q&A">Answer</b-dropdown-item>
+                <b-dropdown-item to="/Q&A">Send</b-dropdown-item>
+              </b-nav-item-dropdown>
+              <b-nav-item to="/link">Link</b-nav-item>
+            </b-navbar-nav>
+
+            <!-- 右側の要素 -->
+            <b-navbar-nav class="ml-auto">
+              <b-nav-text id="time-msg">{{ timeMsg }}</b-nav-text>
+            </b-navbar-nav>
+          </b-collapse>
+        </b-navbar>
+      </div>
+      <router-view />
+      <div id="footer">
+        <b-navbar type="dark" variant="dark" fixed="bottom" class="inner">
+          Copyright (C) 2020- nishimori lab. All Rights Reserved.
+        </b-navbar>
+      </div>
     </div>
   </div>
 </template>
@@ -89,6 +95,110 @@ export default {
 };
 </script>
 
+<style lang="scss" scoped>
+.shutter {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #008554;
+  z-index: 9999;
+  animation: byeShutter 2.1s forwards;
+
+  span {
+    position: fixed;
+    color: #ccffd0;
+    animation: textFade 2.1s ease 0s 1 alternate forwards running;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #dae8da;
+    width: 0;
+    height: 1px;
+    animation: shutterOpen 2.1s forwards;
+  }
+}
+
+.content {
+  animation: none 2.1s forwards;
+}
+
+@keyframes byeShutter {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+}
+
+@keyframes shutterOpen {
+  0% {
+    width: 0;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  90% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes textFade {
+  0% {
+    top: 20vh;
+    opacity: 1;
+    // -webkit-transform: scale(1) rotate(5deg);
+  }
+  5% {
+    -webkit-transform: scale(1.5) rotate(5deg);
+  }
+  15% {
+    -webkit-transform: scale(2.5) rotate(-5deg);
+  }
+  25% {
+    -webkit-transform: scale(3.5) rotate(5deg);
+  }
+  35% {
+    -webkit-transform: scale(4.5) rotate(-5deg);
+  }
+  40% {
+    top: 40vh;
+  }
+  45% {
+    -webkit-transform: scale(5) rotate(0deg);
+  }
+  90% {
+    top: 0vh;
+  }
+  95% {
+    transform: scale(0.5);
+  }
+  100% {
+    // right: 50vw;
+    display: none;
+    transform: scale(0.5);
+  }
+}
+</style>
+
 <style scoped lang="stylus">
 
 #app {}
@@ -102,11 +212,10 @@ export default {
 }
 
 #footer
-  margin-top: 10rem;
   .inner
     color: #DDDDDD;
     font-size: 0.7rem;
-    display table-cell;
+
 
 #time-msg
   font-size: 0.8rem;
