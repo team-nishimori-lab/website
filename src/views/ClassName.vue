@@ -1,5 +1,5 @@
 <template>
-  <div class="className">
+  <div class="class-name">
     <div v-if="loadingTime || loadingApi" class="loader">
       <vue-loading
         type="beat"
@@ -88,6 +88,10 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+
+.class-name {
+  text-align: center;
+}
 
 .md-block-outer
   padding: 0.2rem 3% 0.2rem;

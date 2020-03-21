@@ -91,12 +91,10 @@ export default {
 
 <style scoped lang="stylus">
 
-#app {
-  text-align: center;
-  margin-top: 100px;
-}
+#app {}
 
 #header {
+  margin-top: 5rem;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -104,6 +102,7 @@ export default {
 }
 
 #footer
+  margin-top: 10rem;
   .inner
     color: #DDDDDD;
     font-size: 0.7rem;
@@ -143,6 +142,7 @@ hl-line-color = #008554
   font-size: 30px
 
 .headline {
+  text-align: center;
   font-family: font-KM, sans-serif;
   font-size: hl-fs;
   position: relative;
