@@ -19,8 +19,12 @@
       <main class="main">
         <div>メインのところ</div>
       </main>
-      <aside class="aside">左側のところ</aside>
-      <nav class="nav">右側のところ</nav>
+      <aside class="aside">
+        左側のところ
+      </aside>
+      <nav class="nav">
+        <p>右側のところ</p>
+      </nav>
     </div>
   </div>
 </template>
@@ -39,9 +43,9 @@ export default {
 .content {
   display: grid;
   /* 1列目から順番に180px、1fr、160pxの幅 */
-  grid-template-columns: 20% 1fr 20%;
+  grid-template-columns: 25% 1fr 25%;
   /* 1行目から順番に60px 1fr 90pxの高さ */
-  grid-template-rows: auto;
+  grid-template-rows: 600px;
 }
 
 .main {
@@ -60,6 +64,8 @@ export default {
   /* 行の2本目から3本目のグリッドラインまで */
   grid-row-start: 1;
   grid-row-end: auto;
+  border: 4px solid #888888;
+  text-align: center;
 }
 
 .nav {
@@ -69,5 +75,7 @@ export default {
   /* 行の2本目から3本目のグリッドラインまで */
   grid-row-start: 1;
   grid-row-end: auto;
+  border: 4px solid #888888;
+  text-align: center;
 }
 </style>

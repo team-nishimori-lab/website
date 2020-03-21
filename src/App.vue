@@ -26,7 +26,7 @@
 
           <!-- 右側の要素 -->
           <b-navbar-nav class="ml-auto">
-            <b-nav-text>ここに書くこと無い?</b-nav-text>
+            <b-nav-text id="time-msg">{{ timeMsg }}</b-nav-text>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -39,6 +39,55 @@
     </div>
   </div>
 </template>
+
+<script>
+import moment from "moment";
+
+export default {
+  name: "App",
+  data() {
+    return {
+      timeMsg: String
+    };
+  },
+  mounted() {
+    this.timeMsg = this.getMessageByTime();
+  },
+  updated() {
+    this.timeMsg = this.getMessageByTime();
+  },
+  methods: {
+    getMessageByTime() {
+      var now_hour = moment(new Date()).format("HH");
+      let message = "";
+      if (now_hour <= "02") {
+        message = "深夜までご苦労様です";
+      } else if (now_hour <= "04") {
+        message = "目が開きません...";
+      } else if (now_hour <= "06") {
+        message = "気持ちの良い朝ですね";
+      } else if (now_hour <= "09") {
+        message = "おはようございます";
+      } else if (now_hour <= "11") {
+        message = "そろそろお昼ですね";
+      } else if (now_hour <= "13") {
+        message = "お昼を食べに行きましょう!";
+      } else if (now_hour <= "16") {
+        message = "眠たい時間です...";
+      } else if (now_hour <= "18") {
+        message = "こんばんわ";
+      } else if (now_hour <= "20") {
+        message = "夕食は済みましたか?";
+      } else if (now_hour <= "22") {
+        message = "一日お疲れ様でした";
+      } else if (now_hour <= "24") {
+        message = "一日が終わります";
+      }
+      return message;
+    }
+  }
+};
+</script>
 
 <style scoped lang="stylus">
 
@@ -59,6 +108,9 @@
     color: #DDDDDD;
     font-size: 0.7rem;
     display table-cell;
+
+#time-msg
+  font-size: 0.8rem;
 </style>
 
 <style lang="stylus">
