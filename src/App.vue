@@ -299,23 +299,23 @@ hl-line-color = #008554
   opacity: 1;
 }
 
-.content-enter {
+.part-enter {
   opacity: 0;
 }
-.content-enter-active {
+.part-enter-active {
   transition: opacity 1.5s
 }
-.content-enter-to {
+.part-enter-to {
   opacity: 1;
 }
 
-.subcontent-enter {
+.subpart-enter {
   opacity: 0;
 }
-.subcontent-enter-active {
+.subpart-enter-active {
   transition: opacity 2.5s
 }
-.subcontent-enter-to {
+.subpart-enter-to {
   opacity: 1;
 }
 </style>
