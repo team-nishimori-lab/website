@@ -2,7 +2,9 @@ import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Lab from "../views/Lab.vue";
+import Lab_Contents from "../views/Lab_Contents.vue";
+import Lab_History from "../views/Lab_History.vue";
+import Lab_Member from "../views/Lab_Member.vue";
 import Class from "../views/Class.vue";
 import ClassPage from "../views/ClassName.vue";
 import Link from "../views/Link.vue";
@@ -21,9 +23,19 @@ const routes = [
     component: Home
   },
   {
-    path: "/lab",
-    name: "Lab",
-    component: Lab
+    path: "/lab/contents",
+    name: "Lab_Contents",
+    component: Lab_Contents
+  },
+  {
+    path: "/lab/history",
+    name: "Lab_History",
+    component: Lab_History
+  },
+  {
+    path: "/lab/member",
+    name: "Lab_Member",
+    component: Lab_Member
   },
   {
     path: "/class",
