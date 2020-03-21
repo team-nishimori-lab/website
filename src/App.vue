@@ -212,6 +212,7 @@ export default {
 }
 
 #footer
+  margin-top: 5vh;
   .inner
     color: #DDDDDD;
     font-size: 0.7rem;
