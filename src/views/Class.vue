@@ -109,6 +109,10 @@ export default {
 $color1: #f4f4f4;
 $color2: #3197ee;
 
+.class {
+  text-align: center;
+}
+
 .container {
   /deep/ .radio {
     margin: 0.5rem;
