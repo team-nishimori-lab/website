@@ -53,16 +53,21 @@ export default {
   name: "App",
   data() {
     return {
-      timeMsg: String
+      timeMsg: String,
+      scrollY: 0
     };
   },
   mounted() {
+    window.addEventListener("scroll", this.handleScroll);
     this.timeMsg = this.getMessageByTime();
   },
   updated() {
     this.timeMsg = this.getMessageByTime();
   },
   methods: {
+    handleScroll() {
+      this.scrollY = window.scrollY;
+    },
     getMessageByTime() {
       var now_hour = moment(new Date()).format("HH");
       let message = "";
@@ -96,6 +101,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css?family=Medula+One&display=swap");
 .shutter {
   text-align: center;
   position: fixed;
@@ -108,8 +114,11 @@ export default {
   animation: byeShutter 2.1s forwards;
 
   span {
+    font-family: "Medula One", cursive;
     position: fixed;
-    color: #ccffd0;
+    font-weight: 550;
+    font-size: 3rem;
+    color: #ffffff;
     animation: textFade 2.1s ease 0s 1 alternate forwards running;
   }
 
@@ -145,11 +154,11 @@ export default {
 @keyframes shutterOpen {
   0% {
     width: 0;
-    height: 1px;
+    height: 1rem;
   }
   50% {
     width: 100%;
-    height: 1px;
+    height: 1rem;
   }
   90% {
     width: 100%;
@@ -165,46 +174,44 @@ export default {
   0% {
     top: 20vh;
     opacity: 1;
-    // -webkit-transform: scale(1) rotate(5deg);
+    // -webkit-transform: scale(1) rotate(3deg);
   }
   5% {
-    -webkit-transform: scale(1.5) rotate(5deg);
+    -webkit-transform: scale(1.5) rotate(3deg);
   }
   15% {
-    -webkit-transform: scale(2.5) rotate(-5deg);
+    -webkit-transform: scale(2.5) rotate(-3deg);
   }
   25% {
-    -webkit-transform: scale(3.5) rotate(5deg);
+    -webkit-transform: scale(3.5) rotate(3deg);
   }
   35% {
-    -webkit-transform: scale(4.5) rotate(-5deg);
+    -webkit-transform: scale(4.5) rotate(-3deg);
   }
   40% {
-    top: 40vh;
+    opacity: 1;
+    top: 30vh;
   }
   45% {
-    -webkit-transform: scale(5) rotate(0deg);
+    -webkit-transform: scale(4.5) rotate(0deg);
   }
   90% {
     top: 0vh;
+    opacity: 0;
   }
   95% {
+    display: none;
     transform: scale(0.5);
   }
   100% {
-    // right: 50vw;
-    display: none;
-    transform: scale(0.5);
   }
 }
 </style>
 
 <style scoped lang="stylus">
 
-#app {}
-
 #header {
-  margin-top: 5rem;
+  margin-top: 7vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -252,6 +259,7 @@ hl-line-color = #008554
   font-size: 30px
 
 .headline {
+  text-shadow: 0.2rem 0.2rem 0.2rem rgba(30, 30, 30, 0.25)
   text-align: center;
   font-family: font-KM, sans-serif;
   font-size: hl-fs;
