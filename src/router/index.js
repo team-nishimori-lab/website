@@ -8,6 +8,7 @@ import Lab_Member from "../views/Lab_Member.vue";
 import Class from "../views/Class.vue";
 import ClassPage from "../views/ClassName.vue";
 import Link from "../views/Link.vue";
+import Timer from "../views/Timer.vue";
 import Error from "../views/Error.vue";
 
 Vue.use(VueRouter);
@@ -51,6 +52,11 @@ const routes = [
     path: "/link",
     name: "Link",
     component: Link
+  },
+  {
+    path: "/timer",
+    name: "Timer",
+    component: Timer
   },
   {
     path: "/error",
