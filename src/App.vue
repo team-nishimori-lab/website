@@ -27,6 +27,7 @@
                 <b-dropdown-item to="/Q&A">Send</b-dropdown-item>
               </b-nav-item-dropdown>
               <b-nav-item to="/link">Link</b-nav-item>
+              <b-nav-item to="/timer">Timer</b-nav-item>
             </b-navbar-nav>
 
             <!-- 右側の要素 -->
@@ -38,9 +39,12 @@
       </div>
       <router-view />
       <div id="footer">
-        <b-navbar type="dark" variant="dark" fixed="bottom" class="inner">
-          Copyright (C) 2020- nishimori lab. All Rights Reserved.
-        </b-navbar>
+        <b-navbar
+          type="dark"
+          variant="dark"
+          fixed="bottom"
+          class="inner"
+        >Copyright (C) 2020- nishimori lab. All Rights Reserved.</b-navbar>
       </div>
     </div>
   </div>
@@ -209,7 +213,6 @@ export default {
 </style>
 
 <style scoped lang="stylus">
-
 #header {
   margin-top: 7vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -218,60 +221,69 @@ export default {
   color: #2c3e50;
 }
 
-#footer
+#footer {
   margin-top: 5vh;
-  .inner
+
+  .inner {
     color: #DDDDDD;
     font-size: 0.7rem;
+  }
+}
 
-
-#time-msg
+#time-msg {
   font-size: 0.8rem;
+}
 </style>
 
 <style lang="stylus">
-html
-    font-size: 13px
+html {
+  font-size: 13px;
+}
 
-@media only screen and (min-width:651px)
-  html
-    font-size: 16px
+@media only screen and (min-width: 651px) {
+  html {
+    font-size: 16px;
+  }
+}
 
-@media only screen and (min-width:961px)
-  html
-    font-size: 19px
-
+@media only screen and (min-width: 961px) {
+  html {
+    font-size: 19px;
+  }
+}
 
 @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese');
-font-KM = 'Kosugi Maru'
-hl-fs = 2.2rem
-hl-line-px = 0.2rem
-hl-line-color = #008554
+
+font-KM = 'Kosugi Maru';
+hl-fs = 2.2rem;
+hl-line-px = 0.2rem;
+hl-line-color = #008554;
 
 * {
-  font-family: "Gothic", sans-serif;
+  font-family: 'Gothic', sans-serif;
   font-size: 1.1rem;
 }
 
-.load-str
+.load-str {
   font-family: font-KM, sans-serif;
   color: #AAAAAA;
-  font-size: 30px
+  font-size: 30px;
+}
 
 .headline {
-  text-shadow: 0.2rem 0.2rem 0.2rem rgba(30, 30, 30, 0.25)
+  text-shadow: 0.2rem 0.2rem 0.2rem rgba(30, 30, 30, 0.25);
   text-align: center;
   font-family: font-KM, sans-serif;
   font-size: hl-fs;
   position: relative;
   line-height: 1.4;
   padding: 0.25em 1em;
-  margin: 10px 0px 50px
+  margin: 10px 0px 50px;
   display: inline-block;
 }
 
 .headline:before, .headline:after {
-  content:'';
+  content: '';
   width: 20px;
   height: 30px;
   position: absolute;
@@ -281,28 +293,31 @@ hl-line-color = #008554
 .headline:before {
   border-left: solid hl-line-px hl-line-color;
   border-top: solid hl-line-px hl-line-color;
-  top:0;
+  top: 0;
   left: 0;
 }
 
 .headline:after {
   border-right: solid hl-line-px hl-line-color;
   border-bottom: solid hl-line-px hl-line-color;
-  bottom:0;
+  bottom: 0;
   right: 0;
 }
 
-  h1
-    margin: 40px 0px 10px;
-    padding: 0;
+h1 {
+  margin: 40px 0px 10px;
+  padding: 0;
+}
 
 // transition系
 .hl-enter {
   opacity: 0;
 }
+
 .hl-enter-active {
-  transition: opacity 0.5s
+  transition: opacity 0.5s;
 }
+
 .hl-enter-to {
   opacity: 1;
 }
@@ -310,9 +325,11 @@ hl-line-color = #008554
 .part-enter {
   opacity: 0;
 }
+
 .part-enter-active {
-  transition: opacity 1.5s
+  transition: opacity 1.5s;
 }
+
 .part-enter-to {
   opacity: 1;
 }
@@ -320,9 +337,11 @@ hl-line-color = #008554
 .subpart-enter {
   opacity: 0;
 }
+
 .subpart-enter-active {
-  transition: opacity 2.5s
+  transition: opacity 2.5s;
 }
+
 .subpart-enter-to {
   opacity: 1;
 }
