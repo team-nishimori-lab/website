@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="shutter"></div>
-    <span id="openning-msg">Welcome!</span>
 
     <div class="content">
       <div id="header">
@@ -38,12 +37,9 @@
       </div>
       <router-view />
       <div id="footer">
-        <b-navbar
-          type="dark"
-          variant="dark"
-          fixed="bottom"
-          class="inner"
-        >Copyright (C) 2020- nishimori lab. All Rights Reserved.</b-navbar>
+        <b-navbar type="dark" variant="dark" fixed="bottom" class="inner"
+          >Copyright (C) 2020- nishimori lab. All Rights Reserved.</b-navbar
+        >
       </div>
     </div>
   </div>
@@ -105,20 +101,20 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Medula+One&display=swap");
-span #openning-msg {
-  font-family: "Medula One", cursive;
-  position: fixed;
-  font-weight: 550;
-  font-size: 3rem;
-  color: #ffffff;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  margin: 0px auto;
-  animation: textFade 1.3s ease 0s 1 alternate forwards running;
-}
+// span #openning-msg {
+//   font-family: "Medula One", cursive;
+//   position: fixed;
+//   font-weight: 550;
+//   font-size: 3rem;
+//   color: #ffffff;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   z-index: 9999;
+//   margin: 0px auto;
+//   animation: textFade 1.3s ease 0s 1 alternate forwards running;
+// }
 
 .shutter {
   text-align: center;
@@ -179,42 +175,42 @@ span #openning-msg {
   }
 }
 
-@keyframes textFade {
-  0% {
-    top: 20vh;
-    opacity: 1;
-    // -webkit-transform: scale(1) rotate(3deg);
-  }
-  5% {
-    -webkit-transform: scale(1.5) rotate(3deg);
-  }
-  15% {
-    -webkit-transform: scale(2.5) rotate(-3deg);
-  }
-  25% {
-    -webkit-transform: scale(3.5) rotate(3deg);
-  }
-  35% {
-    -webkit-transform: scale(4.5) rotate(-3deg);
-  }
-  40% {
-    opacity: 1;
-    top: 30vh;
-  }
-  45% {
-    -webkit-transform: scale(4.5) rotate(0deg);
-  }
-  90% {
-    top: 0vh;
-    opacity: 0;
-  }
-  95% {
-    display: none;
-    transform: scale(0.5);
-  }
-  100% {
-  }
-}
+// @keyframes textFade {
+//   0% {
+//     top: 20vh;
+//     opacity: 1;
+//     // -webkit-transform: scale(1) rotate(3deg);
+//   }
+//   5% {
+//     -webkit-transform: scale(1.5) rotate(3deg);
+//   }
+//   15% {
+//     -webkit-transform: scale(2.5) rotate(-3deg);
+//   }
+//   25% {
+//     -webkit-transform: scale(3.5) rotate(3deg);
+//   }
+//   35% {
+//     -webkit-transform: scale(4.5) rotate(-3deg);
+//   }
+//   40% {
+//     opacity: 1;
+//     top: 30vh;
+//   }
+//   45% {
+//     -webkit-transform: scale(4.5) rotate(0deg);
+//   }
+//   90% {
+//     top: 0vh;
+//     opacity: 0;
+//   }
+//   95% {
+//     display: none;
+//     transform: scale(0.5);
+//   }
+//   100% {
+//   }
+// }
 </style>
 
 <style scoped lang="stylus">
