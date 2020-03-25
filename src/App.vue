@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <div class="shutter" style="text-align=center">
-      <span>Welcome!</span>
-    </div>
+    <div class="shutter"></div>
+    <span id="openning-msg">Welcome!</span>
 
     <div class="content">
       <div id="header">
@@ -106,6 +105,21 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Medula+One&display=swap");
+span #openning-msg {
+  font-family: "Medula One", cursive;
+  position: fixed;
+  font-weight: 550;
+  font-size: 3rem;
+  color: #ffffff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  margin: 0px auto;
+  animation: textFade 1.3s ease 0s 1 alternate forwards running;
+}
+
 .shutter {
   text-align: center;
   position: fixed;
@@ -114,17 +128,8 @@ export default {
   right: 0;
   bottom: 0;
   background-color: #008554;
-  z-index: 9999;
-  animation: byeShutter 2.1s forwards;
-
-  span {
-    font-family: "Medula One", cursive;
-    position: fixed;
-    font-weight: 550;
-    font-size: 3rem;
-    color: #ffffff;
-    animation: textFade 2.1s ease 0s 1 alternate forwards running;
-  }
+  z-index: 9998;
+  animation: byeShutter 1.3s forwards;
 
   &::before {
     content: "";
@@ -136,12 +141,12 @@ export default {
     background-color: #dae8da;
     width: 0;
     height: 1px;
-    animation: shutterOpen 2.1s forwards;
+    animation: shutterOpen 1.3s forwards;
   }
 }
 
 .content {
-  animation: none 2.1s forwards;
+  animation: none 1.3s forwards;
 }
 
 @keyframes byeShutter {
