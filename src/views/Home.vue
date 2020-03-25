@@ -5,217 +5,250 @@
         <div class="headline">
           ホーム
         </div>
-        <!-- <div class="logo">
-        <img fluid alt="Vue logo" src="../assets/lab_logo_top.png" />
-      </div> -->
-        <!-- <b-img
-      fluid
-      alt="Vue logo"
-      src="https://www.niigata-u.ac.jp/wp-content/uploads/2019/04/emain_color.jpg"
-      />-->
       </header>
     </transition>
-    <div class="content">
-      <main class="main">
-        <div>メインのところ</div>
-      </main>
-      <transition name="part" appear>
-        <aside class="left-side area">
-          <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <p>何のスペース?</p>
-        </aside>
-      </transition>
 
-      <transition name="part" appear>
-        <nav class="right-side">
-          <div class="box-title">たいとる</div>
-          <p>右側のところ</p>
-        </nav>
-      </transition>
+    <!-- --- --- --- --- welcome --- --- --- --- -->
+    <transition name="part" appear>
+      <div id="welcome" class="box">
+        <div class="content">
+          <router-link to="/">Welcome</router-link>
+          <p>Welcome to our website.{{ this.scrollY + this.height }}</p>
+        </div>
+        <div class="circle1"></div>
+
+        <div class="circle2"></div>
+
+        <div class="circle3"></div>
+      </div>
+    </transition>
+
+    <!-- --- --- --- --- lab --- --- --- --- -->
+
+    <div id="lab" class="box" :style="{ opacity: opacityList['lab'] }">
+      <div class="content">
+        <router-link to="/lab/contents">Lab</router-link>
+        <p>研究紹介など</p>
+      </div>
+      <div class="circle1"></div>
+
+      <div class="circle2"></div>
+
+      <div class="circle3"></div>
     </div>
+
+    <!-- --- --- --- --- class --- --- --- --- -->
+    <div id="class" class="box" :style="{ opacity: opacityList['class'] }">
+      <div class="content">
+        <router-link to="/class">Class</router-link>
+        <p>授業概要や配布資料など</p>
+      </div>
+      <div class="circle1"></div>
+
+      <div class="circle2"></div>
+
+      <div class="circle3"></div>
+    </div>
+
+    <!-- --- --- --- --- FAQ --- --- --- --- -->
+    <div id="faq" class="box" :style="{ opacity: opacityList['faq'] }">
+      <div class="content">
+        <router-link to="/faq">FAQ</router-link>
+        <p>研究室へのよくある質問</p>
+      </div>
+      <div class="circle1"></div>
+
+      <div class="circle2"></div>
+
+      <div class="circle3"></div>
+    </div>
+
+    <!-- --- --- --- --- Link --- --- --- --- -->
+    <div id="link" class="box" :style="{ opacity: opacityList['link'] }">
+      <div class="content">
+        <router-link to="/link">Link</router-link>
+        <p>リンク集はこちらから!</p>
+      </div>
+      <div class="circle1"></div>
+
+      <div class="circle2"></div>
+
+      <div class="circle3"></div>
+    </div>
+
+    <!-- <transition name="show-content">
+    </transition> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  data() {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      scrollY: 0,
+      opacityList: {
+        lab: 0,
+        class: 0,
+        faq: 0,
+        link: 0
+      }
+    };
+  },
+  methods: {
+    handleScroll() {
+      this.scrollY = window.scrollY;
+
+      for (let key in this.opacityList) {
+        if (this.opacityList[key] != 0) continue;
+
+        let yPos =
+          document.getElementById(key).getBoundingClientRect().top +
+          this.scrollY;
+        if (this.scrollY + this.height - this.height / 5 > yPos) {
+          this.opacityList[key] = 1;
+        }
+      }
+    },
+    route(url) {
+      this.$router.push(url);
+    }
+  },
+  mounted: function() {
+    window.addEventListener("scroll", this.handleScroll);
+    for (let key in this.opacityList) {
+      if (this.opacityList[key] != 0) continue;
+
+      let yPos =
+        document.getElementById(key).getBoundingClientRect().top + this.scrollY;
+      if (this.scrollY + this.height - 100 > yPos) {
+        this.opacityList[key] = 1;
+      }
+    }
+  },
+  beforeDestroy: function() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
 };
 </script>
 
-<style scoped>
-.logo img {
-  width: 60%;
+<style scoped lang="scss">
+.box {
+  margin: 2rem auto 10rem;
+  height: 19rem;
+  width: 19rem;
+  transition: 1.2s;
+
+  .content {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 1.8rem;
+    font-weight: 500;
+    height: 19rem;
+    width: 19rem;
+    position: absolute;
+    padding: 2.5rem 1.5rem;
+    z-index: 3;
+
+    %text-base {
+      vertical-align: middle;
+      z-index: 1;
+      // margin-top: 2rem;
+      // margin-left: 4rem;
+      position: relative;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    a {
+      @extend %text-base;
+      padding: 0.4rem 1.2rem;
+      color: #707070;
+      font-size: 1.8rem;
+      font-weight: 700;
+      background-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 6px 5px rgba(30, 100, 235, 0.3);
+      transition: 0.3s;
+
+      &:hover {
+        color: #202020;
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 3px 3px rgba(30, 100, 235, 0.6);
+      }
+    }
+
+    p {
+      margin-top: 1rem;
+      color: #ffffff;
+      font-weight: 600;
+      @extend %text-base;
+      text-shadow: 3px 3px rgba(20, 20, 20, 0.3);
+    }
+  }
+
+  .circle1,
+  .circle2,
+  .circle3 {
+    mix-blend-mode: multiply;
+    position: absolute;
+    text-decoration: none;
+    height: 19rem;
+    width: 19rem;
+  }
+
+  .circle1 {
+    background-color: rgba(20, 210, 110, 0.2);
+    border-top-left-radius: 40% 60%;
+    border-top-right-radius: 50% 30%;
+    border-bottom-right-radius: 60% 40%;
+    border-bottom-left-radius: 40% 50%;
+    animation: border-animation 6s infinite linear;
+  }
+
+  .circle2 {
+    background-color: rgba(30, 200, 160, 0.3);
+    border-top-left-radius: 60% 50%;
+    border-top-right-radius: 40% 50%;
+    border-bottom-right-radius: 50% 60%;
+    border-bottom-left-radius: 60% 70%;
+    animation: border-animation 4s infinite linear;
+  }
+
+  .circle3 {
+    background-color: rgba(110, 230, 90, 0.2);
+    border-top-left-radius: 50% 60%;
+    border-top-right-radius: 50% 40%;
+    border-bottom-right-radius: 50% 30%;
+    border-bottom-left-radius: 50% 40%;
+    animation: border-animation 3s infinite linear;
+  }
 }
 
-.content {
-  display: grid;
-  /* 1列目から順番に180px、1fr、160pxの幅 */
-  grid-template-columns: 25% 1fr 25%;
-  /* 1行目から順番に60px 1fr 90pxの高さ */
-  grid-template-rows: 600px;
+@keyframes border-animation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.middle {
+  background-color: rgba(20, 20, 20, 0.9);
 }
 
 .header {
   text-align: center;
 }
 
-.main {
-  /* 列の2本目から3本目のグリッドラインまで */
-  grid-column-start: 2;
-  grid-column-end: auto;
-  /* 行の2本目から3本目のグリッドラインまで */
-  grid-row-start: 1;
-  grid-row-end: auto;
-}
+// transition系
+// .hl-enter {
+//   opacity: 0;
+// }
 
-.left-side {
-  /* 列の1本目から2本目のグリッドラインまで */
-  grid-column-start: 1;
-  grid-column-end: auto;
-  /* 行の2本目から3本目のグリッドラインまで */
-  grid-row-start: 1;
-  grid-row-end: auto;
-  padding: 0.5em 1em;
-  margin: 0 1vw;
-  color: #5d627b;
-  background: white;
-  border-top: solid 7px #3d526b;
-  /* border-top: solid 7px #5d627b; */
-  box-shadow: 3px 8px 6px rgba(0, 0, 0, 0.44);
-}
-.left-side p {
-  margin: 0;
-  padding: 0;
-}
+// .hl-enter-active {
+//   transition: opacity 0.5s;
+// }
 
-.area {
-  background: linear-gradient(
-    55deg,
-    rgba(35, 150, 243, 0.48),
-    rgba(55, 190, 100, 0.2)
-  );
-  height: 70vh;
-}
-
-.circles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.circles li {
-  position: absolute;
-  display: block;
-  list-style: none;
-  width: 20px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.3);
-  animation: animate 18s linear infinite;
-  bottom: 12vh;
-}
-
-.circles li:nth-child(1) {
-  left: 10%;
-  width: 8rem;
-  height: 8rem;
-  animation-delay: 0s;
-  animation-duration: 20s;
-}
-
-.circles li:nth-child(2) {
-  left: 3%;
-  width: 1.5rem;
-  height: 1.5rem;
-  animation-delay: 2s;
-  animation-duration: 7s;
-}
-
-.circles li:nth-child(3) {
-  left: 16%;
-  width: 1.3rem;
-  height: 1.3rem;
-  animation-delay: 4s;
-}
-
-.circles li:nth-child(4) {
-  left: 13%;
-  width: 2.4rem;
-  height: 2.4rem;
-  animation-delay: 0s;
-  animation-duration: 15s;
-}
-
-.circles li:nth-child(5) {
-  left: 10%;
-  width: 1.5rem;
-  height: 1.5rem;
-  animation-delay: 8s;
-}
-
-.circles li:nth-child(6) {
-  left: 4%;
-  width: 3.3rem;
-  height: 3.3rem;
-  animation-delay: 3s;
-}
-
-.circles li:nth-child(7) {
-  left: 7%;
-  width: 3.6rem;
-  height: 3.6rem;
-  animation-delay: 7s;
-}
-
-@keyframes animate {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    border-radius: 30%;
-  }
-
-  100% {
-    transform: translateY(-60vh) rotate(720deg);
-    opacity: 0;
-    border-radius: 70%;
-  }
-}
-
-.right-side {
-  /* 列の3本目から4本目のグリッドラインまで */
-  grid-column-start: 3;
-  grid-column-end: auto;
-  /* 行の2本目から3本目のグリッドラインまで */
-  grid-row-start: 1;
-  grid-row-end: auto;
-  margin: 0 1vw;
-  background: #fcfcfc;
-  box-shadow: 3px 8px 6px rgba(0, 0, 0, 0.44);
-}
-.right-side .box-title {
-  font-size: 1.2em;
-  background: #5fc2f5;
-  padding: 4px;
-  text-align: center;
-  color: #fff;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-}
-.right-side p {
-  padding: 15px 20px;
-  margin: 0;
-}
+// .hl-enter-to {
+//   opacity: 1;
+// }
 </style>

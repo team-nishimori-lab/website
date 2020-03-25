@@ -20,10 +20,7 @@
                 <b-dropdown-item to="/lab/history">History</b-dropdown-item>
               </b-nav-item-dropdown>
               <b-nav-item to="/class">Class</b-nav-item>
-              <b-nav-item-dropdown text="Q&A" right>
-                <b-dropdown-item to="/Q&A">Answer</b-dropdown-item>
-                <b-dropdown-item to="/Q&A">Send</b-dropdown-item>
-              </b-nav-item-dropdown>
+              <b-nav-item to="/faq">FAQ</b-nav-item>
               <b-nav-item to="/link">Link</b-nav-item>
               <b-nav-item to="/timer">Timer</b-nav-item>
             </b-navbar-nav>
@@ -113,7 +110,7 @@ export default {
 //   bottom: 0;
 //   z-index: 9999;
 //   margin: 0px auto;
-//   animation: textFade 1.3s ease 0s 1 alternate forwards running;
+//   animation: textFade 1.8s ease 0s 1 alternate forwards running;
 // }
 
 .shutter {
@@ -125,7 +122,7 @@ export default {
   bottom: 0;
   background-color: #008554;
   z-index: 9998;
-  animation: byeShutter 1.3s forwards;
+  animation: byeShutter 1.8s forwards;
 
   &::before {
     content: "";
@@ -137,12 +134,12 @@ export default {
     background-color: #dae8da;
     width: 0;
     height: 1px;
-    animation: shutterOpen 1.3s forwards;
+    animation: shutterOpen 1.8s forwards;
   }
 }
 
 .content {
-  animation: none 1.3s forwards;
+  animation: none 1.8s forwards;
 }
 
 @keyframes byeShutter {
@@ -277,37 +274,11 @@ hl-line-color = #008554;
   font-family: font-KM, sans-serif;
   font-size: hl-fs;
   position: relative;
-  line-height: 1.4;
-  padding: 0.25em 1em;
-  margin: 10px 0px 50px;
+  line-height: 2.8rem;
+  padding: 0.25rem 1rem;
+  margin: 1rem 0 3rem;
   display: inline-block;
-}
-
-.headline:before, .headline:after {
-  content: '';
-  width: 20px;
-  height: 30px;
-  position: absolute;
-  display: inline-block;
-}
-
-.headline:before {
-  border-left: solid hl-line-px hl-line-color;
-  border-top: solid hl-line-px hl-line-color;
-  top: 0;
-  left: 0;
-}
-
-.headline:after {
-  border-right: solid hl-line-px hl-line-color;
-  border-bottom: solid hl-line-px hl-line-color;
-  bottom: 0;
-  right: 0;
-}
-
-h1 {
-  margin: 40px 0px 10px;
-  padding: 0;
+  border-bottom: 0.15rem solid rgba(0, 0, 0, 0.9)
 }
 
 // transition系
