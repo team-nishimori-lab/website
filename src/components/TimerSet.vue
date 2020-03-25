@@ -4,15 +4,21 @@
       <div id="time">
         全体の時間 :
         <select v-model="min" required>
-          <option v-for="m in minutesList" v-bind:key="m" v-bind:value="m">{{ m }}</option>
-        </select>分
+          <option v-for="m in minutesList" v-bind:key="m" v-bind:value="m">{{
+            m
+          }}</option> </select
+        >分
         <select v-model="sec" required>
-          <option v-for="s in secondsList" v-bind:key="s" v-bind:value="s">{{ s }}</option>
-        </select>秒
+          <option v-for="s in secondsList" v-bind:key="s" v-bind:value="s">{{
+            s
+          }}</option> </select
+        >秒
       </div>
       <div id="qst">
         <select class="select" v-model="qstNum" required>
-          <option v-for="q in qstList" v-bind:key="q" v-bind:value="q">{{ q }}</option>
+          <option v-for="q in qstList" v-bind:key="q" v-bind:value="q">{{
+            q
+          }}</option>
         </select>
         <span class="highlight"></span>
         <span class="bar"></span>
@@ -20,43 +26,80 @@
       </div>
       <div id="sub-qst">
         <select class="select" v-model="subQstNum" required>
-          <option v-for="sq in subQstList" v-bind:key="sq" v-bind:value="sq">{{ sq }}</option>
+          <option v-for="sq in subQstList" v-bind:key="sq" v-bind:value="sq">{{
+            sq
+          }}</option>
         </select>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label class="label">1題あたりの出問数</label>
       </div>
+
       <div id="submit-button">
-        <b-button type="submit" block variant="outline-secondary">タイマースタート</b-button>
+        <b-button type="submit" block variant="outline-secondary"
+          >タイマースタート</b-button
+        >
       </div>
     </form>
     <div id="format-button-div">
       <b-dropdown right text="玉手箱" variant="outline-info">
         <b-dropdown-item disabled>計数理解</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(15, 0, 29, 1)">図表読み取り-29問 (全29問, 15分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(35, 0, 40, 1)">図表読み取り-40問 (全40問, 35分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(20, 0, 20, 1)">表の穴埋め (全20問, 20分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(9, 0, 50, 1)">四則逆算 (全50問, 9分)</b-dropdown-item>
+        <b-dropdown-item v-on:click="formatted(15, 0, 29, 1)"
+          >図表読み取り-29問 (全29問, 15分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(35, 0, 40, 1)"
+          >図表読み取り-40問 (全40問, 35分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(20, 0, 20, 1)"
+          >表の穴埋め (全20問, 20分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(9, 0, 50, 1)"
+          >四則逆算 (全50問, 9分)</b-dropdown-item
+        >
         <b-dropdown-item disabled>言語理解</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(15, 0, 8, 4)">GAB形式-32問 (8長文, 全32問, 15分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(25, 0, 13, 4)">GAB形式-52問 (13長文, 全52問, 25分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(10, 0, 8, 4)">IMAGES形式 (8長文, 全32問, 10分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(25, 0, 10, 1)">趣旨把握形式 (10長文, 全10問, 25分)</b-dropdown-item>
+        <b-dropdown-item v-on:click="formatted(15, 0, 8, 4)"
+          >GAB形式-32問 (8長文, 全32問, 15分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(25, 0, 13, 4)"
+          >GAB形式-52問 (13長文, 全52問, 25分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(10, 0, 8, 4)"
+          >IMAGES形式 (8長文, 全32問, 10分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(25, 0, 10, 1)"
+          >趣旨把握形式 (10長文, 全10問, 25分)</b-dropdown-item
+        >
         <b-dropdown-divider></b-dropdown-divider>
         <b-dropdown-item disabled>英語</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(10, 0, 8, 3)">GAB形式 (8長文, 全24問, 10分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(10, 0, 8, 3)">IMAGES形式 (8長文, 全24問, 10分)</b-dropdown-item>
+        <b-dropdown-item v-on:click="formatted(10, 0, 8, 3)"
+          >GAB形式 (8長文, 全24問, 10分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(10, 0, 8, 3)"
+          >IMAGES形式 (8長文, 全24問, 10分)</b-dropdown-item
+        >
       </b-dropdown>
       <b-dropdown right text="WebCAB" variant="outline-info">
         <b-dropdown-item disabled>CAB</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(9, 0, 50, 1)">暗算 (全50問, 9分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(12, 0, 30, 1)">法則性 (全30問, 12分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(15, 0, 36, 1)">命令表 (全36問, 15分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(16, 0, 30, 1)">暗号 (全30問, 16分)</b-dropdown-item>
+        <b-dropdown-item v-on:click="formatted(9, 0, 50, 1)"
+          >暗算 (全50問, 9分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(12, 0, 30, 1)"
+          >法則性 (全30問, 12分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(15, 0, 36, 1)"
+          >命令表 (全36問, 15分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(16, 0, 30, 1)"
+          >暗号 (全30問, 16分)</b-dropdown-item
+        >
         <b-dropdown-divider></b-dropdown-divider>
         <b-dropdown-item disabled>GAB</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(25, 0, 13, 4)">言語 (13長文, 全52問, 25分)</b-dropdown-item>
-        <b-dropdown-item v-on:click="formatted(35, 0, 35, 1)">計数 (全35問, 35分)</b-dropdown-item>
+        <b-dropdown-item v-on:click="formatted(25, 0, 13, 4)"
+          >言語 (13長文, 全52問, 25分)</b-dropdown-item
+        >
+        <b-dropdown-item v-on:click="formatted(35, 0, 35, 1)"
+          >計数 (全35問, 35分)</b-dropdown-item
+        >
       </b-dropdown>
     </div>
   </div>
@@ -86,7 +129,6 @@ export default {
       this.sec = sec;
       this.qstNum = qstNum;
       this.subQstNum = subQstNum;
-      console.log("hoge", min, sec, qstNum, subQstNum);
     }
   },
   created() {}
