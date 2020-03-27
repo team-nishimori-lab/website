@@ -7,9 +7,11 @@ import Lab_History from "../views/Lab_History.vue";
 import Lab_Member from "../views/Lab_Member.vue";
 import Class from "../views/Class.vue";
 import ClassPage from "../views/ClassName.vue";
+import Faq from "../views/Faq.vue";
 import Link from "../views/Link.vue";
 import Timer from "../views/Timer.vue";
 import Error from "../views/Error.vue";
+import Test from "../views/Test.vue";
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
@@ -49,6 +51,11 @@ const routes = [
     component: ClassPage
   },
   {
+    path: "/faq",
+    name: "FAQ",
+    component: Faq
+  },
+  {
     path: "/link",
     name: "Link",
     component: Link
@@ -62,6 +69,11 @@ const routes = [
     path: "/error",
     name: "Error",
     component: Error
+  },
+  {
+    path: "/test",
+    name: "Test",
+    component: Test
   }
 ];
 
