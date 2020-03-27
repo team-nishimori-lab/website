@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div class="shutter"></div>
+    <div class="shutter">
+      <ShowLogo :svgHeight="svgHeight"></ShowLogo>
+    </div>
 
     <div class="content">
       <div id="header">
@@ -44,14 +46,22 @@
 
 <script>
 import moment from "moment";
+import ShowLogo from "@/components/ShowLogo2.vue";
 
 export default {
   name: "App",
   data() {
     return {
       timeMsg: String,
-      scrollY: 0
+      scrollY: 0,
+      svgHeight: 0
     };
+  },
+  created() {
+    this.svgHeight =
+      (window.innerHeight * 25) / 18 > window.innerWidth
+        ? window.innerWidth * (18 / 25)
+        : window.innerHeight;
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -92,6 +102,9 @@ export default {
       }
       return message;
     }
+  },
+  components: {
+    ShowLogo
   }
 };
 </script>
@@ -110,7 +123,7 @@ export default {
 //   bottom: 0;
 //   z-index: 9999;
 //   margin: 0px auto;
-//   animation: textFade 1.8s ease 0s 1 alternate forwards running;
+//   animation: textFade 2.2s ease 0s 1 alternate forwards running;
 // }
 
 .shutter {
@@ -120,9 +133,15 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #008554;
+  background-color: rgb(210, 220, 255);
+  // background-color: #008554;
   z-index: 9998;
-  animation: byeShutter 1.8s forwards;
+  animation: byeShutter 2.2s forwards 1.4s;
+
+  ShowLogo {
+    z-index: 9999;
+    width: 10px;
+  }
 
   &::before {
     content: "";
@@ -131,15 +150,16 @@ export default {
     left: 0;
     bottom: 0;
     margin: auto;
-    background-color: #dae8da;
+    background-color: #f0f0f0;
+    // background-color: #dae8da;
     width: 0;
     height: 1px;
-    animation: shutterOpen 1.8s forwards;
+    animation: shutterOpen 2.2s forwards 1.4s;
   }
 }
 
 .content {
-  animation: none 1.8s forwards;
+  animation: none 2.2s forwards 1.4s;
 }
 
 @keyframes byeShutter {
@@ -156,11 +176,11 @@ export default {
 @keyframes shutterOpen {
   0% {
     width: 0;
-    height: 1rem;
+    height: 15rem;
   }
   50% {
     width: 100%;
-    height: 1rem;
+    height: 11%;
   }
   90% {
     width: 100%;

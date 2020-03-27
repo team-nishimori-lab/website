@@ -1,6 +1,6 @@
 <template>
-  <div class="lab">
-    <svg viewbox="0 0 300 300" width="600" height="300">
+  <div class="logo">
+    <svg viewbox="0 0 100 100" id="svg-bg">
       <g>
         <path
           stroke="#3f3f3f"
@@ -137,6 +137,20 @@ export default {
 <style scoped lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Comic+Neue&display=swap");
+
+.logo {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  bottom: 0;
+}
+
+#svg-bg {
+  height: 100%;
+}
 
 %lab {
   fill: rgba(25, 120, 240, 0.75); /* テキストの色 */
