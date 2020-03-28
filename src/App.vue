@@ -36,9 +36,12 @@
       </div>
       <router-view />
       <div id="footer">
-        <b-navbar type="dark" variant="dark" fixed="bottom" class="inner"
-          >Copyright (C) 2020- nishimori lab. All Rights Reserved.</b-navbar
-        >
+        <b-navbar
+          type="dark"
+          variant="dark"
+          fixed="bottom"
+          class="inner"
+        >Copyright (C) 2020- nishimori lab. All Rights Reserved.</b-navbar>
       </div>
     </div>
   </div>
@@ -123,7 +126,7 @@ export default {
 //   bottom: 0;
 //   z-index: 9999;
 //   margin: 0px auto;
-//   animation: textFade 2.2s ease 0s 1 alternate forwards running;
+//   animation: textFade 2.0S ease 0s 1 alternate forwards running;
 // }
 
 .shutter {
@@ -133,10 +136,10 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(210, 220, 255);
+  background-color: rgb(245, 245, 245);
   // background-color: #008554;
   z-index: 9998;
-  animation: byeShutter 2.2s forwards 1.4s;
+  animation: byeShutter 2s forwards 1.6s;
 
   ShowLogo {
     z-index: 9999;
@@ -150,16 +153,16 @@ export default {
     left: 0;
     bottom: 0;
     margin: auto;
-    background-color: #f0f0f0;
+    background-color: rgba(200, 200, 200, 0.4);
     // background-color: #dae8da;
     width: 0;
     height: 1px;
-    animation: shutterOpen 2.2s forwards 1.4s;
+    animation: shutterOpen 2s forwards 1.6s;
   }
 }
 
 .content {
-  animation: none 2.2s forwards 1.4s;
+  animation: none 2s forwards 1.6s;
 }
 
 @keyframes byeShutter {
@@ -298,7 +301,7 @@ hl-line-color = #008554;
   padding: 0.25rem 1rem;
   margin: 1rem 0 3rem;
   display: inline-block;
-  border-bottom: 0.15rem solid rgba(0, 0, 0, 0.9)
+  border-bottom: 0.15rem solid rgba(0, 0, 0, 0.9);
 }
 
 // transition系
