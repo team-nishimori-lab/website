@@ -19,33 +19,15 @@
         z
         v 50
         "
-        ></path>
-        <path stroke-width="10" id="bar1" :d="moveBar1"></path>
-        <path stroke-width="10" id="bar2" :d="moveBar2"></path>
-        <path stroke-width="10" id="bar3" :d="moveBar3"></path>
-        <path
-          stroke="#3f3f3f"
-          stroke-width="3"
-          fill="#5f5f5f"
-          id="under-bar"
-          :d="moveUnderBar"
-        ></path>
+        />
+        <path stroke-width="10" id="bar1" :d="moveBar1" />
+        <path stroke-width="10" id="bar2" :d="moveBar2" />
+        <path stroke-width="10" id="bar3" :d="moveBar3" />
+        <path stroke="#3f3f3f" stroke-width="3" fill="#5f5f5f" id="under-bar" :d="moveUnderBar" />
       </g>
-      <text x="105" y="120" class="text" id="l" :style="{ opacity: showl }">
-        l
-      </text>
-      <text x="143" y="120" class="text" id="ab" :style="{ opacity: showab }">
-        ab
-      </text>
-      <text
-        x="22"
-        y="164"
-        class="text"
-        id="lower"
-        :style="{ opacity: showLower }"
-      >
-        Nishimori
-      </text>
+      <text x="105" y="120" class="text" id="l" :style="{ opacity: showl }">l</text>
+      <text x="143" y="120" class="text" id="ab" :style="{ opacity: showab }">ab</text>
+      <text x="22" y="164" class="text" id="lower" :style="{ opacity: showLower }">Nishimori</text>
     </svg>
   </div>
 </template>
@@ -124,7 +106,7 @@ export default {
       if (this.underBar["width"] + 2 >= 220) {
         this.underBar["width"] = 210;
         clearInterval(this.extendObj);
-        setTimeout(this.fadeBar3, 200);
+        setTimeout(this.fadeBar3, 150);
         this.showl = 1; // 上の文字 l の表示
         this.showLower = 1; // 下の文字 nishimori の表示
         this.showab = 1; // 上の文字 ab の表示
@@ -159,8 +141,9 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   bottom: 0;
-  margin: auto;
+  margin: 0 auto;
   // top: 0;
   // left: 0;
   // width: 100%;
@@ -187,7 +170,7 @@ path {
     font-weight: 200;
     font-size: 120px;
     opacity: 0;
-    transition: opacity 0.5s 0.1s;
+    transition: opacity 0.4s 0.1s;
   }
 
   &#ab {
@@ -195,7 +178,7 @@ path {
     font-weight: 600;
     font-size: 70px;
     opacity: 0;
-    transition: opacity 0.5s 0.1s;
+    transition: opacity 0.4s 0.1s;
   }
 
   &#lower {
