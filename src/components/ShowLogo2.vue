@@ -46,7 +46,7 @@
 export default {
   data() {
     return {
-      animaitonSpanBars: 180,
+      animaitonSpanBars: 160,
       animaitonSpanOthers: 20,
       extendObj: null,
       times: 3,

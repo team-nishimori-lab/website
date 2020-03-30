@@ -136,7 +136,7 @@ export default {
   background-color: rgb(24, 24, 24);
   // background-color: #008554;
   z-index: 9997;
-  animation: byeShutter 2s forwards 2.1s;
+  animation: byeShutter 2s forwards 1.9s;
 
   ShowLogo {
     z-index: 9999;
@@ -154,12 +154,12 @@ export default {
   //   width: 0;
   //   height: 1px;
   //   z-index: 9998;
-  //   animation: shutterOpen 2.0s forwards 2.1s;
+  //   animation: shutterOpen 2.0s forwards 1.9s;
   // }
 }
 
 .content {
-  animation: none 2s forwards 2.1s;
+  animation: none 2s forwards 1.9s;
 }
 
 @keyframes byeShutter {
