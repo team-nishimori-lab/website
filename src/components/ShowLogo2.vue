@@ -9,9 +9,7 @@
       <!-- <svg viewBox="0 0 250 180" id="svg-bg"> -->
       <g>
         <path
-          stroke="#3f3f3f"
           stroke-width="5"
-          fill="#3f3f3f"
           d="
         M 50 70 
         l -30 -50
@@ -23,11 +21,23 @@
         <path stroke-width="10" id="bar1" :d="moveBar1" />
         <path stroke-width="10" id="bar2" :d="moveBar2" />
         <path stroke-width="10" id="bar3" :d="moveBar3" />
-        <path stroke="#3f3f3f" stroke-width="3" fill="#5f5f5f" id="under-bar" :d="moveUnderBar" />
+        <path stroke-width="3" id="under-bar" :d="moveUnderBar" />
       </g>
-      <text x="105" y="120" class="text" id="l" :style="{ opacity: showl }">l</text>
-      <text x="143" y="120" class="text" id="ab" :style="{ opacity: showab }">ab</text>
-      <text x="22" y="164" class="text" id="lower" :style="{ opacity: showLower }">Nishimori</text>
+      <text x="105" y="120" class="text" id="l" :style="{ opacity: showl }">
+        l
+      </text>
+      <text x="143" y="120" class="text" id="ab" :style="{ opacity: showab }">
+        ab
+      </text>
+      <text
+        x="22"
+        y="164"
+        class="text"
+        id="lower"
+        :style="{ opacity: showLower }"
+      >
+        Nishimori
+      </text>
     </svg>
   </div>
 </template>
@@ -36,7 +46,7 @@
 export default {
   data() {
     return {
-      animaitonSpanBars: 150,
+      animaitonSpanBars: 180,
       animaitonSpanOthers: 20,
       extendObj: null,
       times: 3,
@@ -106,7 +116,7 @@ export default {
       if (this.underBar["width"] + 2 >= 220) {
         this.underBar["width"] = 210;
         clearInterval(this.extendObj);
-        setTimeout(this.fadeBar3, 150);
+        setTimeout(this.fadeBar3, 350);
         this.showl = 1; // 上の文字 l の表示
         this.showLower = 1; // 下の文字 nishimori の表示
         this.showab = 1; // 上の文字 ab の表示
@@ -129,21 +139,25 @@ export default {
 
 <style scoped lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Comic+Neue&display=swap");
 
 .logo {
   text-align: center;
-  // position: relative;
+  // width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 #svg-bg {
-  // margin: auto auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  display: table-cell;
+  vertical-align: middle;
   margin: 0 auto;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // margin: 0 auto;
   // top: 0;
   // left: 0;
   // width: 100%;
@@ -151,14 +165,12 @@ export default {
 }
 
 path {
-  stroke: #101010;
-  fill: #101010;
+  stroke: #ffffff;
+  fill: #ffffff;
 }
 
 %lab {
-  fill: rgba(25, 120, 240, 0.75); /* テキストの色 */
-  stroke: #707070;
-  stroke-width: 2px; /* ふちどりのふとさ */
+  fill: rgb(53, 181, 240); /* テキストの色 */
 }
 
 .text {
@@ -170,7 +182,7 @@ path {
     font-weight: 200;
     font-size: 120px;
     opacity: 0;
-    transition: opacity 0.4s 0.1s;
+    transition: opacity 0.8s 0.3s;
   }
 
   &#ab {
@@ -178,16 +190,16 @@ path {
     font-weight: 600;
     font-size: 70px;
     opacity: 0;
-    transition: opacity 0.4s 0.1s;
+    transition: opacity 0.8s 0.3s;
   }
 
   &#lower {
-    font-family: "Comic Neue", cursive;
+    fill: #ffffff;
     font-weight: 600;
-    font-size: 30px;
-    letter-spacing: 10px;
+    font-size: 28px;
+    letter-spacing: 8px;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s 0s;
   }
 }
 </style>
