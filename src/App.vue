@@ -36,12 +36,9 @@
       </div>
       <router-view />
       <div id="footer">
-        <b-navbar
-          type="dark"
-          variant="dark"
-          fixed="bottom"
-          class="inner"
-        >Copyright (C) 2020- nishimori lab. All Rights Reserved.</b-navbar>
+        <b-navbar type="dark" variant="dark" fixed="bottom" class="inner"
+          >Copyright (C) 2020- nishimori lab. All Rights Reserved.</b-navbar
+        >
       </div>
     </div>
   </div>
@@ -63,8 +60,8 @@ export default {
   created() {
     this.svgHeight =
       (window.innerHeight * 25) / 18 > window.innerWidth
-        ? window.innerWidth * (18 / 25)
-        : window.innerHeight;
+        ? 0.7 * window.innerWidth * (18 / 25)
+        : 0.7 * window.innerHeight;
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -136,37 +133,37 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(24, 24, 24);
   // background-color: #008554;
-  z-index: 9998;
-  animation: byeShutter 2s forwards 1.6s;
+  z-index: 9997;
+  animation: byeShutter 2s forwards 2.1s;
 
   ShowLogo {
     z-index: 9999;
     width: 10px;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    background-color: rgba(200, 200, 200, 0.4);
-    // background-color: #dae8da;
-    width: 0;
-    height: 1px;
-    animation: shutterOpen 2s forwards 1.6s;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   margin: auto;
+  //   background-color: rgba(230, 230, 230, 0.3);
+  //   width: 0;
+  //   height: 1px;
+  //   z-index: 9998;
+  //   animation: shutterOpen 2.0s forwards 2.1s;
+  // }
 }
 
 .content {
-  animation: none 2s forwards 1.6s;
+  animation: none 2s forwards 2.1s;
 }
 
 @keyframes byeShutter {
-  70% {
+  80% {
     opacity: 1;
   }
   100% {
@@ -176,24 +173,21 @@ export default {
   }
 }
 
-@keyframes shutterOpen {
-  0% {
-    width: 0;
-    height: 15rem;
-  }
-  50% {
-    width: 100%;
-    height: 11%;
-  }
-  90% {
-    width: 100%;
-    height: 100%;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-  }
-}
+// @keyframes shutterOpen {
+//   0% {
+//     width: 0;
+//     height: 15rem;
+//   }
+//   50% {
+//     width: 100%;
+//     height: 11%;
+//   }
+//   100% {
+//     display: none;
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
 
 // @keyframes textFade {
 //   0% {
