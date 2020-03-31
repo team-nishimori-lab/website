@@ -2,7 +2,7 @@
   <div class="faq">
     <transition name="hl" appear>
       <div class="headline">
-        FAQ
+        よくある質問
       </div>
     </transition>
   </div>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-
-.faq
+.faq {
   text-align: center;
+}
 </style>
