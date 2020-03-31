@@ -7,7 +7,7 @@
         </div>
       </header>
     </transition> -->
-    <div id="header">
+    <div id="header" :class="imgClassActiveDict">
       <svg viewBox="0 0 250 180" height="60%" width="60%" id="svg-bg">
         <!-- <svg viewBox="0 0 250 180" id="svg-bg"> -->
         <g>
@@ -50,13 +50,7 @@
         <text x="143" y="120" class="text" id="ab">
           ab
         </text>
-        <text
-          x="22"
-          y="164"
-          class="text"
-          id="lower"
-          :style="{ opacity: showLower }"
-        >
+        <text x="22" y="164" class="text" id="lower">
           Nishimori
         </text>
       </svg>
@@ -94,11 +88,21 @@
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      imgClassActiveDict: {
+        "bg-img01": false,
+        "bg-img02": false,
+        "bg-img03": false,
+        "bg-img04": false,
+        "bg-img05": false
+      }
+    };
   },
-  methods: {},
-  mounted: function() {},
-  beforeDestroy: function() {}
+  created() {
+    var keys = Object.keys(this.imgClassActiveDict);
+    var random = Math.floor(Math.random() * keys.length);
+    this.imgClassActiveDict[keys[random]] = true;
+  }
 };
 </script>
 
@@ -109,16 +113,15 @@ svg {
   margin: 0 auto;
 
   path {
-    stroke: #d0d0d0;
-    fill: #d0d0d0;
+    stroke: #ffffff;
+    fill: #ffffff;
   }
 
   %lab {
-    fill: rgb(53, 141, 220); /* テキストの色 */
+    fill: rgb(53, 141, 220);
   }
 
   .text {
-    // font-family: "Merriweather", serif;
     font-family: "Merriweather", serif;
 
     &#l {
@@ -134,7 +137,7 @@ svg {
     }
 
     &#lower {
-      fill: #606060;
+      fill: #ffffff;
       font-weight: 600;
       font-size: 28px;
       letter-spacing: 8px;
@@ -159,7 +162,52 @@ svg {
   display: flex;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(#202020, #ffffff);
+  background-size: cover;
+}
+
+.bg-img01 {
+  background: linear-gradient(
+      rgba(10, 10, 10, 0.6) 20%,
+      rgba(110, 110, 110, 0.7) 80%,
+      rgba(255, 255, 255, 01)
+    ),
+    url("../assets/home/header/01.jpg");
+}
+
+.bg-img02 {
+  background: linear-gradient(
+      rgba(10, 10, 10, 0.6) 20%,
+      rgba(110, 110, 110, 0.7) 80%,
+      rgba(255, 255, 255, 01)
+    ),
+    url("../assets/home/header/02.jpg");
+}
+
+.bg-img03 {
+  background: linear-gradient(
+      rgba(10, 10, 10, 0.6) 20%,
+      rgba(110, 110, 110, 0.7) 80%,
+      rgba(255, 255, 255, 01)
+    ),
+    url("../assets/home/header/03.png");
+}
+
+.bg-img04 {
+  background: linear-gradient(
+      rgba(10, 10, 10, 0.6) 20%,
+      rgba(110, 110, 110, 0.7) 80%,
+      rgba(255, 255, 255, 01)
+    ),
+    url("../assets/home/header/04.jpg");
+}
+
+.bg-img05 {
+  background: linear-gradient(
+      rgba(10, 10, 10, 0.6) 20%,
+      rgba(110, 110, 110, 0.7) 80%,
+      rgba(255, 255, 255, 01)
+    ),
+    url("../assets/home/header/05.jpg");
 }
 
 .links {

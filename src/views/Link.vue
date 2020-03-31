@@ -2,7 +2,7 @@
   <div class="link">
     <transition name="hl" appear>
       <div class="headline">
-        リンク集
+        リンク
       </div>
     </transition>
   </div>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-
-.link
+.link {
   text-align: center;
+}
 </style>
