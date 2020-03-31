@@ -1,7 +1,7 @@
 <template>
-  <div class="lab-contents">
+  <div class="lab-theme">
     <div class="headline">
-      研究内容
+      最近の主なテーマ
     </div>
     <div id="bg"></div>
     <p class="scroll-Y" :class="{ sticky: position > 0 }">{{ scrollY }}</p>
@@ -30,13 +30,15 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+.headline {
+  text-align: center;
+}
 
-.headline
+.lab-theme {
+  text-align: center;
+}
 
-.lab-contents
-  text-align center
-
-#bg
+#bg {
   // background-repeat: no-repeat;
   width: 100%;
   height: 300vh;
@@ -46,7 +48,9 @@ export default {
   background-attachment: fixed;
   background-size: cover;
   // background: url(bg.jpg) center center / cover no-repeat;
+}
 
-.scroll-Y
+.scroll-Y {
   position: fixed;
+}
 </style>

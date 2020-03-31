@@ -2,9 +2,9 @@ import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Lab_Contents from "../views/Lab_Contents.vue";
-import Lab_History from "../views/Lab_History.vue";
-import Lab_Member from "../views/Lab_Member.vue";
+import LabTheme from "../views/LabTheme.vue";
+import LabHistory from "../views/LabHistory.vue";
+import LabContents from "../views/LabContents.vue";
 import Class from "../views/Class.vue";
 import ClassPage from "../views/ClassName.vue";
 import Faq from "../views/Faq.vue";
@@ -26,19 +26,19 @@ const routes = [
     component: Home
   },
   {
-    path: "/lab/contents",
-    name: "Lab_Contents",
-    component: Lab_Contents
+    path: "/lab/theme",
+    name: "LabTheme",
+    component: LabTheme
   },
   {
     path: "/lab/history",
-    name: "Lab_History",
-    component: Lab_History
+    name: "LabHistory",
+    component: LabHistory
   },
   {
-    path: "/lab/member",
-    name: "Lab_Member",
-    component: Lab_Member
+    path: "/lab/contents",
+    name: "LabContents",
+    component: LabContents
   },
   {
     path: "/class",

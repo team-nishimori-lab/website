@@ -16,14 +16,14 @@
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
               <b-nav-item to="/">Home</b-nav-item>
-              <b-nav-item-dropdown text="Lab" right>
-                <b-dropdown-item to="/lab/contents">Contents</b-dropdown-item>
-                <b-dropdown-item to="/lab/member">Member</b-dropdown-item>
-                <b-dropdown-item to="/lab/history">History</b-dropdown-item>
+              <b-nav-item-dropdown text="研究について" right>
+                <b-dropdown-item to="/lab/contents">研究内容</b-dropdown-item>
+                <b-dropdown-item to="/lab/theme">主なテーマ</b-dropdown-item>
+                <b-dropdown-item to="/lab/history">活動歴</b-dropdown-item>
               </b-nav-item-dropdown>
-              <b-nav-item to="/class">Class</b-nav-item>
-              <b-nav-item to="/faq">FAQ</b-nav-item>
-              <b-nav-item to="/link">Link</b-nav-item>
+              <b-nav-item to="/class">授業について</b-nav-item>
+              <b-nav-item to="/faq">よくある質問</b-nav-item>
+              <b-nav-item to="/link">リンク</b-nav-item>
               <b-nav-item to="/timer">Timer</b-nav-item>
             </b-navbar-nav>
 
@@ -34,7 +34,11 @@
           </b-collapse>
         </b-navbar>
       </div>
+
       <router-view />
+      <!-- <div id="hoge" style="background-color: black;">
+        hoge
+      </div> -->
       <div id="footer">
         <b-navbar type="dark" variant="dark" fixed="bottom" class="inner"
           >Copyright (C) 2020- nishimori lab. All Rights Reserved.</b-navbar
@@ -229,7 +233,7 @@ export default {
 
 <style scoped lang="stylus">
 #header {
-  margin-top: 7vh;
+  // margin-top: 7vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -252,7 +256,7 @@ export default {
 
 <style lang="stylus">
 html {
-  font-size: 13px;
+  font-size: 11px;
 }
 
 @media only screen and (min-width: 651px) {
@@ -293,7 +297,7 @@ hl-line-color = #008554;
   position: relative;
   line-height: 2.8rem;
   padding: 0.25rem 1rem;
-  margin: 1rem 0 3rem;
+  margin: 7vh 0 3rem;
   display: inline-block;
   border-bottom: 0.15rem solid rgba(0, 0, 0, 0.9);
 }
