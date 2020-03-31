@@ -148,9 +148,9 @@ svg {
 @mixin after-template($url) {
   content: "";
   display: inline-block;
-  width: 8vh;
-  height: 8vh;
-  background-size: contain;
+  width: 8vw;
+  height: 8vw;
+  background-size: cover;
   vertical-align: middle;
   background-image: url($url);
 }
@@ -215,7 +215,7 @@ svg {
     height: 16vh;
     display: flex;
     align-items: center;
-    padding: 0 10vh;
+    padding: 0 10vw;
     margin: 0 0;
     border: 0px solid rgba(0, 0, 0, 0);
     text-shadow: 0.2rem 0.2rem 0.1rem rgba(10, 10, 10, 0.2);
@@ -224,7 +224,7 @@ svg {
 
     p {
       margin: 0 auto;
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: rgb(0, 0, 0);
       display: table-cell;
     }
