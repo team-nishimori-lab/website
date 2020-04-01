@@ -19,6 +19,7 @@
               <b-nav-item-dropdown text="研究について" right>
                 <b-dropdown-item to="/lab/contents">研究内容</b-dropdown-item>
                 <b-dropdown-item to="/lab/theme">主なテーマ</b-dropdown-item>
+                <b-dropdown-item to="/lab/activity">普段の活動</b-dropdown-item>
                 <b-dropdown-item to="/lab/history">活動歴</b-dropdown-item>
               </b-nav-item-dropdown>
               <b-nav-item to="/class">授業について</b-nav-item>
@@ -297,7 +298,7 @@ hl-line-color = #008554;
   position: relative;
   line-height: 2.8rem;
   padding: 0.25rem 1rem;
-  margin: 7vh 0 3rem;
+  margin: 10vh 0 3vh;
   display: inline-block;
   border-bottom: 0.15rem solid rgba(0, 0, 0, 0.9);
 }

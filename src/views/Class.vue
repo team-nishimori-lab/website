@@ -173,6 +173,10 @@ $color2: #3197ee;
   }
 }
 
+.loader {
+  margin: 10vh 0 0;
+}
+
 .container {
   display: flex;
   align-items: center;
