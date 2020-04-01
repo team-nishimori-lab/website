@@ -1,10 +1,12 @@
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
 import VueRouter from "vue-router";
+import VueSmoothScroll from "vue2-smooth-scroll";
 import Home from "../views/Home.vue";
 import LabTheme from "../views/LabTheme.vue";
 import LabHistory from "../views/LabHistory.vue";
 import LabContents from "../views/LabContents.vue";
+import LabActivity from "../views/LabActivity.vue";
 import Class from "../views/Class.vue";
 import ClassPage from "../views/ClassName.vue";
 import Faq from "../views/Faq.vue";
@@ -15,6 +17,7 @@ import Test from "../views/Test.vue";
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
+Vue.use(VueSmoothScroll);
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -39,6 +42,11 @@ const routes = [
     path: "/lab/contents",
     name: "LabContents",
     component: LabContents
+  },
+  {
+    path: "/lab/activity",
+    name: "LabActivity",
+    component: LabActivity
   },
   {
     path: "/class",
