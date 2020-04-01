@@ -150,7 +150,7 @@ svg {
   display: inline-block;
   width: 8vw;
   height: 8vw;
-  background-size: cover;
+  background-size: contain;
   vertical-align: middle;
   background-image: url($url);
 }
@@ -237,7 +237,7 @@ svg {
         transition-duration: 0.5s;
         @include after-template("../assets/home/lab.svg");
       }
-      background-position: 20% 20%;
+      background-position: 20% 23%;
     }
 
     &#class {
@@ -282,12 +282,12 @@ svg {
       &#lab {
         background: linear-gradient(
             90deg,
-            rgba(10, 10, 10, 0.4),
-            rgba(200, 200, 200, 0.3)
+            rgba(10, 10, 10, 0.6),
+            rgba(230, 230, 230, 0.3)
           ),
           url("../assets/home/lab_bg.jpg");
         background-size: cover;
-        background-position: 20% 30%;
+        background-position: 20% 35%;
         &::after {
           opacity: 1;
         }
@@ -295,7 +295,7 @@ svg {
       &#class {
         background: linear-gradient(
             90deg,
-            rgba(10, 10, 10, 0.4),
+            rgba(10, 10, 10, 0.6),
             rgba(200, 200, 200, 0.3)
           ),
           url("../assets/home/class_bg.jpg");
@@ -308,7 +308,7 @@ svg {
       &#faq {
         background: linear-gradient(
             90deg,
-            rgba(10, 10, 10, 0.4),
+            rgba(10, 10, 10, 0.6),
             rgba(200, 200, 200, 0.3)
           ),
           url("../assets/home/faq_bg.jpg");
@@ -321,8 +321,8 @@ svg {
       &#link {
         background: linear-gradient(
             90deg,
-            rgba(10, 10, 10, 0.4),
-            rgba(200, 200, 200, 0.3)
+            rgba(10, 10, 10, 0.6),
+            rgba(230, 230, 230, 0.3)
           ),
           url("../assets/home/link_bg.jpg");
         background-size: cover;
