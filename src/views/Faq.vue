@@ -107,7 +107,9 @@
         :key="q"
       >
         <p class="qst">Q : {{ q }}</p>
-        <div class="text">{{ text }}</div>
+        <div class="text">
+          <p>{{ text }}</p>
+        </div>
       </div>
     </div>
 
@@ -117,7 +119,9 @@
     <div class="ans" v-once id="ans-lab">
       <div class="content" v-for="(text, q) in faqList['lab']" :id="q" :key="q">
         <p class="qst">Q : {{ q }}</p>
-        <div class="text">{{ text }}</div>
+        <div class="text">
+          <p>{{ text }}</p>
+        </div>
       </div>
     </div>
 
@@ -132,7 +136,9 @@
         :key="q"
       >
         <p class="qst">Q : {{ q }}</p>
-        <div class="text">{{ text }}</div>
+        <div class="text">
+          <p>{{ text }}</p>
+        </div>
       </div>
     </div>
 
@@ -147,7 +153,9 @@
         :key="q"
       >
         <p class="qst">Q : {{ q }}</p>
-        <div class="text">{{ text }}</div>
+        <div class="text">
+          <p>{{ text }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -170,7 +178,8 @@ export default {
             "主にMIMOを利用した電波系の研究を行っています. \n詳しくは'研究について/研究内容'へどうぞ.",
           "主な研究テーマは？":
             "いろいろあります. \n詳しくは'研究について/主なテーマ'へどうぞ.",
-          "実験はやってるの？": "hoge",
+          "実験はやってるの？":
+            "同学科の他の研究室と比べ, いろんな実験を行っています.",
           "これまでの卒業研究は？": "hoge",
           "外部との共同研究は？": "hoge"
         },
@@ -399,7 +408,7 @@ hr {
     position: relative;
     margin: 2vh auto;
     padding: 18vh 0 0;
-    height: 40vh;
+    height: 20rem;
     width: 85vw;
 
     .qst {
@@ -411,16 +420,21 @@ hr {
       font-size: 2.1rem;
     }
     .text {
+      display: flex;
+      align-items: center;
       font-size: 1.6rem;
       color: rgb(60, 60, 60);
-      padding: 1vh 0 0;
       border-radius: 50%;
       // background: radial-gradient(rgba(255, 199, 120, 0.6), #ffffff 70%);
-      width: 70vw;
+      // width: 70vw;
+      padding: 3rem 0;
       margin: 0 auto;
-      height: 100%;
       white-space: pre-line;
       word-wrap: break-word;
+      p {
+        display: table-cell;
+        margin: 0 auto;
+      }
     }
   }
 }
