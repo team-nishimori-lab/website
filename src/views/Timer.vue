@@ -6,7 +6,13 @@
     <transition name="part" appear>
       <div>
         <TimerSet @start="start" v-if="isSetting"></TimerSet>
-        <TimerStart v-if="!isSetting" :min="min" :sec="sec" :qstNum="qstNum" :subQstNum="subQstNum"></TimerStart>
+        <TimerStart
+          v-if="!isSetting"
+          :min="min"
+          :sec="sec"
+          :qstNum="qstNum"
+          :subQstNum="subQstNum"
+        ></TimerStart>
       </div>
     </transition>
   </div>

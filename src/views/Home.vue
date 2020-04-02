@@ -276,6 +276,7 @@ svg {
       border-radius: 1rem;
 
       p {
+        font-weight: 700;
         color: rgb(244, 244, 244);
       }
 
