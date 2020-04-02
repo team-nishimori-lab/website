@@ -180,37 +180,44 @@ export default {
             "いろいろあります. \n詳しくは'研究について/主なテーマ'へどうぞ.",
           "実験はやってるの？":
             "同学科の他の研究室と比べ, いろんな実験を行っています.",
-          "これまでの卒業研究は？": "hoge",
-          "外部との共同研究は？": "hoge"
+          "これまでの卒業研究は？": "いろいろあるよ",
+          "外部との共同研究は？": "いろいろしているよ."
         },
         lab: {
-          "学会への発表はありますか？": "あるよ.",
-          "アルバイトをしている人はいますか？": "hoge",
-          "プログラミングはしますか？": "ときどき",
-          "シミュレーションって何するの？": "パソコンでほげ",
-          "どのようなソフトを利用しているの？": "hoge",
-          "研究室の設備は？": "hoge"
+          "学会への発表はありますか？":
+            "精力的に行っています.\n機会があればB4でも発表します.",
+          "アルバイトをしている人はいますか？": "@います.",
+          "プログラミングはしますか？":
+            "シミュレーションを行う際にMATLABを利用します.\n他にも状況に応じてプログラムを書きます.",
+          "シミュレーションって何するの？":
+            "弊研究室であれば, MATLABなどでプログラムを書き, \n現実のモデルを想定してPC上で実験を行います.",
+          "どのようなソフトを利用しているの？":
+            "MATLABを始め, レイトレース用のEEM-RTMを主に使っています.\n他にも必要に応じて色々なソフトを利用しています.",
+          "研究室の設備は？":
+            "実験用の設備は十分に揃っているので, \n様々な実験行えます."
         },
         course: {
-          "主な就職先は？": "hoge",
-          "修士への進学の割合は？": "ほげ",
-          "他大学への院進学ってあり？": "piyo",
-          就職活動と両立できますか: "gogo",
-          "ドクター(博士後期課程)に行きたい": "tya"
+          "主な就職先は？": "@どこ？",
+          "修士への進学の割合は？":
+            "学科自体の進学率が高いのもありますが, \n弊研究室の学生の多くが修士に進学しています.",
+          "他大学への院進学ってあり？": "@あり？",
+          就職活動と両立できますか: "@できる？",
+          "ドクター(博士後期課程)に行きたい": "@どうぞ？"
         },
         assign: {
-          "配属している学生数は？": "200000人くらい",
-          "研究室の雰囲気は？": "いいかんじ",
-          研究室見学をしたい: "ぜひ, 連絡してくれ",
-          研究室の人に話を聞きたい: "聞いて",
-          "自分の研究はどのように決まりますか？": "てきとうに",
-          "部屋はどんな感じですか？": "聞いて",
-          "パソコンの支給はありますか？": "あるかも",
-          研究がうまくできるか心配: "どうにかなる",
-          "どんな勉強をしておくべき？": "聞いて",
-          "電波系の講義を取っていなくても大丈夫？": "うん",
-          "研究が行き詰まったら？": "先生がサポートしてくれます",
-          "研究室の場所はどこですか？": "そこ"
+          "配属している学生数は？":
+            "他の研究室に比べて学生数は比較的多く, \n年度にもよりますが, 20人前後くらいです.",
+          "研究室の雰囲気は？": "@いいかんじ",
+          研究室見学をしたい: "@連絡してください?",
+          研究室の人に話を聞きたい: "@聞く？",
+          "自分の研究はどのように決まりますか？": "@どう決まる？",
+          "部屋はどんな感じですか？": "@別ページへ?",
+          "パソコンの支給はありますか？": "@どうだろう？",
+          研究がうまくできるか心配: "@どうでしょう？",
+          "どんな勉強をしておくべき？": "@どうですか？",
+          "電波系の講義を取っていなくても大丈夫？": "@多分大丈夫?",
+          "研究が行き詰まったら？": "@先生がサポートしてくれます?",
+          "研究室の場所はどこですか？": "@これも別ページにて."
         }
       }
     };
@@ -276,6 +283,17 @@ hr {
   width: 70vw;
 
   &#link-study {
+    .link-contents {
+      a {
+        border-left: 0.1rem solid $study-bg-color;
+        &:hover {
+          box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+          border-left: 0.24rem solid $study-color;
+          color: #303030;
+          font-weight: 700;
+        }
+      }
+    }
     button {
       background: linear-gradient(
         90deg,
@@ -287,6 +305,17 @@ hr {
   }
 
   &#link-lab {
+    .link-contents {
+      a {
+        border-left: 0.1rem solid $lab-bg-color;
+        &:hover {
+          box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+          border-left: 0.24rem solid $lab-color;
+          color: #303030;
+          font-weight: 700;
+        }
+      }
+    }
     button {
       background: linear-gradient(
         90deg,
@@ -298,6 +327,17 @@ hr {
   }
 
   &#link-course {
+    .link-contents {
+      a {
+        border-left: 0.1rem solid $course-bg-color;
+        &:hover {
+          box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+          border-left: 0.24rem solid $course-color;
+          color: #303030;
+          font-weight: 700;
+        }
+      }
+    }
     button {
       background: linear-gradient(
         90deg,
@@ -309,6 +349,17 @@ hr {
   }
 
   &#link-assign {
+    .link-contents {
+      a {
+        border-left: 0.1rem solid $assign-bg-color;
+        &:hover {
+          box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+          border-left: 0.24rem solid $assign-color;
+          color: #303030;
+          font-weight: 700;
+        }
+      }
+    }
     button {
       background: linear-gradient(
         90deg,
@@ -324,6 +375,10 @@ hr {
     font-size: 1.8rem;
     border: none;
     width: 100%;
+
+    &:focus {
+      outline: none;
+    }
 
     &::before {
       @include after-template("../assets/faq/right_arrow.svg");
@@ -341,15 +396,8 @@ hr {
       padding: 1% 1% 1% 4%;
       font-size: 1.5rem;
       color: #707070;
-      border-left: 0.1rem solid #a0a0a0;
-      transition: 0.3s;
-
-      &:hover {
-        box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
-        border-left: 0.24rem solid #a0a0a0;
-        color: #303030;
-        font-weight: 700;
-      }
+      box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.15);
+      transition: 0.25s;
     }
   }
 }
@@ -422,17 +470,15 @@ hr {
     .text {
       display: flex;
       align-items: center;
-      font-size: 1.6rem;
       color: rgb(60, 60, 60);
       border-radius: 50%;
-      // background: radial-gradient(rgba(255, 199, 120, 0.6), #ffffff 70%);
-      // width: 70vw;
       padding: 3rem 0;
       margin: 0 auto;
       white-space: pre-line;
       word-wrap: break-word;
       p {
         display: table-cell;
+        font-size: 1.6rem;
         margin: 0 auto;
       }
     }
