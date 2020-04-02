@@ -13,8 +13,8 @@
       >
         研究について
       </button>
-      <transition name="faq-contents">
-        <div v-if="activeList['study']" class="faq-contents">
+      <transition name="link-contents">
+        <div v-if="activeList['study']" class="link-contents">
           <a
             :href="`#` + q"
             v-for="(text, q) in faqList['study']"
@@ -35,8 +35,8 @@
       >
         西森研の活動について
       </button>
-      <transition name="faq-contents">
-        <div v-if="activeList['lab']" class="faq-contents">
+      <transition name="link-contents">
+        <div v-if="activeList['lab']" class="link-contents">
           <a
             :href="`#` + q"
             v-for="(text, q) in faqList['lab']"
@@ -57,8 +57,8 @@
       >
         進路について
       </button>
-      <transition name="faq-contents">
-        <div v-if="activeList['course']" class="faq-contents">
+      <transition name="link-contents">
+        <div v-if="activeList['course']" class="link-contents">
           <a
             :href="`#` + q"
             v-for="(text, q) in faqList['course']"
@@ -79,8 +79,8 @@
       >
         配属にあたって
       </button>
-      <transition name="faq-contents">
-        <div v-if="activeList['assign']" class="faq-contents">
+      <transition name="link-contents">
+        <div v-if="activeList['assign']" class="link-contents">
           <a
             :href="`#` + q"
             v-for="(text, q) in faqList['assign']"
@@ -114,12 +114,6 @@
     <hr />
     <!-- answer, lab -->
 
-    <div class="ans" v-once id="ans-lab">
-      <div class="content" v-for="(text, q) in faqList['lab']" :id="q" :key="q">
-        <p class="qst">Q : {{ q }}</p>
-        <div class="text">{{ text }}</div>
-      </div>
-    </div>
     <div class="ans" v-once id="ans-lab">
       <div class="content" v-for="(text, q) in faqList['lab']" :id="q" :key="q">
         <p class="qst">Q : {{ q }}</p>
@@ -173,7 +167,7 @@ export default {
       faqList: {
         study: {
           "どんな研究しているの？":
-            "hogehogeをしています. \n詳しくは'研究について/研究内容'へどうぞ.",
+            "主にMIMOを利用した電波系の研究を行っています. \n詳しくは'研究について/研究内容'へどうぞ.",
           "主な研究テーマは？":
             "いろいろあります. \n詳しくは'研究について/主なテーマ'へどうぞ.",
           "実験はやってるの？": "hoge",
@@ -242,7 +236,7 @@ $lab-bg-color: rgba(253, 78, 78, 0.3);
 
 hr {
   width: 90%;
-  margin: 15vh 0;
+  margin: 15vh auto;
   border-top: 0.2rem dashed #dddddd;
 }
 
@@ -327,22 +321,25 @@ hr {
     }
   }
 
-  .faq-contents {
+  .link-contents {
     padding: 0 5%;
 
     a {
       display: block;
+      text-align: left;
       text-decoration: none;
-      margin: 0 0 1vh;
-      padding: 1% 1% 1% 3%;
+      margin: 1vh 0 1vh;
+      padding: 1% 1% 1% 4%;
       font-size: 1.5rem;
       color: #707070;
-      border-bottom: 0.1rem solid #606060;
-      border-left: 0.1rem solid #606060;
+      border-left: 0.1rem solid #a0a0a0;
       transition: 0.3s;
 
       &:hover {
         box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+        border-left: 0.24rem solid #a0a0a0;
+        color: #303030;
+        font-weight: 700;
       }
     }
   }
@@ -429,28 +426,28 @@ hr {
 }
 
 // transition関係
-.faq-contents-enter {
+.link-contents-enter {
   opacity: 0;
   // border-bottom: 0px;
 }
 
-.faq-contents-enter-active {
+.link-contents-enter-active {
   transition: 0.5s;
 }
 
-.faq-contents-enter-to {
+.link-contents-enter-to {
   opacity: 1;
 }
 
-.faq-contents-leave {
+.link-contents-leave {
   opacity: 1;
 }
 
-.faq-contents-leave-active {
+.link-contents-leave-active {
   transition: 0.5s;
 }
 
-.faq-contents-leave-to {
+.link-contents-leave-to {
   opacity: 0;
   font-size: 0.5rem;
 }

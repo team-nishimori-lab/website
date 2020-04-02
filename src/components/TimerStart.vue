@@ -32,7 +32,9 @@
       <!-- 問時間に関する表示 -->
       <div class="name sub-qst" v-if="showSubQstTime">問</div>
       <div class="num sub-qst" v-if="showSubQstTime">{{ subQstCount }}</div>
-      <div class="remain-time sub-qst" v-if="showSubQstTime">{{ getRemainSubQstTime }}</div>
+      <div class="remain-time sub-qst" v-if="showSubQstTime">
+        {{ getRemainSubQstTime }}
+      </div>
 
       <b-progress
         class="bar-sub-qst"

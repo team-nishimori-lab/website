@@ -24,7 +24,12 @@
           <div class="container" v-html="radioList"></div>
         </form>
         <div style="padding: 0% 35%">
-          <b-button v-on:click="selected" block variant="outline-secondary">
+          <b-button
+            id="decide"
+            v-on:click="selected"
+            block
+            variant="outline-secondary"
+          >
             決定
           </b-button>
         </div>
@@ -120,6 +125,7 @@ $color2: #3197ee;
       position: absolute;
       opacity: 0;
       + .radio-label {
+        font-size: 1.4rem;
         &:before {
           content: "";
           background: $color1;
@@ -177,11 +183,14 @@ $color2: #3197ee;
   margin: 10vh 0 0;
 }
 
+#decide {
+  font-size: 1.5rem;
+}
+
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 2rem;
 }
 </style>
