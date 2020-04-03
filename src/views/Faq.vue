@@ -7,7 +7,7 @@
     </transition>
 
     <!--  -->
-    <transition name="part">
+    <transition name="subpart" appear>
       <div class="faq-link" id="link-study">
         <button
           v-on:click="toggleActive('study')"

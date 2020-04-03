@@ -271,7 +271,7 @@ svg {
       text-shadow: 0.1rem 0.1rem 0.05rem rgba(10, 10, 10, 0.5);
       margin: 0 7vw;
       background-color: rgba(235, 235, 235, 0.9);
-      border: 0.15rem solid rgba(20, 20, 20, 0.6);
+      border: 0.2rem solid rgba(20, 20, 20, 0.3);
       border-radius: 1rem;
 
       p {
