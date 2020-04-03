@@ -5,94 +5,106 @@
         よくある質問
       </div>
     </transition>
+
     <!--  -->
-    <div class="faq-link" id="link-study">
-      <button
-        v-on:click="toggleActive('study')"
-        :class="getActivatedClass('study')"
-      >
-        研究について
-      </button>
-      <transition name="link-contents">
-        <div v-if="activeList['study']" class="link-contents">
-          <a
-            :href="`#` + q"
-            v-for="(text, q) in faqList['study']"
-            v-once
-            v-smooth-scroll="{ duration: 750 }"
-            :key="q"
-          >
-            {{ q }}
-          </a>
-        </div>
-      </transition>
-    </div>
+    <transition name="part">
+      <div class="faq-link" id="link-study">
+        <button
+          v-on:click="toggleActive('study')"
+          :class="getActivatedClass('study')"
+        >
+          研究について
+        </button>
+        <transition name="link-contents">
+          <div v-if="activeList['study']" class="link-contents">
+            <a
+              :href="`#` + q"
+              v-for="(text, q) in faqList['study']"
+              v-once
+              v-smooth-scroll="{ duration: 750 }"
+              :key="q"
+            >
+              {{ q }}
+            </a>
+          </div>
+        </transition>
+      </div>
+    </transition>
+
     <!--  -->
-    <div class="faq-link" id="link-lab">
-      <button
-        v-on:click="toggleActive('lab')"
-        :class="getActivatedClass('lab')"
-      >
-        西森研の活動について
-      </button>
-      <transition name="link-contents">
-        <div v-if="activeList['lab']" class="link-contents">
-          <a
-            :href="`#` + q"
-            v-for="(text, q) in faqList['lab']"
-            v-once
-            v-smooth-scroll="{ duration: 750 }"
-            :key="q"
-          >
-            {{ q }}
-          </a>
-        </div>
-      </transition>
-    </div>
+    <transition name="part" appear>
+      <div class="faq-link" id="link-lab">
+        <button
+          v-on:click="toggleActive('lab')"
+          :class="getActivatedClass('lab')"
+        >
+          西森研の活動について
+        </button>
+        <transition name="link-contents">
+          <div v-if="activeList['lab']" class="link-contents">
+            <a
+              :href="`#` + q"
+              v-for="(text, q) in faqList['lab']"
+              v-once
+              v-smooth-scroll="{ duration: 750 }"
+              :key="q"
+            >
+              {{ q }}
+            </a>
+          </div>
+        </transition>
+      </div>
+    </transition>
+
     <!--  -->
-    <div class="faq-link" id="link-course">
-      <button
-        v-on:click="toggleActive('course')"
-        :class="getActivatedClass('course')"
-      >
-        進路について
-      </button>
-      <transition name="link-contents">
-        <div v-if="activeList['course']" class="link-contents">
-          <a
-            :href="`#` + q"
-            v-for="(text, q) in faqList['course']"
-            v-once
-            v-smooth-scroll="{ duration: 750 }"
-            :key="q"
-          >
-            {{ q }}
-          </a>
-        </div>
-      </transition>
-    </div>
+    <transition name="part" appear>
+      <div class="faq-link" id="link-course">
+        <button
+          v-on:click="toggleActive('course')"
+          :class="getActivatedClass('course')"
+        >
+          進路について
+        </button>
+        <transition name="link-contents">
+          <div v-if="activeList['course']" class="link-contents">
+            <a
+              :href="`#` + q"
+              v-for="(text, q) in faqList['course']"
+              v-once
+              v-smooth-scroll="{ duration: 750 }"
+              :key="q"
+            >
+              {{ q }}
+            </a>
+          </div>
+        </transition>
+      </div>
+    </transition>
+
     <!--  -->
-    <div class="faq-link" id="link-assign">
-      <button
-        v-on:click="toggleActive('assign')"
-        :class="getActivatedClass('assign')"
-      >
-        配属にあたって
-      </button>
-      <transition name="link-contents">
-        <div v-if="activeList['assign']" class="link-contents">
-          <a
-            :href="`#` + q"
-            v-for="(text, q) in faqList['assign']"
-            v-once
-            v-smooth-scroll="{ duration: 750 }"
-            :key="q"
-          >
-            {{ q }}
-          </a>
-        </div>
-      </transition>
-    </div>
+    <transition name="part" appear>
+      <div class="faq-link" id="link-assign">
+        <button
+          v-on:click="toggleActive('assign')"
+          :class="getActivatedClass('assign')"
+        >
+          配属にあたって
+        </button>
+        <transition name="link-contents">
+          <div v-if="activeList['assign']" class="link-contents">
+            <a
+              :href="`#` + q"
+              v-for="(text, q) in faqList['assign']"
+              v-once
+              v-smooth-scroll="{ duration: 750 }"
+              :key="q"
+            >
+              {{ q }}
+            </a>
+          </div>
+        </transition>
+      </div>
+    </transition>
 
     <div id="divider"></div>
 

@@ -217,9 +217,8 @@ svg {
     align-items: center;
     padding: 0 10vw;
     margin: 0 0;
-    border: 0px solid rgba(0, 0, 0, 0);
     text-shadow: 0.2rem 0.2rem 0.1rem rgba(10, 10, 10, 0.2);
-    border: 1px solid rgba(20, 20, 20, 0.1);
+    border: 0.05rem solid rgba(20, 20, 20, 0.1);
     background-color: rgba(245, 245, 245, 0.7);
 
     p {
@@ -270,9 +269,9 @@ svg {
     &:hover {
       text-decoration: none;
       text-shadow: 0.1rem 0.1rem 0.05rem rgba(10, 10, 10, 0.5);
-      margin: 2vh 10vw;
+      margin: 0 7vw;
       background-color: rgba(235, 235, 235, 0.9);
-      border: 1px solid rgba(20, 20, 20, 0.1);
+      border: 0.15rem solid rgba(20, 20, 20, 0.6);
       border-radius: 1rem;
 
       p {
