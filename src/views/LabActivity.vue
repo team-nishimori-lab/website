@@ -6,7 +6,18 @@
 
     <div id="day">
       <div class="title">研究室の1日</div>
-      <div>a</div>
+      <div class="note-wrapper">
+        <div class="note">
+          <p class="subtitle">コアタイム @ 10:00〜15:00</p>
+          <p>コアタイム</p>
+          <p class="subtitle upper-space">ゼミ @ 毎週2コマほど</p>
+          <p>piyo</p>
+          <p class="subtitle upper-space">論文輪講 @ 1,2ターム</p>
+          <p>piyo</p>
+          <p class="subtitle upper-space">定例ミーティング @ 月曜9:00〜</p>
+          <p>piyo</p>
+        </div>
+      </div>
     </div>
 
     <!--  -->
@@ -121,15 +132,65 @@ $month-color-12: #4554aa;
 
 #day {
   position: relative;
+  padding: 7rem 5vw 2rem;
+  margin: 0 auto;
+  background-color: rgba(240, 240, 240, 1);
+
   .title {
     display: inline;
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #f0f0f0;
     font-size: 2.3rem;
     padding: 0.3rem 1rem;
     border-radius: 1.5rem;
+  }
+
+  .note-wrapper {
+    background-color: rgba(255, 255, 255, 1);
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    padding: 2rem 1.5rem;
+
+    .note {
+      $note-line-height: 2rem;
+      padding: 0 0 0.1rem;
+
+      background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 97%,
+        #ddd 97%,
+        #ddd 100%
+      );
+      background-size: 100% $note-line-height;
+      line-height: $note-line-height;
+
+      p {
+        margin: 0;
+        margin-bottom: 0;
+        padding: 0;
+
+        &.subtitle {
+          font-size: 1.8rem;
+          font-weight: 700;
+          background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 92%,
+            #00d0b0 92%,
+            #00d0b0 100%
+          );
+          color: #404040;
+        }
+
+        &.upper-space {
+          margin-top: $note-line-height;
+        }
+      }
+    }
   }
 }
 
