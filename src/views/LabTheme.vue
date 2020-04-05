@@ -12,7 +12,7 @@
           href="#g0"
           v-smooth-scroll="{ duration: 500 }"
         >
-          <p>１こめのテーマへ飛ぶ!!</p>
+          <p>マルチビーム Massive MIMO</p>
         </a>
         <a
           class="grid-item"
@@ -20,7 +20,10 @@
           href="#g1"
           v-smooth-scroll="{ duration: 500 }"
         >
-          <p>２こめのテーマへのリンク</p>
+          <p>
+            マイクロ波無線電力伝送のための<br />
+            ビームフォーミング
+          </p>
         </a>
 
         <a
@@ -29,7 +32,7 @@
           href="#g2"
           v-smooth-scroll="{ duration: 500 }"
         >
-          <p>３こめのテーマへ</p>
+          <p>伝搬環境制御</p>
         </a>
 
         <a
@@ -38,7 +41,7 @@
           href="#g3"
           v-smooth-scroll="{ duration: 500 }"
         >
-          <p>4へ</p>
+          <p>屋内環境における電波伝搬特性</p>
         </a>
 
         <a
@@ -47,7 +50,10 @@
           href="#g4"
           v-smooth-scroll="{ duration: 500 }"
         >
-          <p>５こめのテーマって何？</p>
+          <p>
+            MIMOセンサを用いた<br />
+            機械学習による人の行動推定
+          </p>
         </a>
       </div>
     </div>
@@ -252,29 +258,56 @@ $c4: #60d796;
     display: grid;
     height: 100%;
     width: 100%;
-    grid-template-rows: 33% 34% 33%;
-    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
 
     .grid-item {
       // border: 2px solid #cc0000;
       display: flex;
       align-items: center;
-      border-radius: 20%;
-      background-color: rgba(10, 10, 10, 0.2);
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(0, 0, 0, 0.5)
+      );
       color: #4a4a4a;
+      margin: 0px 5%;
       box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5);
       text-decoration: none;
       transition: 0.3s;
 
+      writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+      -webkit-text-orientation: upright;
+      text-orientation: upright;
       p {
         font-size: 2rem;
+        height: 90%;
         margin: 0 auto;
       }
 
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 90%;
+        height: 7%;
+        background-size: 100% 100%;
+        vertical-align: middle;
+        background-image: url("../assets/lab/theme/black-arrow-down.svg");
+        transition-duration: 0.5s;
+      }
+
       &:hover {
-        background-color: rgba(0, 0, 0, 0.5);
+        background: linear-gradient(rgba(80, 80, 80, 0.8), rgba(0, 0, 0, 0.9));
         color: #efefef;
         box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8);
+
+        p {
+          font-weight: 800;
+        }
+
+        &::after {
+          background-image: url("../assets/lab/theme/white-arrow-down.svg");
+        }
       }
 
       &#item1 {
@@ -284,22 +317,22 @@ $c4: #60d796;
 
       &#item2 {
         grid-row: 1;
-        grid-column: 3;
-      }
-
-      &#item3 {
-        grid-row: 2;
         grid-column: 2;
       }
 
+      &#item3 {
+        grid-row: 1;
+        grid-column: 3;
+      }
+
       &#item4 {
-        grid-row: 3;
-        grid-column: 1;
+        grid-row: 1;
+        grid-column: 4;
       }
 
       &#item5 {
-        grid-row: 3;
-        grid-column: 3;
+        grid-row: 1;
+        grid-column: 5;
       }
     }
   }
@@ -313,7 +346,7 @@ $c4: #60d796;
 
   .theme-name {
     line-height: 3.3rem;
-    font-size: 2.2rem;
+    font-size: 2rem;
     position: absolute;
     top: 5vh;
     left: 5vw;
