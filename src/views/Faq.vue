@@ -170,6 +170,8 @@
         </div>
       </div>
     </div>
+
+    <div class="footer-space"></div>
   </div>
 </template>
 
@@ -495,6 +497,10 @@ hr {
       }
     }
   }
+}
+
+.footer-space {
+  margin-top: 5vh;
 }
 
 // transition関係

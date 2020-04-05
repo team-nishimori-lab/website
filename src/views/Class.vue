@@ -35,6 +35,7 @@
         </div>
       </div>
     </transition>
+    <div class="footer-space"></div>
   </div>
 </template>
 
@@ -192,5 +193,9 @@ $color2: #3197ee;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.footer-space {
+  margin-top: 5vh;
 }
 </style>
