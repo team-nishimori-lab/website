@@ -1,7 +1,85 @@
 <template>
   <div class="lab-activity">
-    <div class="headline">
-      普段の生活
+    <div class="header-space"></div>
+
+    <!--  -->
+
+    <div id="day">
+      <div class="title">研究室の1日</div>
+      <div>a</div>
+    </div>
+
+    <!--  -->
+
+    <div id="year-table">
+      <div class="title">年間の予定表</div>
+      <table>
+        <tr>
+          <th class="manth-column"></th>
+          <th class="B4-column">B4</th>
+          <th class="all-column">全体</th>
+        </tr>
+        <tr id="Apr">
+          <td class="month-column">4月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="May">
+          <td class="month-column">5月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Jun">
+          <td class="month-column">6月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Jul">
+          <td class="month-column">7月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Aug">
+          <td class="month-column">8月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Sep">
+          <td class="month-column">9月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Oct">
+          <td class="month-column">10月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Nov">
+          <td class="month-column">11月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Dec">
+          <td class="month-column">12月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Jan">
+          <td class="month-column">1月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Feb">
+          <td class="month-column">2月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+        <tr id="Mar">
+          <td class="month-column">3月</td>
+          <td class="B4-column">fuga</td>
+          <td class="all-column">piyo</td>
+        </tr>
+      </table>
     </div>
     <div></div>
     "コアタイムはありますか？": "あります.", "ゼミはありますか？": "あります"<br />
@@ -16,40 +94,178 @@
 export default {
   name: "Lab_Activity",
   data() {
-    return {
-      scrollY: 0
-    };
+    return {};
   },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      this.scrollY = window.scrollY;
-    }
-  }
+  mounted() {},
+  methods: {}
 };
 </script>
 
-<style scoped lang="stylus">
+<style scoped lang="scss">
+$month-color-01: #ff6232;
+$month-color-02: #4582bb;
+$month-color-03: #f09898;
+$month-color-04: #a0e064;
+$month-color-05: #61c7a8;
+$month-color-06: #7b4d81;
+$month-color-07: #57b7f6;
+$month-color-08: #ffae00;
+$month-color-09: #015708;
+$month-color-10: #b48249;
+$month-color-11: #8d5001;
+$month-color-12: #4554aa;
 
-.lab-activity {
+.header-space {
+  height: 10vh;
+}
+
+#day {
+  position: relative;
+  .title {
+    display: inline;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 2.3rem;
+    padding: 0.3rem 1rem;
+    border-radius: 1.5rem;
+  }
+}
+
+#year-table {
+  position: relative;
   text-align: center;
-}
+  padding: 5rem 0 0;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
 
-#bg {
-  // background-repeat: no-repeat;
-  width: 100%;
-  height: 300vh;
-  padding-top: calc(300 / 1000 * 100%); /* calc(画像高さ ÷ 画像横幅 × 100%) */
-  // padding-top: 100vh;
-  // background: url("https://source.unsplash.com/user/unsplash/") center center / cover no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  // background: url(bg.jpg) center center / cover no-repeat;
-}
+  .title {
+    display: inline;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 2.3rem;
+    padding: 0.3rem 1rem;
+    border-radius: 1.5rem;
+  }
 
-.scroll-Y {
-  position: fixed;
+  table {
+    padding: 0 2vw;
+    display: inline-block;
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+
+    tr {
+      th {
+        color: #ffffff;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+      }
+      td {
+        padding: 0.3rem 1.5rem;
+        height: 10vh;
+
+        &.month-column {
+          font-size: 1.7rem;
+          font-weight: 700;
+        }
+
+        &.B4-column {
+          background-color: #f0f0f0;
+        }
+
+        &.all-column {
+          background-color: #f6f6f6;
+        }
+      }
+    }
+
+    .month-column {
+      width: 15vw;
+      color: #ffffff;
+    }
+
+    .B4-column {
+      width: 35vw;
+    }
+
+    .all-column {
+      width: 35vw;
+    }
+
+    #Apr {
+      .month-column {
+        background-color: $month-color-04;
+      }
+    }
+
+    #May {
+      .month-column {
+        background-color: $month-color-05;
+      }
+    }
+
+    #Jun {
+      .month-column {
+        background-color: $month-color-06;
+      }
+    }
+
+    #Jul {
+      .month-column {
+        background-color: $month-color-07;
+      }
+    }
+
+    #Aug {
+      .month-column {
+        background-color: $month-color-08;
+      }
+    }
+
+    #Sep {
+      .month-column {
+        background-color: $month-color-09;
+      }
+    }
+
+    #Oct {
+      .month-column {
+        background-color: $month-color-10;
+      }
+    }
+
+    #Nov {
+      .month-column {
+        background-color: $month-color-11;
+      }
+    }
+
+    #Dec {
+      .month-column {
+        background-color: $month-color-12;
+      }
+    }
+
+    #Jan {
+      .month-column {
+        background-color: $month-color-01;
+      }
+    }
+
+    #Feb {
+      .month-column {
+        background-color: $month-color-02;
+      }
+    }
+
+    #Mar {
+      .month-column {
+        background-color: $month-color-03;
+      }
+    }
+  }
 }
 </style>
