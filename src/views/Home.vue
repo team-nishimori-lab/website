@@ -81,6 +81,7 @@
         </router-link>
       </div>
     </transition>
+    <div class="footer-space"></div>
   </div>
 </template>
 
@@ -346,5 +347,9 @@ svg {
 
 .header {
   text-align: center;
+}
+
+.footer-space {
+  margin-top: 5vh;
 }
 </style>

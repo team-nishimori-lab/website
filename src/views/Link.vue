@@ -41,8 +41,8 @@
       <!--  -->
       <div class="content">
         <p class="site-name">先生のリサーチマップ</p>
-        <a href="https://researchmap.jp/knishimori" class="site-url">
-          https://researchmap.jp/knishimori
+        <a href="https://researchmap.jp/knishimori/" class="site-url">
+          https://researchmap.jp/knishimori/
         </a>
       </div>
 
@@ -56,6 +56,7 @@
 
       <!--  -->
     </div>
+    <div class="footer-space"></div>
   </div>
 </template>
 
@@ -152,5 +153,9 @@ $lab-group-a-color: rgba(0, 0, 255, 0.3);
       transition: 0.3s;
     }
   }
+}
+
+.footer-space {
+  margin-top: 5vh;
 }
 </style>

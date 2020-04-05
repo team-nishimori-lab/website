@@ -5,12 +5,12 @@
     <!--  -->
 
     <div id="day">
-      <div class="title">研究室の1日</div>
+      <div class="title">研究室の活動</div>
       <div class="note-wrapper">
         <div class="note">
           <p class="subtitle">コアタイム @ 10:00〜15:00</p>
           <p>
-            西森研ではフレックスタイム制を採用してしています.
+            西森研ではフレックスタイム制を採用してしています.<br />
             コアタイムは10:00〜15:00なので,
             その時間帯には研究室にいなければいけませんが,
             他の時間は好きにして構いません.
@@ -18,16 +18,19 @@
           <p class="subtitle upper-space">ゼミ @ 週1回, 2コマほど</p>
           <p>
             西森研では週に1回,
-            研究室の学生全体で進捗報告を行う「ゼミ」を行っています.
+            研究室の学生全体で進捗報告を行う「ゼミ」を行っています.<br />
+            任意のプレゼンテーションツールを用いて,
+            各自簡単に進捗の発表を行います.
           </p>
           <p class="subtitle upper-space">論文輪講 @ 1,2ターム</p>
           <p>
-            B4は1,2タームに論文輪講を行います. 各自担当が割り当てられ,
-            それらに対する発表を行ってもらっています.
+            B4は1,2タームに論文輪講を行います. <br />
+            各自担当が割り当てられ, それらに対する発表を,
+            研究室内で行ってもらいます.
           </p>
           <p class="subtitle upper-space">定例ミーティング @ 月曜9:00〜</p>
           <p>
-            毎週月曜9時から定例ミーティングを行っています.
+            毎週月曜9時から定例ミーティングを行っています.<br />
             ここでは先生からの連絡を主として, 全体でミーティングを行います.
           </p>
         </div>
@@ -38,6 +41,10 @@
 
     <div id="year-table">
       <div class="title">年間の予定表</div>
+      <div class="msg">
+        年度によって前後するので参考程度ですが,
+        1年間の予定などは大まかに以下のようになっています.
+      </div>
       <table>
         <tr>
           <th class="manth-column"></th>
@@ -46,72 +53,68 @@
         </tr>
         <tr id="Apr">
           <td class="month-column">4月</td>
-          <td class="B4-column">fuga</td>
-          <td class="all-column">piyo</td>
+          <td class="B4-column">配属<br />配属課題</td>
+          <td class="all-column">5月大会にむけて</td>
         </tr>
         <tr id="May">
           <td class="month-column">5月</td>
-          <td class="B4-column">fuga</td>
-          <td class="all-column">piyo</td>
+          <td class="B4-column">配属課題<br />論文輪講</td>
+          <td class="all-column">大会</td>
         </tr>
         <tr id="Jun">
           <td class="month-column">6月</td>
-          <td class="B4-column">fuga</td>
-          <td class="all-column">piyo</td>
+          <td class="B4-column">配属課題<br />論文輪講</td>
+          <td class="all-column">なんだろ</td>
         </tr>
         <tr id="Jul">
           <td class="month-column">7月</td>
-          <td class="B4-column">fuga</td>
-          <td class="all-column">piyo</td>
+          <td class="B4-column">テーマ決め</td>
+          <td class="all-column">なんだろ</td>
         </tr>
         <tr id="Aug">
           <td class="month-column">8月</td>
-          <td class="B4-column">fuga</td>
+          <td class="B4-column">実験補助</td>
           <td class="all-column">piyo</td>
         </tr>
         <tr id="Sep">
           <td class="month-column">9月</td>
-          <td class="B4-column">fuga</td>
+          <td class="B4-column">実験補助</td>
           <td class="all-column">piyo</td>
         </tr>
         <tr id="Oct">
           <td class="month-column">10月</td>
-          <td class="B4-column">fuga</td>
+          <td class="B4-column">卒業研究</td>
           <td class="all-column">piyo</td>
         </tr>
         <tr id="Nov">
           <td class="month-column">11月</td>
-          <td class="B4-column">fuga</td>
+          <td class="B4-column">卒業研究</td>
           <td class="all-column">piyo</td>
         </tr>
         <tr id="Dec">
           <td class="month-column">12月</td>
-          <td class="B4-column">fuga</td>
+          <td class="B4-column">卒業研究</td>
           <td class="all-column">piyo</td>
         </tr>
         <tr id="Jan">
           <td class="month-column">1月</td>
-          <td class="B4-column">fuga</td>
+          <td class="B4-column">卒業研究発表の準備</td>
           <td class="all-column">piyo</td>
         </tr>
         <tr id="Feb">
           <td class="month-column">2月</td>
-          <td class="B4-column">fuga</td>
+          <td class="B4-column">卒業研究発表の発表</td>
           <td class="all-column">piyo</td>
         </tr>
         <tr id="Mar">
           <td class="month-column">3月</td>
-          <td class="B4-column">fuga</td>
+          <td class="B4-column">卒業論文制作</td>
           <td class="all-column">piyo</td>
         </tr>
       </table>
     </div>
-    <div></div>
-    "コアタイムはありますか？": "あります.", "ゼミはありますか？": "あります"<br />
-    "輪講ってなんですか？": "あれです.", "進捗報告的なやつはある？": "hoge"<br />
-    "研究室の一年間のスケジュールは？": "違うところに年表的な"<br />
-    "研究室のイベントとか？": "これも違うところにはる", "当番はありますか？":
-    "週替りで簡単なゴミ捨て", "長期休暇のスケジュールは？": "hoge"<br />
+
+    <div class="footer-space"></div>
   </div>
 </template>
 
@@ -141,12 +144,13 @@ $month-color-11: #8d5001;
 $month-color-12: #4554aa;
 
 .header-space {
-  height: 10vh;
+  height: 7vh;
+  background-color: rgba(240, 240, 240, 1);
 }
 
 #day {
   position: relative;
-  padding: 7rem 5vw 2rem;
+  padding: 6rem 5vw 2rem;
   margin: 0 auto;
   background-color: rgba(240, 240, 240, 1);
 
@@ -211,9 +215,9 @@ $month-color-12: #4554aa;
 #year-table {
   position: relative;
   text-align: center;
-  padding: 5rem 0 0;
+  padding: 6rem 0 5vh;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgb(50, 50, 50);
 
   .title {
     display: inline;
@@ -224,6 +228,14 @@ $month-color-12: #4554aa;
     font-size: 2.3rem;
     padding: 0.3rem 1rem;
     border-radius: 1.5rem;
+  }
+
+  .msg {
+    text-align: left;
+    color: #f0f0f0;
+    font-size: 1.6rem;
+    padding: 0 10vw;
+    margin: 1rem 0 1rem;
   }
 
   table {
@@ -245,6 +257,7 @@ $month-color-12: #4554aa;
         &.month-column {
           font-size: 1.7rem;
           font-weight: 700;
+          border-right: 0.2rem solid rgb(10, 10, 10);
         }
 
         &.B4-column {

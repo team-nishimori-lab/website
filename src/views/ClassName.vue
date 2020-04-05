@@ -37,6 +37,8 @@
         </b-button>
       </div>
     </transition>
+
+    <div class="footer-space"></div>
   </div>
 </template>
 
@@ -206,5 +208,9 @@ export default {
       background: #D6D6D6;
     }
   }
+}
+
+.footer-space {
+  margin-top: 5vh;
 }
 </style>
