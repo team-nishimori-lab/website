@@ -123,7 +123,7 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.handleResize);
-    window.removeEventListener("scroll", this.calculateScrollY);
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleScroll() {
