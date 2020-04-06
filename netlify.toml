@@ -2,15 +2,16 @@
   for = "/*" # 対象ファイルを指定
   [headers.values]
     # ...
-    Cache-Control = "no-store" # キャッシュ不可
+    Cache-Control = "public, max-age=3600" # 1時間のみキャッシュ
 
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    # 31536000秒=1年間キャッシュ
+    # 31日間キャッシュ
     Cache-Control = "public, max-age=2678400"
 
 [[headers]]
   for = "/img/*"
   [headers.values]
+    # 31日間キャッシュ
     Cache-Control = "public, max-age=2678400"
