@@ -24,6 +24,15 @@
     <br />
     <br />
 
+    <div id="read-more">
+      <button v-on:click="toggleActive()" :class="getReadMoreClass()">
+        READ MORE?
+      </button>
+      <div class="links" v-if="active">
+        <div class="link">hoge</div>
+      </div>
+    </div>
+
     <div class="footer-space"></div>
   </div>
 </template>
@@ -32,10 +41,23 @@
 export default {
   name: "Lab_Contents",
   data() {
-    return {};
+    return {
+      active: false
+    };
   },
   mounted() {},
-  methods: {}
+  methods: {
+    toggleActive() {
+      this.active = !this.active;
+    },
+    getReadMoreClass() {
+      if (this.active) {
+        return { activated: true };
+      }
+
+      return { activated: false };
+    }
+  }
 };
 </script>
 
@@ -46,5 +68,47 @@ export default {
 
 .footer-space {
   margin-top: 5vh;
+}
+
+#read-more {
+  margin: 0 20%;
+  background-color: #303030;
+
+  button {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    border: none;
+    display: inline-block;
+    background-color: #303030;
+    color: #f0f0f0;
+    font-weight: 700;
+
+    line-height: 10vh;
+    text-align: left;
+    font-size: 1.8rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 6vh;
+      height: 6vh;
+      margin: 2vh 1rem;
+      // margin: 1vh 1vw 1vh;
+      vertical-align: top;
+      background-image: url("../assets/faq/right_arrow.svg");
+      background-size: 100% 100%;
+      transition: 0.2s;
+    }
+    &.activated {
+      &::before {
+        transform: rotateZ(90deg);
+      }
+    }
+  }
 }
 </style>
