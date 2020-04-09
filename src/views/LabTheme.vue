@@ -339,7 +339,7 @@ $c4: #60d796;
 }
 
 .theme-group {
-  width: 100vw;
+  width: 100%;
   padding: 10vh 10vw;
   position: relative;
   transition: 1.2s;
