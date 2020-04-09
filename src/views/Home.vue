@@ -149,9 +149,9 @@ svg {
 @mixin after-template($url) {
   content: "";
   display: inline-block;
-  width: 8vw;
-  height: 8vw;
-  background-size: contain;
+  width: 12vh;
+  height: 12vh;
+  background-size: 100% 100%;
   vertical-align: middle;
   background-image: url($url);
 }

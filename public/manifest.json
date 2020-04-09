@@ -1,6 +1,6 @@
 {
-  "name": "西森研究室(非)公式アプリ",
-  "short_name": "nlab-app",
+  "name": "nishimori-lab",
+  "short_name": "n-lab",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
