@@ -273,22 +273,17 @@ hr {
 @mixin after-template($url) {
   content: "";
   display: inline-block;
-  width: 4vw;
-  height: 4vw;
-  margin: 1vh 1vw 1vh;
-  vertical-align: middle;
+  width: 5vh;
+  height: 5vh;
+  margin: 1.5vh 1rem;
+  vertical-align: top;
   background-image: url($url);
+  background-size: 100% 100%;
   transition: 0.2s;
 }
 
 .faq {
   text-align: center;
-}
-
-.activated-button {
-  &::before {
-    transform: rotateZ(90deg);
-  }
 }
 
 .faq-link {
@@ -315,6 +310,12 @@ hr {
         $study-bg-color
       );
       border: 0.05rem solid $study-bg-color;
+
+      &.activated-button {
+        &::before {
+          transform: rotateZ(90deg);
+        }
+      }
     }
   }
 
@@ -389,6 +390,9 @@ hr {
     font-size: 1.8rem;
     border: none;
     width: 100%;
+    height: 8vh;
+    line-height: 8vh;
+    vertical-align: middle;
 
     &:focus {
       outline: none;
