@@ -26,11 +26,27 @@
 
     <div id="read-more">
       <button v-on:click="toggleActive()" :class="getReadMoreClass()">
-        READ MORE?
+        READ MORE
       </button>
-      <div class="links" v-if="active">
-        <div class="link">hoge</div>
-      </div>
+      <transition name="links">
+        <div class="links" v-if="active">
+          <router-link to="/lab/theme" class="link" id="theme">
+            <p>
+              各研究テーマについて
+            </p>
+          </router-link>
+          <router-link to="/lab/activity" class="link" id="activity">
+            <p>
+              研究室の普段の活動について
+            </p>
+          </router-link>
+          <router-link to="/lab/history" class="link" id="history">
+            <p>
+              研究実績について
+            </p>
+          </router-link>
+        </div>
+      </transition>
     </div>
 
     <div class="footer-space"></div>
@@ -71,7 +87,7 @@ export default {
 }
 
 #read-more {
-  margin: 0 20%;
+  margin: 0 5%;
   background-color: #303030;
 
   button {
@@ -100,15 +116,60 @@ export default {
       margin: 2vh 1rem;
       // margin: 1vh 1vw 1vh;
       vertical-align: top;
-      background-image: url("../assets/faq/right_arrow.svg");
+      transform: rotateZ(90deg);
+      background-image: url("../assets/lab/contents/open.svg");
       background-size: 100% 100%;
-      transition: 0.2s;
+      transition: 0.4s;
     }
     &.activated {
       &::before {
-        transform: rotateZ(90deg);
+        transform: rotateZ(0deg);
+        background-image: url("../assets/lab/contents/close.svg");
       }
     }
   }
+
+  .links {
+    padding: 0 10% 1.5rem;
+
+    .link {
+      color: #101010;
+      display: block;
+      text-decoration: none;
+      background-color: #ffffff;
+      p {
+        margin: 1.5rem 0;
+        padding: 1rem 1rem;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+// transition関係
+.links-enter {
+  opacity: 0;
+  // border-bottom: 0px;
+}
+
+.links-enter-active {
+  transition: 0.7s;
+}
+
+.links-enter-to {
+  opacity: 1;
+}
+
+.links-leave {
+  opacity: 1;
+}
+
+.links-leave-active {
+  transition: 0.2s;
+}
+
+.links-leave-to {
+  opacity: 0;
+  font-size: 0.5rem;
 }
 </style>

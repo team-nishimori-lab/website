@@ -20,7 +20,7 @@
                 <b-dropdown-item to="/lab/contents">研究内容</b-dropdown-item>
                 <b-dropdown-item to="/lab/theme">主なテーマ</b-dropdown-item>
                 <b-dropdown-item to="/lab/activity">普段の活動</b-dropdown-item>
-                <b-dropdown-item to="/lab/history">活動歴</b-dropdown-item>
+                <b-dropdown-item to="/lab/history">研究実績</b-dropdown-item>
               </b-nav-item-dropdown>
               <b-nav-item to="/class">授業について</b-nav-item>
               <b-nav-item to="/faq">よくある質問</b-nav-item>
@@ -40,11 +40,9 @@
       <!-- <div id="hoge" style="background-color: black;">
         hoge
       </div> -->
-      <div id="footer">
-        <b-navbar type="dark" variant="dark" fixed="bottom" class="inner"
-          >Copyright (C) 2020- nishimori lab. All Rights Reserved.</b-navbar
-        >
-      </div>
+      <b-navbar type="dark" variant="dark" fixed="bottom" class="inner">
+        <p>Copyright (C) 2020- nishimori lab. All Rights Reserved.</p>
+      </b-navbar>
     </div>
   </div>
 </template>
@@ -232,7 +230,7 @@ export default {
 // }
 </style>
 
-<style scoped lang="stylus">
+<style scoped lang="scss">
 #header {
   // margin-top: 7vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -241,10 +239,13 @@ export default {
   color: #2c3e50;
 }
 
-#footer {
-  .inner {
-    color: #DDDDDD;
-    font-size: 0.7rem;
+.inner {
+  height: 2rem;
+  display: inline-block;
+  text-align: right;
+  p {
+    color: #dddddd;
+    font-size: 0.8rem;
   }
 }
 
