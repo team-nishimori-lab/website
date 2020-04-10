@@ -1,6 +1,9 @@
 <template>
   <div class="link">
-    <div class="divider"></div>
+    <div class="header-space"></div>
+    <div class="headline">
+      リンク
+    </div>
 
     <!-- 学校関係のリンク -->
     <div class="link-group" id="school">
@@ -56,6 +59,36 @@
 
       <!--  -->
     </div>
+
+    <div class="headline">
+      アクセス
+    </div>
+    <div class="lab-access">
+      <div class="pos">
+        <div class="pos-msg" id="pos1">
+          <p>
+            〒950-2102 新潟県新潟市西区五十嵐２の町<br />
+            新潟大学 情報理工棟 8F 802
+          </p>
+        </div>
+        <div class="pos-img" id="pos2">
+          <img src="../assets/link/zyouhou_rikou_tou.jpg" />
+        </div>
+        <div class="pos-img" id="pos3">
+          <img src="../assets/link/access-top-lab_ver01.png" />
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d393.71580302631054!2d138.9392890721534!3d37.86669120241534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1586528272931!5m2!1sja!2sjp"
+          frameborder="0"
+          style="border:0;"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+          id="pos4"
+        ></iframe>
+      </div>
+    </div>
+
     <div class="footer-space"></div>
   </div>
 </template>
@@ -67,10 +100,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.divider {
-  height: 15vh;
-}
-
 .link {
   text-align: center;
 }
@@ -82,7 +111,7 @@ $lab-group-color: #0000ff;
 $lab-group-a-color: rgba(0, 0, 255, 0.3);
 
 .link-group {
-  margin: 0 12vw;
+  margin: 5vh 12vw;
   padding: 3rem 0 3rem 3%;
   position: relative;
   &#school {
@@ -153,6 +182,81 @@ $lab-group-a-color: rgba(0, 0, 255, 0.3);
       transition: 0.3s;
     }
   }
+}
+
+.lab-access {
+  padding: 2%;
+  .pos {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 2%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .pos-msg {
+      margin: 0 2vw 0 0;
+      color: #ffffff;
+      font-size: 1.4rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      background-color: rgba(70, 70, 70, 1);
+      p {
+        display: table-cell;
+      }
+    }
+    .pos-img {
+      img {
+        width: 100%;
+      }
+    }
+
+    #pos1 {
+      grid-row: 1;
+      grid-column: 1;
+    }
+    #pos2 {
+      grid-row: 1;
+      grid-column: 2;
+      img {
+        height: 100%;
+      }
+    }
+    #pos3 {
+      margin: 2vh 0 0;
+      grid-row: 2;
+      grid-column: 1/3;
+    }
+    #pos4 {
+      margin: 2vh 0 0;
+      width: 100%;
+      height: 50vh;
+      grid-row: 3;
+      grid-column: 1/3;
+    }
+  }
+
+  // .pos {
+  //   background-color: rgba(30, 30, 30, 0.9);
+  //   padding: 3%;
+  //   width: 100vw;
+  //   display: grid;
+  //   grid-template-columns: 40% 1fr;
+  //   .pos-msg {
+  //     grid-column: 1;
+  //     color: #ffffff;
+  //     font-size: 1.6rem;
+  //     background-color: rgba(70, 70, 70, 1);
+  //   }
+  //   .pos-img {
+  //     grid-column: 2;
+  //     img {
+  //       width: 100%;
+  //     }
+  //   }
+  // }
 }
 
 .footer-space {

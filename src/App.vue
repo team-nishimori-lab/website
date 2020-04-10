@@ -301,7 +301,7 @@ hl-line-color = #008554;
   position: relative;
   line-height: 2.8rem;
   padding: 0.25rem 1rem 0rem;
-  margin: 1rem 0 5vh;
+  margin: 1rem 0 2rem;
   display: block;
 
   &:before {
