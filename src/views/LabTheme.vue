@@ -3,60 +3,61 @@
     <div id="bg" :class="bgClassActiveDict"></div>
 
     <div class="header-space"></div>
+    <transition appear name="hl">
+      <div id="theme-link">
+        <div id="link-grid">
+          <a
+            class="grid-item"
+            id="item1"
+            href="#g0"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>マルチビーム Massive MIMO</p>
+          </a>
+          <a
+            class="grid-item"
+            id="item2"
+            href="#g1"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>
+              マイクロ波無線電力伝送のための<br />
+              ビームフォーミング
+            </p>
+          </a>
 
-    <div id="theme-link">
-      <div id="link-grid">
-        <a
-          class="grid-item"
-          id="item1"
-          href="#g0"
-          v-smooth-scroll="{ duration: 500 }"
-        >
-          <p>マルチビーム Massive MIMO</p>
-        </a>
-        <a
-          class="grid-item"
-          id="item2"
-          href="#g1"
-          v-smooth-scroll="{ duration: 500 }"
-        >
-          <p>
-            マイクロ波無線電力伝送のための<br />
-            ビームフォーミング
-          </p>
-        </a>
+          <a
+            class="grid-item"
+            id="item3"
+            href="#g2"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>伝搬環境制御</p>
+          </a>
 
-        <a
-          class="grid-item"
-          id="item3"
-          href="#g2"
-          v-smooth-scroll="{ duration: 500 }"
-        >
-          <p>伝搬環境制御</p>
-        </a>
+          <a
+            class="grid-item"
+            id="item4"
+            href="#g3"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>屋内環境における電波伝搬特性</p>
+          </a>
 
-        <a
-          class="grid-item"
-          id="item4"
-          href="#g3"
-          v-smooth-scroll="{ duration: 500 }"
-        >
-          <p>屋内環境における電波伝搬特性</p>
-        </a>
-
-        <a
-          class="grid-item"
-          id="item5"
-          href="#g4"
-          v-smooth-scroll="{ duration: 500 }"
-        >
-          <p>
-            MIMOセンサを用いた<br />
-            機械学習による人の行動推定
-          </p>
-        </a>
+          <a
+            class="grid-item"
+            id="item5"
+            href="#g4"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>
+              MIMOセンサを用いた<br />
+              機械学習による人の行動推定
+            </p>
+          </a>
+        </div>
       </div>
-    </div>
+    </transition>
 
     <!-- <p class="scroll-Y">
       {{ scrollY }}<br />{{ height }}<br />{{ scrollY + height }}
