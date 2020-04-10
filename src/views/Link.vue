@@ -205,6 +205,7 @@ $lab-group-a-color: rgba(0, 0, 255, 0.3);
       background-color: rgba(70, 70, 70, 1);
       p {
         display: table-cell;
+        margin: 0 auto;
       }
     }
     .pos-img {
