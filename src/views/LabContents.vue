@@ -1,56 +1,65 @@
 <template>
-  <div class="lab-contents">
-    <div class="header-space"></div>
-    西森研究室では MIMO (Multiple Input Multiple Output)技術を用いて,
-    無線LAN・携帯電話への適用を目指した研究を行っています.
-    <br />
-    <br />
-    西森研究室では,
-    最新のスマートフォンやWi-Fiに導入されているMIMOと呼ばれる技術に関数る研究を行っています.
-    今年度も多くの学会発表や論文投稿を行うことがでｋました。これからは,
-    これまでに培ったスキルを発揮して,
-    ただ前だけを見て社会の荒波を乗り越えていきましょう.
-    <br />
-    <br />
-    私達の研究室では, 無線通信技術についての研究を行っており,
-    スマートフォンやドローンから電波の解析など様々なテーマについて検討しています.メンバー全員で熱心に研究に取り組んでおり,
-    学会発表や論文投稿を通して, 様々な表彰を頂いております.
-    <br />
-    <br />
+  <transition appear name="hl">
+    <div class="lab-contents">
+      <div class="header-space"></div>
+      <div class="headline">
+        研究について
+      </div>
+      <div class="msg" id="study">
+        西森研究室では, 無線通信技術についての研究を行っており, 中でも
+        <span class="red bold">MIMO</span> (
+        <span class="red bold">M</span>ultiple
+        <span class="red bold">I</span>nput
+        <span class="red bold">M</span>ultiple
+        <span class="red bold">O</span>utput )
+        技術を無線LANや携帯電話に適用させた研究を中心に行っています.
+        <br />
+        研究室内で多くのテーマがあり, それらには電波の伝搬特性の解析を行ったり,
+        無線技術を用いたシステムの評価や, 伝搬環境制御の手法提案などがあります.
+        <br />
+        メンバー全員で熱心に研究に取り組んでおり, 学会発表や論文投稿を通して,
+        様々な表彰を頂いております. <br />
+      </div>
 
-    <br />
-    <br />
+      <div class="headline">
+        研究室について
+      </div>
+      <div class="msg" id="lab">
+        先生のご指導のもと,
+        研究室のメンバーがそれぞれのテーマに取り組んでいます. その結果,
+        学会発表や論文投稿といった形で多くの成果を残しています.<br />
+        また, 研究室のメンバー同士で普段から意見交換をしたり,
+        雰囲気の良い研究室です.
+      </div>
 
-    <br />
-    <br />
+      <div id="read-more">
+        <button v-on:click="toggleActive()" :class="getReadMoreClass()">
+          READ MORE
+        </button>
+        <transition name="links">
+          <div class="links" v-if="active">
+            <router-link to="/lab/theme" class="link" id="theme">
+              <p>
+                各研究テーマについて
+              </p>
+            </router-link>
+            <router-link to="/lab/activity" class="link" id="activity">
+              <p>
+                研究室の普段の活動について
+              </p>
+            </router-link>
+            <router-link to="/lab/history" class="link" id="history">
+              <p>
+                研究実績について
+              </p>
+            </router-link>
+          </div>
+        </transition>
+      </div>
 
-    <div id="read-more">
-      <button v-on:click="toggleActive()" :class="getReadMoreClass()">
-        READ MORE
-      </button>
-      <transition name="links">
-        <div class="links" v-if="active">
-          <router-link to="/lab/theme" class="link" id="theme">
-            <p>
-              各研究テーマについて
-            </p>
-          </router-link>
-          <router-link to="/lab/activity" class="link" id="activity">
-            <p>
-              研究室の普段の活動について
-            </p>
-          </router-link>
-          <router-link to="/lab/history" class="link" id="history">
-            <p>
-              研究実績について
-            </p>
-          </router-link>
-        </div>
-      </transition>
+      <div class="footer-space"></div>
     </div>
-
-    <div class="footer-space"></div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -78,12 +87,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.header-space {
-  height: 10vh;
-}
-
 .footer-space {
   margin-top: 5vh;
+}
+
+.msg {
+  margin: 0 7% 5rem;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  border-left: 0.3rem solid rgba(140, 140, 140, 0.8);
+  background-color: rgba(200, 200, 200, 0.2);
+  padding: 0 1rem;
+}
+
+.red {
+  color: rgba(230, 150, 20, 1);
+  font-size: 1.7rem;
+}
+
+.bold {
 }
 
 #read-more {
@@ -102,7 +124,7 @@ export default {
 
     line-height: 10vh;
     text-align: left;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
 
     &:focus {
       outline: none;
@@ -133,6 +155,8 @@ export default {
     padding: 0 10% 1.5rem;
 
     .link {
+      box-shadow: 0.4rem 0.4rem 0.3rem rgba(150, 150, 150, 0.8);
+
       color: #101010;
       display: block;
       text-decoration: none;
