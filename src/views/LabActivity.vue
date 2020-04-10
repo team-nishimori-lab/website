@@ -3,116 +3,119 @@
     <div class="header-space"></div>
 
     <!--  -->
-
-    <div id="day">
-      <div class="title">研究室の活動</div>
-      <div class="note-wrapper">
-        <div class="note">
-          <p class="subtitle">コアタイム @ 10:00〜15:00</p>
-          <p>
-            西森研ではフレックスタイム制を採用してしています.<br />
-            コアタイムは10:00〜15:00なので,
-            その時間帯には研究室にいなければいけませんが,
-            他の時間は好きにして構いません.
-          </p>
-          <p class="subtitle upper-space">ゼミ @ 週1回, 2コマほど</p>
-          <p>
-            西森研では週に1回,
-            研究室の学生全体で進捗報告を行う「ゼミ」を行っています.<br />
-            任意のプレゼンテーションツールを用いて,
-            各自簡単に進捗の発表を行います.
-          </p>
-          <p class="subtitle upper-space">論文輪講 @ 1,2ターム</p>
-          <p>
-            B4は1,2タームに論文輪講を行います. <br />
-            各自担当が割り当てられ, それらに対する発表を,
-            研究室内で行ってもらいます.
-          </p>
-          <p class="subtitle upper-space">定例ミーティング @ 月曜9:00〜</p>
-          <p>
-            毎週月曜9時から定例ミーティングを行っています.<br />
-            ここでは先生からの連絡を主として, 全体でミーティングを行います.
-          </p>
+    <transition appear name="hl">
+      <div id="day">
+        <div class="title">研究室の活動</div>
+        <div class="note-wrapper">
+          <div class="note">
+            <p class="subtitle">コアタイム @ 10:00〜15:00</p>
+            <p>
+              西森研ではフレックスタイム制を採用してしています.<br />
+              コアタイムは10:00〜15:00なので,
+              その時間帯には研究室にいなければいけませんが,
+              他の時間は好きにして構いません.
+            </p>
+            <p class="subtitle upper-space">ゼミ @ 週1回, 2コマほど</p>
+            <p>
+              西森研では週に1回,
+              研究室の学生全体で進捗報告を行う「ゼミ」を行っています.<br />
+              任意のプレゼンテーションツールを用いて,
+              各自簡単に進捗の発表を行います.
+            </p>
+            <p class="subtitle upper-space">論文輪講 @ 1,2ターム</p>
+            <p>
+              B4は1,2タームに論文輪講を行います. <br />
+              各自担当が割り当てられ, それらに対する発表を,
+              研究室内で行ってもらいます.
+            </p>
+            <p class="subtitle upper-space">定例ミーティング @ 月曜9:00〜</p>
+            <p>
+              毎週月曜9時から定例ミーティングを行っています.<br />
+              ここでは先生からの連絡を主として, 全体でミーティングを行います.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
 
     <!--  -->
 
-    <div id="year-table">
-      <div class="title">年間の予定表</div>
-      <div class="msg">
-        年度によって前後するので参考程度ですが,
-        1年間の予定などは大まかに以下のようになっています.
+    <transition appear name="hl">
+      <div id="year-table">
+        <div class="title">年間の予定表</div>
+        <div class="msg">
+          年度によって前後するので参考程度ですが,
+          1年間の予定などは大まかに以下のようになっています.
+        </div>
+        <table>
+          <tr>
+            <th class="manth-column"></th>
+            <th class="B4-column">B4</th>
+            <th class="all-column">全体</th>
+          </tr>
+          <tr id="Apr">
+            <td class="month-column">4月</td>
+            <td class="B4-column">配属<br />配属課題</td>
+            <td class="all-column">5月大会にむけて</td>
+          </tr>
+          <tr id="May">
+            <td class="month-column">5月</td>
+            <td class="B4-column">配属課題<br />論文輪講</td>
+            <td class="all-column">大会</td>
+          </tr>
+          <tr id="Jun">
+            <td class="month-column">6月</td>
+            <td class="B4-column">配属課題<br />論文輪講</td>
+            <td class="all-column">なんだろ</td>
+          </tr>
+          <tr id="Jul">
+            <td class="month-column">7月</td>
+            <td class="B4-column">テーマ決め</td>
+            <td class="all-column">なんだろ</td>
+          </tr>
+          <tr id="Aug">
+            <td class="month-column">8月</td>
+            <td class="B4-column">実験補助</td>
+            <td class="all-column">piyo</td>
+          </tr>
+          <tr id="Sep">
+            <td class="month-column">9月</td>
+            <td class="B4-column">実験補助</td>
+            <td class="all-column">piyo</td>
+          </tr>
+          <tr id="Oct">
+            <td class="month-column">10月</td>
+            <td class="B4-column">卒業研究</td>
+            <td class="all-column">piyo</td>
+          </tr>
+          <tr id="Nov">
+            <td class="month-column">11月</td>
+            <td class="B4-column">卒業研究</td>
+            <td class="all-column">piyo</td>
+          </tr>
+          <tr id="Dec">
+            <td class="month-column">12月</td>
+            <td class="B4-column">卒業研究</td>
+            <td class="all-column">piyo</td>
+          </tr>
+          <tr id="Jan">
+            <td class="month-column">1月</td>
+            <td class="B4-column">卒業研究発表の準備</td>
+            <td class="all-column">piyo</td>
+          </tr>
+          <tr id="Feb">
+            <td class="month-column">2月</td>
+            <td class="B4-column">卒業研究発表の発表</td>
+            <td class="all-column">piyo</td>
+          </tr>
+          <tr id="Mar">
+            <td class="month-column">3月</td>
+            <td class="B4-column">卒業論文制作</td>
+            <td class="all-column">piyo</td>
+          </tr>
+        </table>
       </div>
-      <table>
-        <tr>
-          <th class="manth-column"></th>
-          <th class="B4-column">B4</th>
-          <th class="all-column">全体</th>
-        </tr>
-        <tr id="Apr">
-          <td class="month-column">4月</td>
-          <td class="B4-column">配属<br />配属課題</td>
-          <td class="all-column">5月大会にむけて</td>
-        </tr>
-        <tr id="May">
-          <td class="month-column">5月</td>
-          <td class="B4-column">配属課題<br />論文輪講</td>
-          <td class="all-column">大会</td>
-        </tr>
-        <tr id="Jun">
-          <td class="month-column">6月</td>
-          <td class="B4-column">配属課題<br />論文輪講</td>
-          <td class="all-column">なんだろ</td>
-        </tr>
-        <tr id="Jul">
-          <td class="month-column">7月</td>
-          <td class="B4-column">テーマ決め</td>
-          <td class="all-column">なんだろ</td>
-        </tr>
-        <tr id="Aug">
-          <td class="month-column">8月</td>
-          <td class="B4-column">実験補助</td>
-          <td class="all-column">piyo</td>
-        </tr>
-        <tr id="Sep">
-          <td class="month-column">9月</td>
-          <td class="B4-column">実験補助</td>
-          <td class="all-column">piyo</td>
-        </tr>
-        <tr id="Oct">
-          <td class="month-column">10月</td>
-          <td class="B4-column">卒業研究</td>
-          <td class="all-column">piyo</td>
-        </tr>
-        <tr id="Nov">
-          <td class="month-column">11月</td>
-          <td class="B4-column">卒業研究</td>
-          <td class="all-column">piyo</td>
-        </tr>
-        <tr id="Dec">
-          <td class="month-column">12月</td>
-          <td class="B4-column">卒業研究</td>
-          <td class="all-column">piyo</td>
-        </tr>
-        <tr id="Jan">
-          <td class="month-column">1月</td>
-          <td class="B4-column">卒業研究発表の準備</td>
-          <td class="all-column">piyo</td>
-        </tr>
-        <tr id="Feb">
-          <td class="month-column">2月</td>
-          <td class="B4-column">卒業研究発表の発表</td>
-          <td class="all-column">piyo</td>
-        </tr>
-        <tr id="Mar">
-          <td class="month-column">3月</td>
-          <td class="B4-column">卒業論文制作</td>
-          <td class="all-column">piyo</td>
-        </tr>
-      </table>
-    </div>
+    </transition>
 
     <div class="footer-space"></div>
   </div>

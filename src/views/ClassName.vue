@@ -1,5 +1,7 @@
 <template>
   <div class="class-name">
+    <div class="header-space"></div>
+
     <div v-if="loadingTime || loadingApi" class="loader">
       <vue-loading
         type="beat"
