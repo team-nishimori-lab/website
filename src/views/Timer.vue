@@ -1,5 +1,7 @@
 <template>
   <div class="timer">
+    <div class="header-space"></div>
+
     <transition name="hl" appear>
       <div class="headline">タイマー</div>
     </transition>

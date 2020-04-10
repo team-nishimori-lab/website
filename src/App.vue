@@ -24,7 +24,7 @@
               </b-nav-item-dropdown>
               <b-nav-item to="/class">授業について</b-nav-item>
               <b-nav-item to="/faq">よくある質問</b-nav-item>
-              <b-nav-item to="/link">リンク</b-nav-item>
+              <b-nav-item to="/link">リンク/アクセス</b-nav-item>
               <b-nav-item to="/timer">Timer</b-nav-item>
             </b-navbar-nav>
 
@@ -289,6 +289,10 @@ hl-line-color = #008554;
   font-size: 30px;
 }
 
+.header-space {
+  height: 6vh;
+}
+
 .headline {
   text-shadow: 0.2rem 0.2rem 0.2rem rgba(30, 30, 30, 0.25);
   text-align: center;
@@ -296,10 +300,23 @@ hl-line-color = #008554;
   font-size: hl-fs;
   position: relative;
   line-height: 2.8rem;
-  padding: 0.25rem 1rem;
-  margin: 10vh 0 3vh;
-  display: inline-block;
-  border-bottom: 0.15rem solid rgba(0, 0, 0, 0.9);
+  padding: 0.25rem 1rem 0rem;
+  margin: 1rem 0 5vh;
+  display: block;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -1.2rem;
+    display: inline-block;
+    width: 4rem;
+    height: 0.25rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: rgba(50, 50, 50, 1);
+    border-radius: 20%;
+  }
 }
 
 // transition系
