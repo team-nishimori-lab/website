@@ -1,5 +1,7 @@
 <template>
   <div class="class">
+    <div class="header-space"></div>
+
     <div v-show="loadingTime || loadingApi" class="loader">
       <vue-loading
         type="beat"
@@ -21,7 +23,24 @@
     <transition name="part">
       <div v-show="!(loadingTime || loadingApi)" class="select">
         <form id="classSelect">
-          <div class="container" v-html="radioList"></div>
+          <div class="container">
+            <div
+              once
+              v-for="classInfo in getClassInfo()"
+              :key="classInfo['id']"
+              class="radio"
+            >
+              <input
+                name="radio"
+                type="radio"
+                :id="classInfo['id']"
+                :value="classInfo['value']"
+              />
+              <label class="radio-label" :for="classInfo['id']">
+                {{ classInfo["className"] }}
+              </label>
+            </div>
+          </div>
         </form>
         <div style="padding: 0% 35%">
           <b-button
@@ -59,6 +78,28 @@ export default {
       } else {
         this.$router.push(`/class/${state}`);
       }
+    },
+    getClassInfo() {
+      var infoArr = [];
+      var id = 0;
+      if (!this.orgData) {
+        this.$router.push(`/class`);
+      }
+      for (var d of this.orgData) {
+        try {
+          var className = /#class_(.+)/.exec(d["description"])[1];
+        } catch (error) {
+          continue;
+        }
+
+        infoArr[id] = {
+          className: className,
+          id: id,
+          value: d["id"]
+        };
+        id++;
+      }
+      return infoArr;
     }
   },
   data() {
@@ -81,30 +122,6 @@ export default {
         this.loadingApi = false;
       });
   },
-  beforeUpdate() {
-    var str = "";
-    var id = 0;
-    if (!this.orgData) {
-      this.$router.push(`/class`);
-    }
-    for (var d of this.orgData) {
-      try {
-        var className = /#class_(.+)/.exec(d["description"])[1];
-      } catch (error) {
-        continue;
-      }
-      str += `<div class="radio">`;
-      if (id == 0) {
-        str += `<input name="radio" type="radio" id="${id}" value="${d["id"]}" checked/>`;
-      } else {
-        str += `<input name="radio" type="radio" id="${id}" value="${d["id"]}" />`;
-      }
-      str += `<label class="radio-label" for="${id}">${className}</label>`;
-      str += "</div>";
-      id++;
-    }
-    this.radioList = str;
-  },
   components: {
     VueLoading
   }
@@ -120,32 +137,50 @@ $color2: #3197ee;
 }
 
 .container {
-  /deep/ .radio {
-    margin: 0.5rem;
-    input[type="radio"] {
+  .radio {
+    margin: 0.5rem 0;
+    width: 80vw;
+    input {
       position: absolute;
       opacity: 0;
       + .radio-label {
-        font-size: 1.4rem;
+        transition: 0.4s;
+        border: 1.5px solid rgba(40, 40, 40, 0.5);
+        border-radius: 2rem;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.3) 75%,
+          rgba(30, 140, 245, 0.3)
+        );
+        background-color: rgba(40, 40, 200, 0);
+
+        width: 100%;
+        font-size: 1.8rem;
+        line-height: 7vh;
         &:before {
           content: "";
           background: $color1;
           border-radius: 100%;
           border: 1px solid darken($color1, 25%);
           display: inline-block;
-          width: 1.4em;
-          height: 1.4em;
-          position: relative;
-          top: -0.2em;
-          margin-right: 1em;
-          vertical-align: middle;
+          width: 4vh;
+          height: 4vh;
+          margin: 1.5vh 1rem 1.5vh;
+          vertical-align: top;
           cursor: pointer;
-          text-align: center;
-          transition: all 250ms ease;
+          transition: all 500ms ease;
         }
       }
       &:checked {
         + .radio-label {
+          border: 2.5px solid rgba(40, 40, 40, 0.5);
+          border-radius: 0.5rem;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.3) 60%,
+            rgba(30, 140, 245, 0.5)
+          );
+          background-color: rgba(10, 140, 255, 0.1);
           &:before {
             background-color: $color2;
             box-shadow: inset 0 0 0 4px $color1;
@@ -170,6 +205,7 @@ $color2: #3197ee;
         }
       }
       + .radio-label {
+        margin: 0;
         &:empty {
           &:before {
             margin-right: 0;
@@ -189,10 +225,21 @@ $color2: #3197ee;
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
+  // @media only screen and (max-width: 550px) {
+  //   padding: 0 0 0 15%;
+  // }
+  // @media only screen and (min-width: 550px) and (max-width: 800px) {
+  //   padding: 0 0 0 30%;
+  // }
+  // @media only screen and (min-width: 800px) and (max-width: 3000px) {
+  //   padding: 0 0 0 35%;
+  // }
+  // @media only screen and (min-width: 3000px) {
+  //   padding: 0 0 0 45%;
+  // }
+  padding: 0 0 0 10vw;
+  text-align: left;
+  margin: 0;
 }
 
 .footer-space {
