@@ -1,5 +1,7 @@
 <template>
   <div class="faq">
+    <div class="header-space"></div>
+
     <transition name="hl" appear>
       <div class="headline">
         よくある質問
@@ -189,18 +191,17 @@ export default {
       faqList: {
         study: {
           "どんな研究しているの？":
-            "主にMIMOを利用した電波系の研究を行っています. \n詳しくは'研究について/研究内容'へどうぞ.",
+            "主にMIMOを利用した無線通信技術の研究を行っています. \n詳しくは「研究について/研究内容」へどうぞ.",
           "主な研究テーマは？":
-            "いろいろあります. \n詳しくは'研究について/主なテーマ'へどうぞ.",
+            "いろんなテーマがあり, ここに書ききれないので\n「研究について/主なテーマ」へどうぞ.",
           "実験はやってるの？":
-            "同学科の他の研究室と比べ, いろんな実験を行っています.",
-          "これまでの卒業研究は？": "いろいろあるよ",
-          "外部との共同研究は？": "いろいろしているよ."
+            "同学科の他の研究室と比べ, 多くの実験を行っています.\n学校内での実験や学外に出ての実験など色々あります."
         },
         lab: {
           "学会への発表はありますか？":
             "精力的に行っています.\n機会があればB4でも発表します.",
-          "アルバイトをしている人はいますか？": "@います.",
+          "アルバイトをしている人はいますか？":
+            "もちろんいます. バイトをしながらでも問題なく研究活動できます.",
           "プログラミングはしますか？":
             "シミュレーションを行う際にMATLABを利用します.\n他にも状況に応じてプログラムを書きます.",
           "シミュレーションって何するの？":
@@ -208,14 +209,14 @@ export default {
           "どのようなソフトを利用しているの？":
             "MATLABを始め, レイトレース用のEEM-RTMを主に使っています.\n他にも必要に応じて色々なソフトを利用しています.",
           "研究室の設備は？":
-            "実験用の設備は十分に揃っているので, \n様々な実験行えます."
+            "実験用の設備は十分に揃っているので, ストレスなく研究に専念できます.\nまた, 実験器具も十分にあるため, 様々な実験行えます."
         },
         course: {
           "主な就職先は？": "@どこ？",
           "修士への進学の割合は？":
             "学科自体の進学率が高いのもありますが, \n弊研究室の学生の多くが修士に進学しています.",
           "他大学への院進学ってあり？": "@あり？",
-          就職活動と両立できますか: "@できる？",
+          "就職活動と両立できますか？": "@できる？",
           "ドクター(博士後期課程)に行きたい": "@どうぞ？"
         },
         assign: {
@@ -310,12 +311,6 @@ hr {
         $study-bg-color
       );
       border: 0.05rem solid $study-bg-color;
-
-      &.activated-button {
-        &::before {
-          transform: rotateZ(90deg);
-        }
-      }
     }
   }
 
@@ -401,6 +396,12 @@ hr {
     &::before {
       @include after-template("../assets/faq/right_arrow.svg");
     }
+
+    &.activated-button {
+      &::before {
+        transform: rotateZ(90deg);
+      }
+    }
   }
 
   .link-contents {
@@ -424,18 +425,11 @@ hr {
   border-left: 0.3rem solid $color;
 }
 
-@mixin text-bg($color) {
-  background: radial-gradient($color, #ffffff 70%);
-}
-
 .ans {
   &#ans-study {
     .content {
       .qst {
         @include left-border($study-color);
-      }
-      .text {
-        @include text-bg($study-bg-color);
       }
     }
   }
@@ -444,18 +438,12 @@ hr {
       .qst {
         @include left-border($lab-color);
       }
-      .text {
-        @include text-bg($lab-bg-color);
-      }
     }
   }
   &#ans-course {
     .content {
       .qst {
         @include left-border($course-color);
-      }
-      .text {
-        @include text-bg($course-bg-color);
       }
     }
   }
@@ -464,39 +452,40 @@ hr {
       .qst {
         @include left-border($assign-color);
       }
-      .text {
-        @include text-bg($assign-bg-color);
-      }
     }
   }
   margin: 3vh 10vw;
   .content {
     position: relative;
-    margin: 2vh auto;
-    padding: 18vh 0 0;
-    height: 20rem;
+    margin: 1vh auto 5vh;
+    padding: 10vh 3% 0;
     width: 85vw;
 
     .qst {
+      background-color: #ffffff;
+      display: inline-block;
       box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
       padding-left: 3vw;
       position: absolute;
       left: 0vw;
-      top: 8vh;
+      top: 6.8vh;
       font-size: 2.1rem;
+      text-align: left;
     }
     .text {
       display: flex;
       align-items: center;
-      color: rgb(60, 60, 60);
-      border-radius: 50%;
-      padding: 3rem 0;
+      color: rgb(30, 30, 30);
+      border-radius: 2rem;
+      border: 0.18rem solid rgba(30, 30, 30, 0.3);
+
+      padding: 1.8rem 1rem 1rem;
       margin: 0 auto;
       white-space: pre-line;
       word-wrap: break-word;
       p {
         display: table-cell;
-        font-size: 1.6rem;
+        font-size: 1.7rem;
         margin: 0 auto;
       }
     }
