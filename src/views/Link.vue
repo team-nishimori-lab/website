@@ -192,8 +192,8 @@ $lab-group-a-color: rgba(0, 0, 255, 0.3);
     width: 100%;
 
     display: grid;
-    grid-template-columns: 60% 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: 150px 1fr;
 
     .pos-msg {
       margin: 0 2vw 0 0;
