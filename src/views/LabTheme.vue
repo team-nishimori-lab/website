@@ -85,42 +85,67 @@
     <div class="divider" id="d-for-1"></div>
 
     <div class="theme-group" :style="{ opacity: opacityList[0] }" id="g0">
-      <div class="theme-name">テーマの名前をここに書く</div>
+      <div class="theme-name">マルチビーム Massive MIMO</div>
       <img
         src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
-        alt="ほげ"
+        alt="マルチビーム Massive MIMO"
       />
     </div>
 
     <div class="divider" id="d-for-1"></div>
 
     <div class="theme-group" :style="{ opacity: opacityList[1] }" id="g1">
-      <div class="theme-name">テーマの名前をここに書く</div>
+      <div class="theme-name">ドローンによる伝搬環境制御</div>
       <img
-        src="../assets/lab/theme/研究テーマ紹介テンプレート.png"
-        alt="ほげ"
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="ドローンによる伝搬環境制御"
       />
     </div>
 
     <div class="divider" id="d-for-2"></div>
 
     <div class="theme-group" :style="{ opacity: opacityList[2] }" id="g2">
-      <div class="theme-name">テーマの名前をここに書く</div>
-      <img src="../assets/lab/theme/2019_BP.png" alt="ほげ" />
+      <div class="theme-name">IoT干渉を考慮した伝搬モデルの構築</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="IoT干渉を考慮した伝搬モデルの構築"
+      />
     </div>
 
     <div class="divider" id="d-for-3"></div>
 
     <div class="theme-group" :style="{ opacity: opacityList[3] }" id="g3">
-      <div class="theme-name">テーマの名前をここに書く</div>
-      <img src="../assets/lab/theme/2019_BP.png" alt="ほげ" />
+      <div class="theme-name">圧縮センシングを用いた到来方向推定</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="圧縮センシングを用いた到来方向推定"
+      />
     </div>
 
     <div class="divider" id="d-for-4"></div>
 
     <div class="theme-group" :style="{ opacity: opacityList[4] }" id="g4">
-      <div class="theme-name">テーマの名前をここに書く</div>
-      <img src="../assets/lab/theme/2019_BP.png" alt="ほげ" />
+      <div class="theme-name">ドローンによる波源推定</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="ドローンによる波源推定"
+      />
+    </div>
+
+    <div class="theme-group" :style="{ opacity: opacityList[5] }" id="g5">
+      <div class="theme-name">機械学習によるMIMOセンサ</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="機械学習によるMIMOセンサ"
+      />
+    </div>
+
+    <div class="theme-group" :style="{ opacity: opacityList[6] }" id="g6">
+      <div class="theme-name">Massive MIMO の簡易性能評価</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="Massive MIMO の簡易性能評価"
+      />
     </div>
   </div>
 </template>
