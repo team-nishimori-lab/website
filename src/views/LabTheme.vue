@@ -97,7 +97,7 @@
     <div class="theme-group" :style="{ opacity: opacityList[1] }" id="g1">
       <div class="theme-name">テーマの名前をここに書く</div>
       <img
-        src="../assets/lab/theme/フォントとページサイズ確認_A4.png"
+        src="../assets/lab/theme/研究テーマ紹介テンプレート.png"
         alt="ほげ"
       />
     </div>
@@ -309,6 +309,13 @@ $c4: rgba(0, 0, 0, 0.8);
         font-size: 1.6rem;
         margin: 0 0;
 
+        // @media only screen and (max-width: 500px) {
+        //   font-size: 1.6rem;
+        // }
+        // @media only screen and (min-width: 500px) {
+        //   font-size: 1.6rem;
+        // }
+
         transition: 0.4s;
 
         &.icon {
@@ -335,8 +342,16 @@ $c4: rgba(0, 0, 0, 0.8);
 .theme-group {
   width: 100%;
   padding: 10vh 10vw;
+  margin: 0 auto;
   position: relative;
   transition: 1.2s;
+
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 1100px) {
+    width: 1100px;
+  }
 
   .theme-name {
     line-height: 3.3rem;
@@ -355,10 +370,5 @@ $c4: rgba(0, 0, 0, 0.8);
     width: 100%;
     display: inline-block;
   }
-}
-
-.scroll-Y {
-  position: fixed;
-  color: #ff0000;
 }
 </style>

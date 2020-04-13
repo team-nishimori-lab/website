@@ -255,11 +255,13 @@ export default {
 </style>
 
 <style lang="stylus">
-html {
-  font-size: 11px;
+@media only screen and (max-width: 651px) {
+  html {
+    font-size: 10px;
+  }
 }
 
-@media only screen and (min-width: 651px) {
+@media only screen and (min-width: 651px) and (max-width: 961px) {
   html {
     font-size: 16px;
   }
