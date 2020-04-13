@@ -145,18 +145,15 @@ $color2: #3197ee;
       opacity: 0;
       + .radio-label {
         transition: 0.4s;
-        border: 1.5px solid rgba(40, 40, 40, 0.5);
-        border-radius: 2rem;
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.3) 75%,
-          rgba(30, 140, 245, 0.3)
-        );
-        background-color: rgba(40, 40, 200, 0);
+        border: 1px dashed rgba(40, 40, 40, 0.5);
+        border-radius: 0.5rem;
+        background-color: rgb(235, 235, 235);
+        color: rgb(50, 50, 50);
 
         width: 100%;
         font-size: 1.8rem;
         line-height: 7vh;
+
         &:before {
           content: "";
           background: $color1;
@@ -165,7 +162,7 @@ $color2: #3197ee;
           display: inline-block;
           width: 4vh;
           height: 4vh;
-          margin: 1.5vh 1rem 1.5vh;
+          margin: 1.5vh 0.5rem 1.5vh 1rem;
           vertical-align: top;
           cursor: pointer;
           transition: all 500ms ease;
@@ -173,14 +170,19 @@ $color2: #3197ee;
       }
       &:checked {
         + .radio-label {
-          border: 2.5px solid rgba(40, 40, 40, 0.5);
-          border-radius: 0.5rem;
+          border: 1px solid rgba(40, 40, 40, 0.8);
+          border-radius: 2rem;
           background: linear-gradient(
             90deg,
             rgba(255, 255, 255, 0.3) 60%,
             rgba(30, 140, 245, 0.5)
           );
-          background-color: rgba(10, 140, 255, 0.1);
+
+          font-size: 1.9rem;
+          color: rgb(0, 0, 0);
+          margin-left: 1rem;
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+
           &:before {
             background-color: $color2;
             box-shadow: inset 0 0 0 4px $color1;
