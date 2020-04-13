@@ -76,7 +76,7 @@
         </router-link>
         <router-link to="/link" id="link">
           <p>
-            リンク
+            リンク/アクセス
           </p>
         </router-link>
       </div>
