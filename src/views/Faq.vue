@@ -290,7 +290,13 @@ hr {
 .faq-link {
   margin: 0 auto 3vh;
   transition: 0.6s;
-  width: 70vw;
+
+  @media only screen and (max-width: 700px) {
+    width: 95vw;
+  }
+  @media only screen and (min-width: 700px) {
+    width: 70vw;
+  }
 
   &#link-study {
     .link-contents {
