@@ -4,76 +4,56 @@
 
     <div class="header-space"></div>
     <transition appear name="hl">
-      <div id="theme-links">
-        <div id="link-title">テーマ一覧</div>
-
-        <!-- --- --- --- --- --- --- --- -->
-        <div class="link" id="link-top">
-          <a href="#g0" v-smooth-scroll="{ duration: 500 }">
-            <div>
-              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
-              <p>マルチビーム Massive MIMO</p>
-            </div>
+      <div id="theme-link">
+        <div id="link-grid">
+          <a
+            class="grid-item"
+            id="item1"
+            href="#g0"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>マルチビーム Massive MIMO</p>
           </a>
-        </div>
-
-        <!-- --- --- --- --- --- --- --- -->
-        <div class="link">
-          <a href="#g1" v-smooth-scroll="{ duration: 500 }">
-            <div>
-              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
-              <p>ドローンによる伝搬環境制御</p>
-            </div>
+          <a
+            class="grid-item"
+            id="item2"
+            href="#g1"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>
+              マイクロ波無線電力伝送のための<br />
+              ビームフォーミング
+            </p>
           </a>
-        </div>
 
-        <!-- --- --- --- --- --- --- --- -->
-        <div class="link">
-          <a href="#g2" v-smooth-scroll="{ duration: 500 }">
-            <div>
-              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
-              <p>IoT干渉を考慮した伝搬モデルの構築</p>
-            </div>
+          <a
+            class="grid-item"
+            id="item3"
+            href="#g2"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>伝搬環境制御</p>
           </a>
-        </div>
 
-        <!-- --- --- --- --- --- --- --- -->
-        <div class="link">
-          <a href="#g3" v-smooth-scroll="{ duration: 500 }">
-            <div>
-              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
-              <p>圧縮センシングを用いた到来方向推定</p>
-            </div>
+          <a
+            class="grid-item"
+            id="item4"
+            href="#g3"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>屋内環境における電波伝搬特性</p>
           </a>
-        </div>
 
-        <!-- --- --- --- --- --- --- --- -->
-        <div class="link">
-          <a href="#g4" v-smooth-scroll="{ duration: 500 }">
-            <div>
-              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
-              <p>ドローンによる波源推定</p>
-            </div>
-          </a>
-        </div>
-
-        <!-- --- --- --- --- --- --- --- -->
-        <div class="link">
-          <a href="#g5" v-smooth-scroll="{ duration: 500 }">
-            <div>
-              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
-              <p>機械学習によるMIMOセンサ</p>
-            </div>
-          </a>
-        </div>
-
-        <!-- --- --- --- --- --- --- --- -->
-        <div class="link">
-          <a href="#g6" v-smooth-scroll="{ duration: 500 }">
-            <div>
-              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
-              <p>Massive MIMO の簡易性能評価</p>
-            </div>
+          <a
+            class="grid-item"
+            id="item5"
+            href="#g4"
+            v-smooth-scroll="{ duration: 500 }"
+          >
+            <p>
+              MIMOセンサを用いた<br />
+              機械学習による人の行動推定
+            </p>
           </a>
         </div>
       </div>
@@ -86,20 +66,14 @@
 
     <div class="theme-group" :style="{ opacity: opacityList[0] }" id="g0">
       <div class="theme-name">テーマの名前をここに書く</div>
-      <img
-        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
-        alt="ほげ"
-      />
+      <img src="../assets/lab/theme/2019_BP.png" alt="ほげ" />
     </div>
 
     <div class="divider" id="d-for-1"></div>
 
     <div class="theme-group" :style="{ opacity: opacityList[1] }" id="g1">
       <div class="theme-name">テーマの名前をここに書く</div>
-      <img
-        src="../assets/lab/theme/フォントとページサイズ確認_A4.png"
-        alt="ほげ"
-      />
+      <img src="../assets/lab/theme/2019_BP.png" alt="ほげ" />
     </div>
 
     <div class="divider" id="d-for-2"></div>
@@ -207,6 +181,25 @@ $c4: rgba(0, 0, 0, 0.8);
   margin: 0 auto;
 
   border-top: 0.7rem dashed rgba(30, 30, 30, 0.2);
+  // &#d-for-0 {
+  //   background: linear-gradient(#2060dd, $c0);
+  // }
+
+  // &#d-for-1 {
+  //   background: linear-gradient($c0, $c1);
+  // }
+
+  // &#d-for-2 {
+  //   background: linear-gradient($c1, $c2);
+  // }
+
+  // &#d-for-3 {
+  //   background: linear-gradient($c2, $c3);
+  // }
+
+  // &#d-for-4 {
+  //   background: linear-gradient($c3, $c4);
+  // }
 }
 
 #bg {
@@ -271,62 +264,91 @@ $c4: rgba(0, 0, 0, 0.8);
   height: 10vh;
 }
 
-#theme-links {
+#theme-link {
   display: block;
-  margin: 0 3% 20vh;
-  padding: 0rem 0 5vh;
+  height: 80vh;
+  margin-bottom: 20vh;
+  padding: 0 5%;
 
-  background-color: rgba(50, 50, 50, 0.6);
+  #link-grid {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
 
-  border-radius: 1rem;
+    .grid-item {
+      // border: 2px solid #cc0000;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(0, 0, 0, 0.5)
+      );
+      color: #4a4a4a;
+      margin: 0px 5%;
+      box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+      transition: 0.3s;
 
-  #link-title {
-    color: rgb(240, 240, 240);
-    font-size: 2.5rem;
-    font-weight: 600;
-    line-height: 5rem;
-  }
-
-  .link {
-    border-bottom: 0.1rem dashed rgb(230, 230, 230);
-
-    &#link-top {
-      border-top: 0.1rem dashed rgb(230, 230, 230);
-    }
-
-    div {
-      text-align: left;
-      padding: 0 1rem 0 0;
-
-      transition: 0.4s;
-
-      line-height: 8vh;
-
+      writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+      -webkit-text-orientation: upright;
+      text-orientation: upright;
       p {
-        color: rgb(240, 240, 240);
-        vertical-align: middle;
+        font-size: 2rem;
+        height: 90%;
+        margin: 0 auto;
+      }
+
+      &::after {
+        content: "";
         display: inline-block;
-        font-size: 1.6rem;
-        margin: 0 0;
-
-        transition: 0.4s;
-
-        &.icon {
-          vertical-align: middle;
-          font-size: 2.6rem;
-          margin: 0 1rem;
-        }
+        width: 90%;
+        height: 7%;
+        background-size: 100% 100%;
+        vertical-align: middle;
+        background-image: url("../assets/lab/theme/black-arrow-down.svg");
+        transition-duration: 0.5s;
       }
 
       &:hover {
-        background-color: rgba(20, 20, 20, 0.9);
+        background: linear-gradient(rgba(80, 80, 80, 0.8), rgba(0, 0, 0, 0.9));
+        color: #efefef;
+        box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8);
 
         p {
-          color: rgb(255, 255, 255);
-          &.icon {
-            margin-right: 2.5rem;
-          }
+          font-weight: 800;
         }
+
+        &::after {
+          background-image: url("../assets/lab/theme/white-arrow-down.svg");
+        }
+      }
+
+      &#item1 {
+        grid-row: 1;
+        grid-column: 1;
+      }
+
+      &#item2 {
+        grid-row: 1;
+        grid-column: 2;
+      }
+
+      &#item3 {
+        grid-row: 1;
+        grid-column: 3;
+      }
+
+      &#item4 {
+        grid-row: 1;
+        grid-column: 4;
+      }
+
+      &#item5 {
+        grid-row: 1;
+        grid-column: 5;
       }
     }
   }
@@ -354,6 +376,7 @@ $c4: rgba(0, 0, 0, 0.8);
   img {
     width: 100%;
     display: inline-block;
+    background: url("../assets/lab/theme/2019_BP.png");
   }
 }
 

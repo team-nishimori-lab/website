@@ -12,7 +12,7 @@
       <!--  -->
       <div class="content">
         <p class="site-name">新潟大学</p>
-        <a href="https://www.niigata-u.ac.jp/" class="site-url">
+        <a href="https://www.niigata-u.ac.jp/" target="_blank" class="site-url">
           https://www.niigata-u.ac.jp/
         </a>
       </div>
@@ -20,7 +20,11 @@
       <!--  -->
       <div class="content">
         <p class="site-name">新潟大学 工学部</p>
-        <a href="https://www.eng.niigata-u.ac.jp/" class="site-url">
+        <a
+          href="https://www.eng.niigata-u.ac.jp/"
+          target="_blank"
+          class="site-url"
+        >
           https://www.eng.niigata-u.ac.jp/
         </a>
       </div>
@@ -31,7 +35,11 @@
           新潟大学 工学部 <br />
           情報工学科
         </p>
-        <a href="https://www.ie.niigata-u.ac.jp/" class="site-url">
+        <a
+          href="https://www.ie.niigata-u.ac.jp/"
+          target="_blank"
+          class="site-url"
+        >
           https://www.ie.niigata-u.ac.jp/
         </a>
       </div>
@@ -44,7 +52,11 @@
       <!--  -->
       <div class="content">
         <p class="site-name">先生のリサーチマップ</p>
-        <a href="https://researchmap.jp/knishimori/" class="site-url">
+        <a
+          href="https://researchmap.jp/knishimori/"
+          target="_blank"
+          class="site-url"
+        >
           https://researchmap.jp/knishimori/
         </a>
       </div>
@@ -52,7 +64,11 @@
       <!--  -->
       <div class="content">
         <p class="site-name">ホームページ</p>
-        <a href="https://nu-nishimori-lab.netlify.com/" class="site-url">
+        <a
+          href="https://nu-nishimori-lab.netlify.com/"
+          target="_blank"
+          class="site-url"
+        >
           https://nu-nishimori-lab.netlify.com/
         </a>
       </div>
