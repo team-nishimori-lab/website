@@ -380,7 +380,7 @@ $c4: rgba(0, 0, 0, 0.8);
 
   .theme-name {
     line-height: 3.3rem;
-    font-size: 2rem;
+    font-size: 1.7rem;
     position: absolute;
     top: 5vh;
     left: 5vw;
