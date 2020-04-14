@@ -203,6 +203,15 @@ $lab-group-a-color: rgba(0, 0, 255, 0.3);
 .lab-access {
   padding: 2%;
   .pos {
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+    }
+    @media only screen and (min-width: 800px) {
+      width: 500px;
+    }
+
+    margin: 0 auto;
+
     background-color: rgba(30, 30, 30, 0.9);
     padding: 2%;
     width: 100%;
