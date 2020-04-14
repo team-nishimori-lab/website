@@ -1,9 +1,8 @@
 /* eslint-disable */
 
 import Vue from "vue";
-import BootstrapVue from "bootstrap-vue";
+
 import VueRouter from "vue-router";
-import VueSmoothScroll from "vue2-smooth-scroll";
 import Home from "../views/Home.vue";
 import LabTheme from "../views/LabTheme.vue";
 import LabHistory from "../views/LabHistory.vue";
@@ -18,73 +17,68 @@ import Error from "../views/Error.vue";
 import Test from "../views/Test.vue";
 
 Vue.use(VueRouter);
-Vue.use(BootstrapVue);
-Vue.use(VueSmoothScroll);
-
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   {
     path: "/lab/theme",
     name: "LabTheme",
-    component: LabTheme,
+    component: LabTheme
   },
   {
     path: "/lab/history",
     name: "LabHistory",
-    component: LabHistory,
+    component: LabHistory
   },
   {
     path: "/lab/contents",
     name: "LabContents",
-    component: LabContents,
+    component: LabContents
   },
   {
     path: "/lab/activity",
     name: "LabActivity",
-    component: LabActivity,
+    component: LabActivity
   },
   {
     path: "/class",
     name: "Class",
-    component: Class,
+    component: Class
   },
   {
     path: "/class/:gistId",
     name: "ClassPage",
-    component: ClassPage,
+    component: ClassPage
   },
   {
     path: "/faq",
     name: "FAQ",
-    component: Faq,
+    component: Faq
   },
   {
     path: "/link",
     name: "Link",
-    component: Link,
+    component: Link
   },
   {
     path: "/timer",
     name: "Timer",
-    component: Timer,
+    component: Timer
   },
   {
     path: "/error",
     name: "Error",
-    component: Error,
+    component: Error
   },
   {
     path: "/test",
     name: "Test",
-    component: Test,
-  },
+    component: Test
+  }
 ];
 
 const router = new VueRouter({
@@ -97,7 +91,7 @@ const router = new VueRouter({
       return { x: 0, y: 0 };
     }
   },
-  routes,
+  routes
 });
 
 export default router;
