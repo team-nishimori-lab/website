@@ -25,7 +25,12 @@
               <b-nav-item to="/class">授業について</b-nav-item>
               <b-nav-item to="/faq">よくある質問</b-nav-item>
               <b-nav-item to="/link">リンク/アクセス</b-nav-item>
-              <b-nav-item to="/timer">Timer</b-nav-item>
+              <b-nav-item-dropdown text="その他" right>
+                <b-dropdown-item to="/timer">タイマー</b-dropdown-item>
+                <b-dropdown-item disabled to="/simcir"
+                  >論理回路シミュレータ</b-dropdown-item
+                >
+              </b-nav-item-dropdown>
             </b-navbar-nav>
 
             <!-- 右側の要素 -->

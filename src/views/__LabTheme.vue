@@ -7,40 +7,150 @@
       <div id="theme-links">
         <div id="link-title">テーマ一覧</div>
 
-        <div class="link" v-for="(theme, index) in themeList" :key="theme.name">
-          <a :href="`#g${index}`" v-smooth-scroll="{ duration: 500 }">
+        <!-- --- --- --- --- --- --- --- -->
+        <div class="link" id="link-top">
+          <a href="#g0" v-smooth-scroll="{ duration: 500 }">
             <div>
               <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
-              <p>{{ theme.name }}</p>
+              <p>マルチビーム Massive MIMO</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- --- --- --- --- --- --- --- -->
+        <div class="link">
+          <a href="#g1" v-smooth-scroll="{ duration: 500 }">
+            <div>
+              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
+              <p>ドローンによる伝搬環境制御</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- --- --- --- --- --- --- --- -->
+        <div class="link">
+          <a href="#g2" v-smooth-scroll="{ duration: 500 }">
+            <div>
+              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
+              <p>IoT干渉を考慮した伝搬モデルの構築</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- --- --- --- --- --- --- --- -->
+        <div class="link">
+          <a href="#g3" v-smooth-scroll="{ duration: 500 }">
+            <div>
+              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
+              <p>圧縮センシングを用いた到来方向推定</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- --- --- --- --- --- --- --- -->
+        <div class="link">
+          <a href="#g4" v-smooth-scroll="{ duration: 500 }">
+            <div>
+              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
+              <p>ドローンによる波源推定</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- --- --- --- --- --- --- --- -->
+        <div class="link">
+          <a href="#g5" v-smooth-scroll="{ duration: 500 }">
+            <div>
+              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
+              <p>機械学習によるMIMOセンサ</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- --- --- --- --- --- --- --- -->
+        <div class="link">
+          <a href="#g6" v-smooth-scroll="{ duration: 500 }">
+            <div>
+              <p class="icon"><i class="far fa-arrow-alt-circle-right"></i></p>
+              <p>Massive MIMO の簡易性能評価</p>
             </div>
           </a>
         </div>
       </div>
     </transition>
 
+    <!-- <p class="scroll-Y">
+      {{ scrollY }}<br />{{ height }}<br />{{ scrollY + height }}
+    </p> -->
     <div class="divider" id="d-for-1"></div>
 
-    <div
-      class="container"
-      v-for="(theme, index) in themeList"
-      :key="theme.name"
-    >
-      <div class="link-dest" :id="`g${index}`"></div>
-      <div class="theme-name">{{ theme.name }}</div>
-      <div class="theme-summary">{{ theme.summary }}</div>
-      <div class="theme-QA">
-        <div class="QA-content" v-for="d in theme.QA" :key="d.Q">
-          <div class="qst">{{ d.Q }}</div>
-          <div class="ans">{{ d.A }}</div>
-        </div>
-      </div>
+    <div class="theme-group" :style="{ opacity: opacityList[0] }" id="g0">
+      <div class="theme-name">マルチビーム Massive MIMO</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="マルチビーム Massive MIMO"
+      />
+    </div>
+
+    <div class="divider" id="d-for-1"></div>
+
+    <div class="theme-group" :style="{ opacity: opacityList[1] }" id="g1">
+      <div class="theme-name">ドローンによる伝搬環境制御</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="ドローンによる伝搬環境制御"
+      />
+    </div>
+
+    <div class="divider" id="d-for-2"></div>
+
+    <div class="theme-group" :style="{ opacity: opacityList[2] }" id="g2">
+      <div class="theme-name">IoT干渉を考慮した伝搬モデルの構築</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="IoT干渉を考慮した伝搬モデルの構築"
+      />
+    </div>
+
+    <div class="divider" id="d-for-3"></div>
+
+    <div class="theme-group" :style="{ opacity: opacityList[3] }" id="g3">
+      <div class="theme-name">圧縮センシングを用いた到来方向推定</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="圧縮センシングを用いた到来方向推定"
+      />
+    </div>
+
+    <div class="divider" id="d-for-4"></div>
+
+    <div class="theme-group" :style="{ opacity: opacityList[4] }" id="g4">
+      <div class="theme-name">ドローンによる波源推定</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="ドローンによる波源推定"
+      />
+    </div>
+
+    <div class="theme-group" :style="{ opacity: opacityList[5] }" id="g5">
+      <div class="theme-name">機械学習によるMIMOセンサ</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="機械学習によるMIMOセンサ"
+      />
+    </div>
+
+    <div class="theme-group" :style="{ opacity: opacityList[6] }" id="g6">
+      <div class="theme-name">Massive MIMO の簡易性能評価</div>
+      <img
+        src="../assets/lab/theme/フォントとページサイズ確認_A3.png"
+        alt="Massive MIMO の簡易性能評価"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import jsonData from "../assets/lab/theme/json/data.json";
-
 export default {
   name: "Lab_Contents",
   data() {
@@ -56,8 +166,7 @@ export default {
         "bg-2": false,
         "bg-3": false,
         "bg-4": false
-      },
-      themeList: jsonData["data"]
+      }
     };
   },
   mounted() {
@@ -117,12 +226,12 @@ $c4: #60d796;
 $c4: rgba(0, 0, 0, 0.8);
 
 .divider {
-  height: 10vh;
+  height: 5vh;
   width: 90vw;
 
   margin: 0 auto;
 
-  // border-top: 0.7rem dashed rgba(30, 30, 30, 0.2);
+  border-top: 0.7rem dashed rgba(30, 30, 30, 0.2);
 }
 
 #bg {
@@ -201,11 +310,14 @@ $c4: rgba(0, 0, 0, 0.8);
     font-size: 2.5rem;
     font-weight: 600;
     line-height: 5rem;
-    border-bottom: 0.1rem dashed rgb(230, 230, 230);
   }
 
   .link {
     border-bottom: 0.1rem dashed rgb(230, 230, 230);
+
+    &#link-top {
+      border-top: 0.1rem dashed rgb(230, 230, 230);
+    }
 
     div {
       text-align: left;
@@ -252,105 +364,36 @@ $c4: rgba(0, 0, 0, 0.8);
   }
 }
 
-.container {
-  text-align: left;
+.theme-group {
+  width: 100%;
+  padding: 10vh 10vw;
+  margin: 0 auto;
+  position: relative;
+  transition: 1.2s;
 
-  background-color: rgba(250, 250, 250, 0.75);
-
-  @media only screen and (max-width: 751px) {
-    width: 95%;
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
   }
-
-  @media only screen and (min-width: 751px) {
-    width: 700px;
-  }
-
-  display: block;
-  border: solid 2px #a0a0a0;
-  border-radius: 1rem;
-  box-shadow: 0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.7);
-  margin: 0 auto 20vh;
-  padding: 1rem 2%;
-
-  $note-line-height: 2rem;
-
-  $name-color: #000000;
-  $summary-color: #202020;
-  $qst-color: #202020;
-  $ans-color: #333333;
-
-  .link-dest {
-    // border-top: 3px solid #ff0000;
-    // width: 100px;
-    position: relative;
-    top: -10vh;
-    left: 0;
+  @media only screen and (min-width: 1100px) {
+    width: 1100px;
   }
 
   .theme-name {
+    line-height: 3.3rem;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    background-color: #ffffff;
+    border-left: 0.6rem solid rgba(20, 20, 20, 0.8);
+    border-bottom: 0.2rem solid rgba(20, 20, 20, 0.8);
+    box-shadow: 0.3rem 0.3rem 0.1rem rgba(0, 0, 0, 0.3);
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+  img {
+    width: 100%;
     display: inline-block;
-    border-left: 0.35rem solid rgba(30, 120, 230, 0.8);
-    padding: 1rem;
-    margin: 0 0 2rem;
-
-    color: $name-color;
-    font-size: 1.8rem;
-    text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
-
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  .theme-summary {
-    margin: 0 0 2rem;
-    padding: 1rem;
-    background-color: rgb(220, 220, 220);
-    border-radius: 1rem;
-
-    font-size: 1.4rem;
-    color: $summary-color;
-
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  .theme-QA {
-    .QA-content {
-      background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0) 97%,
-        rgb(160, 160, 160) 97%,
-        rgb(160, 160, 160) 100%
-      );
-      background-size: 100% $note-line-height;
-      line-height: $note-line-height;
-      padding: 0 0 1rem;
-      .qst {
-        font-size: 1.4rem;
-        color: $qst-color;
-
-        &::before {
-          content: "";
-          display: inline-block;
-          width: $note-line-height;
-          height: $note-line-height;
-          margin: 0 0.5rem 0 0;
-          vertical-align: top;
-          background-image: url("../assets/lab/theme/qst-header.svg");
-          background-size: 100% 100%;
-          transform: scale(-1, 1);
-        }
-      }
-      .ans {
-        font-size: 1.1rem;
-        color: $ans-color;
-
-        white-space: pre-wrap;
-        word-wrap: break-word;
-      }
-      margin: $note-line-height 0 0;
-    }
   }
 }
 </style>

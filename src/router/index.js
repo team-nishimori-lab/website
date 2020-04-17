@@ -13,6 +13,7 @@ import ClassPage from "../views/ClassName.vue";
 import Faq from "../views/Faq.vue";
 import Link from "../views/Link.vue";
 import Timer from "../views/Timer.vue";
+import Simsir from "../views/Simcir.vue";
 import Error from "../views/Error.vue";
 import Test from "../views/Test.vue";
 
@@ -68,6 +69,11 @@ const routes = [
     path: "/timer",
     name: "Timer",
     component: Timer
+  },
+  {
+    path: "/simcir",
+    name: "Simcir",
+    component: Simsir
   },
   {
     path: "/error",
