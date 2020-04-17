@@ -1,7 +1,7 @@
 <template>
-  <div class="lab-history">
+  <div class="simcir-div">
     <div class="header-space"></div>
-    ぷ
+    み
     <div class="simcir">
       <!-- paste here your circuit data -->
     </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "Lab_History",
+  name: "Simcir",
   data() {
     return {};
   },
