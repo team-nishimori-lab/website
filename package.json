@@ -2,9 +2,6 @@
   "name": "nishimori-lab_hp",
   "version": "0.1.1",
   "private": true,
-  "rules": {
-    "no-console": 0
-  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
