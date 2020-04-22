@@ -51,7 +51,7 @@ export default {
   name: "Lab_Contents",
   data() {
     return {
-      themeList: {}
+      themeList: {},
     };
   },
   created() {
@@ -60,23 +60,21 @@ export default {
 
     try {
       this.$jsonp(requestURL, {
-        callbackName: "getJsonData"
+        callbackName: "getJsonData",
       })
-        .then(json => {
+        .then((json) => {
           this.themeList = json["data"];
         })
-        .catch(err => {
-          console.log(err);
+        .catch((err) => {
           this.themeList = jsonData["data"];
         });
     } catch (e) {
-      console.log(e);
       this.themeList = jsonData["data"];
     }
   },
   mounted() {},
   beforeDestroy() {},
-  methods: {}
+  methods: {},
 };
 </script>
 
