@@ -2,9 +2,21 @@
   <div class="lab-theme">
     <div id="bg" class="normal"></div>
 
+    <div v-if="loadingTime || loadingApi" class="loader">
+      <vue-loading
+        type="spiningDubbles"
+        color="rgba(10, 10, 10, 0.5)"
+        :size="{ width: '10rem' }"
+      >
+      </vue-loading>
+      <div class="load-str">
+        授業データの取得中..
+      </div>
+    </div>
+
     <div class="header-space"></div>
-    <transition appear name="hl">
-      <div id="theme-links">
+    <transition name="hl">
+      <div id="theme-links" v-if="!(loadingTime || loadingApi)">
         <div id="link-title">テーマ一覧</div>
 
         <div class="link" v-for="(theme, index) in themeList" :key="theme.name">
@@ -18,31 +30,35 @@
       </div>
     </transition>
 
-    <div class="divider"></div>
+    <transition name="part">
+      <div class="divider"></div>
+    </transition>
 
-    <div
-      class="container"
-      v-for="(theme, index) in themeList"
-      :key="theme.name"
-    >
-      <div class="link-dest" :id="`g${index}`"></div>
-      <div class="theme-name">{{ theme.name }}</div>
-      <div class="theme-summary">{{ theme.summary }}</div>
-      <div class="theme-QA">
-        <div class="QA-content" v-for="d in theme.QA" :key="d.Q">
-          <div class="qst">{{ d.Q }}</div>
+    <transition name="part">
+      <div id="theme-contents" v-if="!(loadingTime || loadingApi)">
+        <div
+          class="container"
+          v-for="(theme, index) in themeList"
+          :key="theme.name"
+        >
+          <div class="link-dest" :id="`g${index}`"></div>
+          <div class="theme-name">{{ theme.name }}</div>
+          <div class="theme-summary">{{ theme.summary }}</div>
+          <div class="theme-QA">
+            <div class="QA-content" v-for="d in theme.QA" :key="d.Q">
+              <div class="qst">{{ d.Q }}</div>
 
-          <div class="ans" v-html="d.A"></div>
+              <div class="ans" v-html="d.A"></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
 <script>
-import Vue from "vue";
-import VueJsonp from "vue-jsonp";
-Vue.use(VueJsonp, 3000); // 3000ms後タイムアウト
+import { VueLoading } from "vue-loading-template";
 
 import jsonData from "../assets/lab/theme/json/data.json";
 
@@ -50,47 +66,57 @@ export default {
   name: "Lab_Contents",
   data() {
     return {
-      themeList: {}
+      themeList: jsonData["data"],
+      loadingApi: true,
+      loadingTime: true
     };
   },
   created() {
-    const requestURL =
-      "http://nishimorilab.sakura.ne.jp/homepage-data/lab/theme/callback.js";
-
-    try {
-      this.$jsonp(requestURL, {
-        callbackName: "getJsonData"
-      })
-        .then(json => {
-          this.themeList = json["data"];
-        })
-        .catch(function() {
-          this.themeList = jsonData["data"];
-        });
-    } catch (e) {
-      this.themeList = jsonData["data"];
-    }
-
     setTimeout(() => {
       this.loadingTime = false;
     }, 500);
+
     const axios = require("axios");
     axios
-      .get(`https://api.github.com/gists/${this.$route.params["gistId"]}`)
+      .get(`https://api.github.com/gists/9a77be93a74c5f8d8f7ba52cb8c0699f`)
       .then(response => {
-        this.orgData = response["data"];
+        if (response["data"]["description"] != "#homepage_theme") {
+          return;
+        }
+
+        const dataList = [];
+        for (let fileName in response["data"]["files"]) {
+          dataList.push(
+            JSON.parse(response["data"]["files"][fileName]["content"])
+          );
+        }
+        this.themeList = dataList;
         this.loadingApi = false;
       });
   },
   mounted() {},
+  beforeUpdate() {},
   beforeDestroy() {},
-  methods: {}
+  methods: {},
+  components: {
+    VueLoading
+  }
 };
 </script>
 
 <style scoped lang="scss">
 .lab-theme {
   text-align: center;
+}
+
+.loader {
+  margin: 10vh auto 3rem;
+  text-align: center;
+
+  .load-str {
+    color: rgba(10, 10, 10, 0.5);
+    font-size: 2.2rem;
+  }
 }
 
 .divider {
