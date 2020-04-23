@@ -20,7 +20,9 @@
                 <b-dropdown-item to="/lab/contents">研究内容</b-dropdown-item>
                 <b-dropdown-item to="/lab/theme">主なテーマ</b-dropdown-item>
                 <b-dropdown-item to="/lab/activity">普段の活動</b-dropdown-item>
-                <b-dropdown-item to="/lab/history">研究実績</b-dropdown-item>
+                <b-dropdown-item disabled to="/lab/history"
+                  >研究実績</b-dropdown-item
+                >
               </b-nav-item-dropdown>
               <b-nav-item to="/class">授業について</b-nav-item>
               <b-nav-item to="/faq">よくある質問</b-nav-item>
