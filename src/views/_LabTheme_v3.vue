@@ -32,6 +32,7 @@
         <div class="QA-content" v-for="d in theme.QA" :key="d.Q">
           <div class="qst">{{ d.Q }}</div>
 
+          <!-- <div class="ans">{{ d.A }}</div> -->
           <div class="ans" v-html="d.A"></div>
         </div>
       </div>
@@ -70,17 +71,6 @@ export default {
     } catch (e) {
       this.themeList = jsonData["data"];
     }
-
-    setTimeout(() => {
-      this.loadingTime = false;
-    }, 500);
-    const axios = require("axios");
-    axios
-      .get(`https://api.github.com/gists/${this.$route.params["gistId"]}`)
-      .then(response => {
-        this.orgData = response["data"];
-        this.loadingApi = false;
-      });
   },
   mounted() {},
   beforeDestroy() {},
