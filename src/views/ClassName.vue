@@ -140,10 +140,8 @@ export default {
 
     h1 {
       font-size: 2.2rem;
-      padding-bottom: 0.2rem;
-      padding-top: 0;
-      padding-left: 0.2rem;
-      margin-top: 1rem;
+      padding: 1rem 0.2rem;
+      margin-top: 2.5rem;
       position: relative;
       border-left: 5px solid #999999;
 
@@ -210,6 +208,6 @@ export default {
 }
 
 .footer-space {
-  margin-top: 5vh;
+  margin-top: 8vh;
 }
 </style>
