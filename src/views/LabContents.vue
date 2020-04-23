@@ -48,11 +48,11 @@
                 研究室の普段の活動について
               </p>
             </router-link>
-            <router-link to="/lab/history" class="link" id="history">
+            <!-- <router-link to="/lab/history" class="link" id="history">
               <p>
                 研究実績について
               </p>
-            </router-link>
+            </router-link> -->
           </div>
         </transition>
       </div>
