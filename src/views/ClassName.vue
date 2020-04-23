@@ -69,18 +69,15 @@ export default {
       .get(`https://api.github.com/gists/${this.$route.params["gistId"]}`)
       .then(response => {
         this.orgData = response["data"];
+        try {
+          this.className = /#class_(.+)/.exec(this.orgData["description"])[1];
+        } catch (error) {
+          this.$router.push(`/error`);
+        }
+        this.url = this.orgData["html_url"];
+        this.content = marked(this.orgData["files"]["README.md"]["content"]);
         this.loadingApi = false;
       });
-  },
-  beforeUpdate() {
-    // this.className = /#class_(.+)/.exec(this.orgData["description"])[1];
-    try {
-      this.className = /#class_(.+)/.exec(this.orgData["description"])[1];
-    } catch (error) {
-      this.$router.push(`/error`);
-    }
-    this.url = this.orgData["html_url"];
-    this.content = marked(this.orgData["files"]["README.md"]["content"]);
   },
   components: {
     VueLoading
