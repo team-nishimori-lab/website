@@ -42,15 +42,16 @@
             </div>
           </div>
         </form>
-        <div style="padding: 0% 35%">
-          <b-button
+        <div id="decide-div">
+          <!-- <b-button
             id="decide"
             v-on:click="selected"
             block
             variant="outline-secondary"
           >
             決定
-          </b-button>
+          </b-button> -->
+          <button v-on:click="selected">決定する</button>
         </div>
       </div>
     </transition>
@@ -130,13 +131,30 @@ export default {
 
 <style scoped lang="scss">
 $color1: #f4f4f4;
-$color2: #3197ee;
+$color2: rgba(54, 140, 130, 0.9);
+// $color2: #3197ee;
 
 .class {
   text-align: center;
 }
 
 .container {
+  // @media only screen and (max-width: 550px) {
+  //   padding: 0 0 0 15%;
+  // }
+  // @media only screen and (min-width: 550px) and (max-width: 800px) {
+  //   padding: 0 0 0 30%;
+  // }
+  // @media only screen and (min-width: 800px) and (max-width: 3000px) {
+  //   padding: 0 0 0 35%;
+  // }
+  // @media only screen and (min-width: 3000px) {
+  //   padding: 0 0 0 45%;
+  // }
+  padding: 0 0 0 10vw;
+  text-align: left;
+  margin: 8vh 0 0;
+
   .radio {
     margin: 0.5rem 0;
     width: 80vw;
@@ -174,14 +192,15 @@ $color2: #3197ee;
           border-radius: 2rem;
           background: linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.3) 60%,
-            rgba(30, 140, 245, 0.5)
+            rgba(255, 255, 255, 0.3) 95%,
+            $color2
           );
 
           font-size: 1.9rem;
           color: rgb(0, 0, 0);
           margin-left: 1rem;
           text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+          width: 90%;
 
           &:before {
             background-color: $color2;
@@ -222,26 +241,31 @@ $color2: #3197ee;
   margin: 10vh 0 0;
 }
 
-#decide {
-  font-size: 1.5rem;
-}
+#decide-div {
+  margin: 3vh 0;
+  button {
+    padding: 0.5rem 2rem;
 
-.container {
-  // @media only screen and (max-width: 550px) {
-  //   padding: 0 0 0 15%;
-  // }
-  // @media only screen and (min-width: 550px) and (max-width: 800px) {
-  //   padding: 0 0 0 30%;
-  // }
-  // @media only screen and (min-width: 800px) and (max-width: 3000px) {
-  //   padding: 0 0 0 35%;
-  // }
-  // @media only screen and (min-width: 3000px) {
-  //   padding: 0 0 0 45%;
-  // }
-  padding: 0 0 0 10vw;
-  text-align: left;
-  margin: 0;
+    background-color: rgba(255, 255, 255, 1);
+    border: 0.15rem solid rgba(20, 110, 100, 0.15);
+    border-radius: 1rem;
+
+    box-shadow: 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.3);
+
+    font-size: 1.8rem;
+    color: rgba(0, 0, 0, 0.6);
+
+    transition: 500ms;
+
+    &:hover {
+      background-color: rgba(250, 250, 250, 0.5);
+      border: 0.15rem solid rgba(20, 110, 100, 0.65);
+
+      color: rgba(0, 0, 0, 0.95);
+
+      box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+    }
+  }
 }
 
 .footer-space {
