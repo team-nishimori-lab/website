@@ -43,12 +43,27 @@
         >
           <div class="link-dest" :id="`g${index}`"></div>
           <div class="theme-name">{{ theme.name }}</div>
-          <div class="theme-summary">{{ theme.summary }}</div>
+          <div class="theme-summary">
+            <div class="msg">{{ theme.summary.msg }}</div>
+            <div class="img-container" v-if="theme.summary.setImg">
+              <img
+                :src="theme.summary.img.url"
+                :alt="theme.summary.img.altMsg"
+                :style="{ width: theme.summary.img.width }"
+              />
+            </div>
+          </div>
           <div class="theme-QA">
             <div class="QA-content" v-for="d in theme.QA" :key="d.Q">
               <div class="qst">{{ d.Q }}</div>
-
               <div class="ans" v-html="d.A"></div>
+              <div class="img-container" v-if="d.setImg">
+                <img
+                  :src="d.img.url"
+                  :alt="d.img.altMsg"
+                  :style="{ width: d.img.width }"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -270,11 +285,19 @@ export default {
     background-color: rgb(220, 220, 220);
     border-radius: 1rem;
 
-    font-size: 1.4rem;
-    color: $summary-color;
+    .msg {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 1.4rem;
+      color: $summary-color;
+    }
 
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    .img-container {
+      text-align: center;
+      img {
+        margin: 1.5rem 0 0;
+      }
+    }
   }
 
   .theme-QA {
@@ -313,6 +336,13 @@ export default {
         word-wrap: break-word;
       }
       margin: $note-line-height 0 0;
+
+      .img-container {
+        text-align: center;
+        img {
+          margin: 1.5rem 0 0;
+        }
+      }
     }
   }
 }
