@@ -114,8 +114,12 @@
     <!-- answer, study -->
 
     <div class="ans" v-once id="ans-study">
-      <div class="content" v-for="(text, q) in faqList['study']" :key="q">
-        <div class="link-dest" :id="`${q}`"></div>
+      <div
+        class="content"
+        v-for="(text, q) in faqList['study']"
+        :id="q"
+        :key="q"
+      >
         <p class="qst">Q : {{ q }}</p>
         <div class="text">
           <p>{{ text }}</p>
@@ -127,8 +131,7 @@
     <!-- answer, lab -->
 
     <div class="ans" v-once id="ans-lab">
-      <div class="content" v-for="(text, q) in faqList['lab']" :key="q">
-        <div class="link-dest" :id="`${q}`"></div>
+      <div class="content" v-for="(text, q) in faqList['lab']" :id="q" :key="q">
         <p class="qst">Q : {{ q }}</p>
         <div class="text">
           <p>{{ text }}</p>
@@ -140,8 +143,12 @@
     <!-- answer, course -->
 
     <div class="ans" v-once id="ans-course">
-      <div class="content" v-for="(text, q) in faqList['course']" :key="q">
-        <div class="link-dest" :id="`${q}`"></div>
+      <div
+        class="content"
+        v-for="(text, q) in faqList['course']"
+        :id="q"
+        :key="q"
+      >
         <p class="qst">Q : {{ q }}</p>
         <div class="text">
           <p>{{ text }}</p>
@@ -153,8 +160,12 @@
     <!-- answer, assign -->
 
     <div class="ans" v-once id="ans-assign">
-      <div class="content" v-for="(text, q) in faqList['assign']" :key="q">
-        <div class="link-dest" :id="`${q}`"></div>
+      <div
+        class="content"
+        v-for="(text, q) in faqList['assign']"
+        :id="q"
+        :key="q"
+      >
         <p class="qst">Q : {{ q }}</p>
         <div class="text">
           <p>{{ text }}</p>
@@ -204,7 +215,7 @@ export default {
           // "主な就職先は？": "@どこ？",
           "修士への進学の割合は？":
             "学科自体の進学率が高いのもありますが, \n弊研究室の学生の多くが修士に進学しています.",
-          "他大学への院進学ってあり？@@@@@@@@@@@@@@@@@@": "@あり？",
+          "他大学への院進学ってあり？": "@あり？",
           "就職活動と両立できますか？": "@できる？"
           // "ドクター(博士後期課程)に行きたい": "@どうぞ？"
         },
@@ -455,34 +466,20 @@ hr {
   .content {
     position: relative;
     margin: 1vh auto 5vh;
-    padding: 10vh 7% 0;
-    // width: 85vw;
-
-    .link-dest {
-      // border-top: 3px solid #ff0000;
-      // width: 100px;
-      position: relative;
-      top: -10vh;
-      left: 0;
-    }
+    padding: 10vh 3% 0;
+    width: 85vw;
 
     .qst {
-      display: flex;
-      align-items: left;
-
-      width: 80%;
-
       background-color: #ffffff;
+      display: inline-block;
       box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
       padding-left: 3vw;
-      position: relative;
-      top: 1rem;
-      left: -1rem;
+      position: absolute;
+      left: 0vw;
+      top: 6.8vh;
       font-size: 2.1rem;
       text-align: left;
-      margin: 0;
     }
-
     .text {
       display: flex;
       align-items: center;
