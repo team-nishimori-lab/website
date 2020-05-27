@@ -55,63 +55,63 @@
           </tr>
           <tr id="Apr">
             <td class="month-column">4月</td>
-            <td class="B4-column">配属<br />配属課題</td>
-            <td class="all-column">5月大会にむけて</td>
+            <td class="B4-column">配属</td>
+            <td class="all-column">5月大会にむけての準備</td>
           </tr>
           <tr id="May">
             <td class="month-column">5月</td>
-            <td class="B4-column">配属課題<br />論文輪講</td>
-            <td class="all-column">大会</td>
+            <td class="B4-column">配属課題</td>
+            <td class="all-column">各種大会に参加</td>
           </tr>
           <tr id="Jun">
             <td class="month-column">6月</td>
-            <td class="B4-column">配属課題<br />論文輪講</td>
-            <td class="all-column">なんだろ</td>
+            <td class="B4-column">論文輪講</td>
+            <td class="all-column">-</td>
           </tr>
           <tr id="Jul">
             <td class="month-column">7月</td>
-            <td class="B4-column">テーマ決め</td>
-            <td class="all-column">なんだろ</td>
+            <td class="B4-column">研究テーマ決め</td>
+            <td class="all-column">-</td>
           </tr>
           <tr id="Aug">
             <td class="month-column">8月</td>
             <td class="B4-column">実験補助</td>
-            <td class="all-column">piyo</td>
+            <td class="all-column">屋外実験</td>
           </tr>
           <tr id="Sep">
             <td class="month-column">9月</td>
             <td class="B4-column">実験補助</td>
-            <td class="all-column">piyo</td>
+            <td class="all-column">屋外実験</td>
           </tr>
           <tr id="Oct">
             <td class="month-column">10月</td>
             <td class="B4-column">卒業研究</td>
-            <td class="all-column">piyo</td>
+            <td class="all-column">-</td>
           </tr>
           <tr id="Nov">
             <td class="month-column">11月</td>
             <td class="B4-column">卒業研究</td>
-            <td class="all-column">piyo</td>
+            <td class="all-column">-</td>
           </tr>
           <tr id="Dec">
             <td class="month-column">12月</td>
             <td class="B4-column">卒業研究</td>
-            <td class="all-column">piyo</td>
+            <td class="all-column">-</td>
           </tr>
           <tr id="Jan">
             <td class="month-column">1月</td>
             <td class="B4-column">卒業研究発表の準備</td>
-            <td class="all-column">piyo</td>
+            <td class="all-column">-</td>
           </tr>
           <tr id="Feb">
             <td class="month-column">2月</td>
             <td class="B4-column">卒業研究発表の発表</td>
-            <td class="all-column">piyo</td>
+            <td class="all-column">納会</td>
           </tr>
           <tr id="Mar">
             <td class="month-column">3月</td>
             <td class="B4-column">卒業論文制作</td>
-            <td class="all-column">piyo</td>
+            <td class="all-column">-</td>
           </tr>
         </table>
       </div>
