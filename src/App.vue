@@ -8,7 +8,7 @@
       <div id="header">
         <b-navbar toggleable="xl" type="dark" variant="dark" fixed="top">
           <!-- ロゴなど -->
-          <b-navbar-brand to="/">西森研究室</b-navbar-brand>
+          <b-navbar-brand to="/">新潟大学 西森研究室</b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
