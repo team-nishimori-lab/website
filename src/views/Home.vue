@@ -54,6 +54,11 @@
           Nishimori
         </text>
       </svg>
+      <div id="badge-area">
+        <!-- <img src="../assets/home/school_mon/logo.svg" /> -->
+        <!-- <img src="../assets/home/school_mon/e3_color.png" /> -->
+        <img src="../assets/home/school_mon/path (コピー).svg" />
+      </div>
     </div>
 
     <!-- --- --- --- --- welcome --- --- --- --- -->
@@ -164,6 +169,24 @@ svg {
   align-items: center;
   height: 100vh;
   background-size: cover;
+
+  #badge-area {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    text-align: right;
+
+    height: 14vh;
+
+    padding: 0.1rem 2rem 0.1rem;
+    margin: 0 0 4vh;
+
+    img {
+      height: 80%;
+      // opacity: 0.7;
+    }
+  }
 }
 
 .bg-img01 {
