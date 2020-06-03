@@ -57,7 +57,7 @@
       <div id="badge-area">
         <!-- <img src="../assets/home/school_mon/logo.svg" /> -->
         <!-- <img src="../assets/home/school_mon/e3_color.png" /> -->
-        <img src="../assets/home/school_mon/path (コピー).svg" />
+        <img src="../assets/home/school_mon/make_logo_online_ver1.svg" />
       </div>
     </div>
 
